@@ -218,6 +218,7 @@ h6 {
   line-height: 1.5;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+h1,
 h2,
 h3,
 h4,
@@ -405,7 +406,6 @@ table {
   border-spacing: 0;
   border: 1px solid #ddd;
   font-size: 14px;
-  table-layout: fixed;
   word-wrap: break-all;
 }
 table>tbody>tr:nth-of-type(odd) {
@@ -1328,6 +1328,9 @@ pre .javascript .function {
 .posts-expand .post-body .fancybox img {
   margin: 0 auto 25px;
 }
+.posts-expand .post-body img {
+  margin: 0 auto 25px;
+}
 @media (max-width: 767px) {
   .posts-collapse {
     margin: 0 20px;
@@ -1820,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #78ffe7;
+  background: #fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2351,6 +2354,24 @@ pre .javascript .function {
 .page-post-detail .comments {
   overflow: hidden;
 }
+ul.breadcrumb {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0 2em;
+  text-align: center;
+  font-size: 12px;
+}
+ul.breadcrumb li {
+  display: inline;
+}
+ul.breadcrumb li+li:before {
+  padding: 0.5em;
+  font-weight: normal;
+  content: "/\00a0";
+}
+ul.breadcrumb li+li:last-child {
+  font-weight: bold;
+}
 .header {
   position: relative;
   margin: 0 auto;
@@ -2614,6 +2635,32 @@ pre .javascript .function {
   .site-nav-toggle {
     display: block;
   }
+}
+.sub-menu {
+  margin: 0;
+  padding: 6px 0;
+  background: #fff !important;
+  border-bottom: 1px solid #ddd;
+}
+.sub-menu .menu-item {
+  display: inline-block !important;
+}
+.sub-menu .menu-item a {
+  padding: initial !important;
+  margin: 5px 10px;
+}
+.sub-menu .menu-item a:hover {
+  background: initial !important;
+  color: #fc6423;
+}
+.sub-menu .menu-item-active a {
+  background: #fff !important;
+  color: #fc6423;
+  border-bottom-color: #fc6423;
+}
+.sub-menu .menu-item-active a:hover {
+  background: #fff !important;
+  border-bottom-color: #fc6423;
 }
 .use-motion .sidebar .motion-element {
   opacity: 1;

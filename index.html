@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -49,19 +49,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
 
 
 
@@ -76,7 +76,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '6.0.4',
+    version: '6.0.6',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -99,19 +99,15 @@
 
 
 
-  
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-<meta name="description" content="前端小透明的踩坑之路">
+  <meta name="description" content="前端小透明的踩坑之路">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tian&#39;s Blog">
+<meta property="og:title" content="Tedding&#39;s Blog">
 <meta property="og:url" content="https://iTedding.github.io/index.html">
-<meta property="og:site_name" content="Tian&#39;s Blog">
+<meta property="og:site_name" content="Tedding&#39;s Blog">
 <meta property="og:description" content="前端小透明的踩坑之路">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tian&#39;s Blog">
+<meta name="twitter:title" content="Tedding&#39;s Blog">
 <meta name="twitter:description" content="前端小透明的踩坑之路">
 
 
@@ -128,11 +124,21 @@
     sidebar: "",
   };
 </script>
-  <title>Tian's Blog</title>
+
+  <title>Tedding's Blog</title>
   
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116371488-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116371488-1');
+</script>
 
 
 
@@ -180,14 +186,16 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Tian's Blog</span>
+        <span class="site-title">Tedding's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -197,7 +205,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -212,38 +220,55 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+</li>
+
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-        </li>
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+</li>
+
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+</li>
+
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-        </li>
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+</li>
+
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-        </li>
+        
+          
+  <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+</li>
+
       
 
       
     </ul>
+  
+
   
 
   
@@ -263,6 +288,10 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -291,7 +320,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -377,9 +406,16 @@
       
         
           
-            <h2 id="npm-查看全局安装的-packages"><a href="#npm-查看全局安装的-packages" class="headerlink" title="npm 查看全局安装的 packages"></a>npm 查看全局安装的 packages</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list -g</span><br></pre></td></tr></table></figure>
-<h2 id="npm-查看全局安装的-packages-显示一级目录"><a href="#npm-查看全局安装的-packages-显示一级目录" class="headerlink" title="npm 查看全局安装的 packages ( 显示一级目录 )"></a>npm 查看全局安装的 packages ( 显示一级目录 )</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list -g --depth 0</span><br></pre></td></tr></table></figure>
+          npm 查看全局安装的 packages1npm list -g
+npm 查看全局安装的 packages ( 显示一级目录 )1npm list -g --depth 0
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/23/List-globally-installed-npm-packages.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -440,7 +476,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -526,10 +562,16 @@
       
         
           
-            <h2 id="将-sf-xxx-目录通过软连接的形式链接到-Apache-Document-Root。"><a href="#将-sf-xxx-目录通过软连接的形式链接到-Apache-Document-Root。" class="headerlink" title="将 sf_xxx 目录通过软连接的形式链接到 Apache Document Root。"></a>将 sf_xxx 目录通过软连接的形式链接到 Apache Document Root。</h2><p><code>ln -s /media/sf_xxx  /var/www/html</code><br>【注意】要使用绝对路径。</p>
-<h2 id="将-www-data-用户加入到-vboxsf-用户组。"><a href="#将-www-data-用户加入到-vboxsf-用户组。" class="headerlink" title="将 www_data 用户加入到 vboxsf 用户组。"></a>将 www_data 用户加入到 vboxsf 用户组。</h2><p><code>sudo usermod -a -G vboxsf www-data</code><br>尝试重启 虚拟机 查看是否生效</p>
-
-          
+          将 sf_xxx 目录通过软连接的形式链接到 Apache Document Root。ln -s /media/sf_xxx  /var/www/html【注意】要使用绝对路径。
+将 www_data 用户加入到 vboxsf 用户组。sudo usermod -a -G vboxsf www-d
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/30/Linux-Apache-VBox-shared-folder.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -590,7 +632,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -676,10 +718,15 @@
       
         
           
-            <p>1.<code>sudo  apt-get update</code><br>2.<code>sudo apt-get upgrade</code><br>3.<code>sudo apt-get install apache2</code><br>4.<code>sudo apt-get install php7.0</code><br>5.<code>sudo apt-get install mysql-server mysql-client</code><br>6.<code>sudo apt-get install phpmyadmin</code></p>
-<p>【注意】安装mysql的时候不会提示输入root密码，需要在安装完成之后在终端执行<br><code>sudo mysql_secure_installation</code><br>根据提示设置MySQL root帐号的密码，以及是否允许root 账号远程连接。<br>接着终端执行下面几条<br><code>sudo mysql -u root</code><br><code>use mysql</code><br><code>update mysql.user set plugin = &#39;&#39;where User=&#39;root&#39;;</code><br><code>flush privileges;</code><br><code>exit;</code><br>至此phpmyadmin可以使用root帐户登陆。</p>
-
-          
+          1.sudo  apt-get update2.sudo apt-get upgrade3.sudo apt-get install apache24.sudo apt-get install php7.05.sudo apt-get install mysql-server mysql-clien
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/30/debian-depolyment-Apache2-php7-MySQL-phpMyAdmin.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -740,7 +787,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -826,9 +873,16 @@
       
         
           
-            <p>Vbox共享文件夹挂载在<code>/media/sf_xxx</code>，属于<code>root</code>用户和<code>vfsbox</code>用户组，一般用户不能访问。<br>想要访问共享文件夹需要将用户加入 <code>vfsbox</code> 用户组。<br>首先安装  <code>VBoxLinuxAdditions</code><br>然后在终端中执行：<br> <code>sudo usermod -a -G vboxsf 你的用户名</code></p>
+          Vbox共享文件夹挂载在/media/sf_xxx，属于root用户和vfsbox用户组，一般用户不能访问。想要访问共享文件夹需要将用户加入 vfsbox 用户组。首先安装  VBoxLinuxAdditions然后在终端中执行： sudo usermod -a -G vboxsf 你的用户名
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/30/Linux-VBox-shared-folder.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -889,7 +943,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -968,18 +1022,16 @@
       
         
           
-            <p><a href="http://www.paragon-drivers.com/cn/ntfs-mac-free/ntfs-free.html" target="_blank" rel="noopener">http://www.paragon-drivers.com/cn/ntfs-mac-free/ntfs-free.html</a><br><a href="http://www.paragon-drivers.com/cn/hfs-windows-free/hfs-free.html" target="_blank" rel="noopener">http://www.paragon-drivers.com/cn/hfs-windows-free/hfs-free.html</a></p>
-<p><strong>Paragon 网站上有免费的软件可以注册使用。</strong></p>
-<h2 id="打开网站"><a href="#打开网站" class="headerlink" title="打开网站"></a>打开网站</h2><p><strong> 首先打开网站下载special edition版本的软件 </strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4221131-375ad36ed9fb9167.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NTFS+ for Mac Download"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4221131-26d4875f5e5ff912.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HFS+ for Windows Download"><br>[注：免费的版本不是最新的版本，但是实测软件在OSX Yosemite 和 Windows 10 创意者版本使用没有问题] </p>
-<h2 id="提交邮箱"><a href="#提交邮箱" class="headerlink" title="提交邮箱"></a>提交邮箱</h2><p><strong> 下载页面的下方填入自己的邮箱，提交之后会收到 PRODUCT KEY 和 SERIAL NUMBER </strong></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4221131-f523d2874b5f4071.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="NTFS For Mac.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4221131-5053b2342ae84f4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HFS+ for Windows.png"></p>
-<h2 id="接收key-和-序列号"><a href="#接收key-和-序列号" class="headerlink" title="接收key 和 序列号"></a>接收key 和 序列号</h2><h2 id="安装并激活"><a href="#安装并激活" class="headerlink" title="安装并激活"></a>安装并激活</h2><p><strong> 安装软件填入收到的key 和 序列号 激活软件，永久有效。</strong><br>windows 10 下写入速度截图（移动硬盘不给力，这个速度还可以）</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4221131-a8a81f3f91eacb75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paragon HFS For Windows8.png"></p>
-
-          
+          http://www.paragon-drivers.com/cn/ntfs-mac-free/ntfs-free.htmlhttp://www.paragon-drivers.com/cn/hfs-windows-free/hfs-free.html
+Paragon 网站上有免费的软件可以注册使用
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/22/Free-of-Pargon-Softwares.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1040,7 +1092,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -1119,14 +1171,15 @@
       
         
           
-            <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>测试文字底部对齐<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		* &#123;</span></span><br><span class="line"><span class="undefined">			margin: 0;</span></span><br><span class="line"><span class="undefined">			padding: 0;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		body &#123;</span></span><br><span class="line"><span class="undefined">			font: 12px/1.5 arial;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		ul &#123;</span></span><br><span class="line"><span class="undefined">			list-style: none;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">		ul li &#123;</span></span><br><span class="line"><span class="undefined">			display: inline-block;</span></span><br><span class="line"><span class="undefined">			*display: inline;</span></span><br><span class="line"><span class="undefined">			*zoom: 1;</span></span><br><span class="line"><span class="undefined">			width: 1em;</span></span><br><span class="line"><span class="undefined">			margin-right: 10px;</span></span><br><span class="line"><span class="undefined">			overflow: hidden;</span></span><br><span class="line"><span class="undefined">			background: #cecece;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"height: 65px;"</span>&gt;</span>65<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"height: 80px;"</span>&gt;</span>80<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"height: 40px;"</span>&gt;</span>40<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"height: 60px;"</span>&gt;</span>60<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"height: 50px;"</span>&gt;</span>50<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">style</span>=<span class="string">"height: 70px;"</span>&gt;</span>70<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/4221131-e474b0a909b03bdd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预览1.png"><br><img src="http://upload-images.jianshu.io/upload_images/4221131-a836fa15f7324ecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="预览2.png"></p>
-<ul>
-<li>当<code>&lt;li&gt;</code>标签内没有文本节点时，通过设置样式<strong><code>display:inline-block</code></strong>可以将高度不一样的<code>&lt;li&gt;</code>标签底部对齐。</li>
-<li>当<code>&lt;li&gt;</code>标签内有文本节点时，通过设置样式<strong><code>display:inline-block</code></strong>，<strong><code>overflow:hidden</code></strong>可以将高度不一样的<code>&lt;li&gt;</code>标签底部对齐。</li>
-</ul>
-
-          
+          12345678910111213141516171819202122232425262728293031323334353637383940414243&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;	&lt;meta charset="utf-8"&gt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/11/list-align-div-bottom.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1187,7 +1240,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -1273,35 +1326,25 @@
       
         
           
-            <h3 id="安装简述"><a href="#安装简述" class="headerlink" title="安装简述:"></a>安装简述:</h3><ul>
-<li>安装 <strong>python</strong></li>
-<li>安装 <strong>pip</strong></li>
-<li>通过 <strong>pip</strong> 安装 <strong>sip</strong></li>
-<li>通过 <strong>pip</strong> 安装 <strong>PyQt</strong>  </li>
-</ul>
-<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3><ol>
-<li>从 <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a> 下载对应的python版本  </li>
-<li><ul>
-<li>安装 <strong>python3</strong></li>
-<li>检查 <strong>python</strong> 环境<br><strong><code>win+x</code></strong>打开<strong>Windows PowerShell</strong>(或者CMD)窗口，键入<strong><code>python -V</code></strong>回车，查看 <strong>python</strong> 版本号，确定<strong>python</strong> 已经正确安装完成  </li>
-</ul>
-</li>
-<li><ul>
-<li>安装 <strong>pip</strong><ol>
-<li>获取 <strong>pip</strong> 官方文档中的安装脚本<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a></li>
-<li>在脚本所在文件夹打开 <strong>Windows PowerShell</strong> 键入：<br><code>python get-pip.py</code><br>(更多参考<a href="https://pip.pypa.io/en/stable/installing/" target="_blank" rel="noopener">https://pip.pypa.io/en/stable/installing/</a>)</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>安装PyQt<ol>
-<li>在 <strong>Windows PowerShell</strong> 键入<code>pip3 install SIP</code>安装SIP</li>
-<li>在 <strong>Windows PowerShell</strong> 键入<code>pip3 install PyQt5</code>  安装PyQt<br>[注意]：在安装PyQt模块之前请确保已经正确安装SIP模块。</li>
-</ol>
-</li>
-</ol>
+          安装简述:
+安装 python
+安装 pip
+通过 pip 安装 sip
+通过 pip 安装 PyQt  
 
-          
+具体步骤:
+从 https://www.python.org/downloads/ 下载对应的python版本  
+
+安装 python3
+检查 python 环境win+x打开Window
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/08/Windows10-Python3-PyQt.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1362,7 +1405,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tian's Blog">
+      <meta itemprop="name" content="Tedding's Blog">
     </span>
 
     
@@ -1448,19 +1491,16 @@
       
         
           
-            <p>默认你已经打开终端 <code>ssh</code> 连接至树莓派<br>依次执行下面的命令更新源和package：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update			</span><br><span class="line">$ sudo apt-get upgrade</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装-node-和-npm"><a href="#安装-node-和-npm" class="headerlink" title="安装 node 和 npm"></a>安装 node 和 npm</h2><p>如果你之前通过 <code>apt-get</code> 安装过 <em>node</em> 和 <em>npm</em> 请忽略，直接到下一步。如果没有就依次执行下面的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install nodejs</span><br><span class="line">$ sudo apt-get install npm</span><br></pre></td></tr></table></figure></p>
-<p>可以通过下面的命令查看<code>apt-get</code>源中的软件和描述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ apt-cache serach nodejs	</span><br><span class="line">$ apt-cache serach npm</span><br></pre></td></tr></table></figure></p>
-<p>安装完成后通过 <code>node -v</code>  <code>npm -v</code>  查看 node 和 npm 的版本。<br>不出意外的话 <code>node</code> 的版本是0.10.x ，<code>npm</code> 的版本是2.x的老版本。</p>
-<h2 id="升级-node-和-npm"><a href="#升级-node-和-npm" class="headerlink" title="升级 node 和 npm"></a>升级 node 和 npm</h2><p>全局安装管理 <code>node</code> 版本的软件包 <code>n</code>，软件包的名字就叫做 <code>n</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g n</span><br></pre></td></tr></table></figure></p>
-<p>安装 <code>node</code> 稳定版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable</span><br></pre></td></tr></table></figure></p>
-<p>安装 <code>node</code> 指定版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo n vxxx</span><br><span class="line">#vvv为版本号</span><br></pre></td></tr></table></figure></p>
-<p>安装 <code>node LTS 6.11.0</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n v6.11.0</span><br></pre></td></tr></table></figure></p>
-<p><em>以上所有命令都要 sudo 以root 权限执行</em></p>
-<h2 id="刷新环境变量"><a href="#刷新环境变量" class="headerlink" title="刷新环境变量"></a>刷新环境变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<h2 id="清理多余的-node-版本"><a href="#清理多余的-node-版本" class="headerlink" title="清理多余的 node 版本"></a>清理多余的 node 版本</h2><p>现在系统中的 node 已经是指定的版本了。<br>但是除了最新的node之外，你还有一个通过apt-get所安装的低版本，可以不用管它，也可以通过下面的命令来清理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove nodejs</span><br><span class="line">$ sudo apt autoremove</span><br></pre></td></tr></table></figure></p>
-
-          
+          默认你已经打开终端 ssh 连接至树莓派依次执行下面的命令更新源和package：12$ sudo apt-get update			$ sudo apt-get upgrade
+安装 node 和 npm如果你之前通过 apt-get 安装过 node 和 npm 请忽略，直接到下一步。如果没有就
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/17/raspberrypi-nodejs-version.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1658,7 +1698,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1680,7 +1720,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.6</div>
 
 
 
@@ -1690,6 +1730,15 @@
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=500600338";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -1761,28 +1810,28 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
 
 
 
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.6"></script>
+
+
+
+  
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
 
 
 
