@@ -1,0 +1,39 @@
+body {
+  text-align: center;
+}
+
+.menu {
+  padding: 20px 0;
+}
+
+.menu-item {
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.menu-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  padding-bottom: 5px;
+  position: relative;
+  left: 32px;
+  border-bottom: 2px solid #000;
+  -webkit-transition: border-color 0.35s cubic-bezier(0.44, 0.02, 0.56, 1.01) 0s,
+    left 0.35s cubic-bezier(0.44, 0.02, 0.56, 1.01) 0s,
+    width 0.35s cubic-bezier(0.44, 0.02, 0.56, 1.01) 0s;
+  transition: border-color 0.35s cubic-bezier(0.44, 0.02, 0.56, 1.01) 0s,
+    left 0.35s cubic-bezier(0.44, 0.02, 0.56, 1.01) 0s,
+    width 0.35s cubic-bezier(0.44, 0.02, 0.56, 1.01) 0s;
+}
+
+.menu-item-active {
+  color: rgb(52, 117, 238);
+}
+
+.menu-item-active::after {
+  left: 0;
+  width: 64px;
+  border-bottom: 2px solid rgb(52, 117, 238);
+}
