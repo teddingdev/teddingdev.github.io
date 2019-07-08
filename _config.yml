@@ -26,7 +26,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render: 
-- '/README'
+- '/README.MD'
 - '/LICENSE'
 - 'ife-2018/*.*'
 - 'ife-2018/*/*.*'
@@ -79,7 +79,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: hexo-theme-next-6.0.6
+theme: hexo-theme-next-7.2.0
 
 
 # Deployment
