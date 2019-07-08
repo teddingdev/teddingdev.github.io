@@ -1,2 +1,3 @@
-Personal blog about FEdev
-https://itedding.com
+### Personal blog about FEdev
+#### https://tedding.dev
+#### https://itedding.com
