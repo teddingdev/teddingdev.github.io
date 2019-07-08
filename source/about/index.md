@@ -4,8 +4,9 @@ date: 2018-01-03 04:00:53
 ---
 
 ### 个人主页 
+https://tedding.dev
 https://itedding.com
 ### 联系方式 
-tedding1993@gmail.com
+teddingdev@gmail.com
 ### 说明
-GitHub主页：https://github.com/itedding
+GitHub主页：https://github.com/teddingdev
