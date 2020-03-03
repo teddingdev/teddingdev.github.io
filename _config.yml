@@ -107,5 +107,5 @@ theme: hexo-theme-next-7.7.2
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:itedding/itedding.github.io.git
+  repo: git@github.com:teddingdev/teddingdev.github.io.git
   branch: master
