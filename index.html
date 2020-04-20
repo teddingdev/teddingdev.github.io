@@ -175,6 +175,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tedding.dev/2020/04/18/Interview-QS-1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="tedding">
+      <meta itemprop="description" content="前端小透明的踩坑之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tedding's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/18/Interview-QS-1.html" class="post-title-link" itemprop="url">Interview QS 1</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-18 03:34:02" itemprop="dateCreated datePublished" datetime="2020-04-18T03:34:02+08:00">2020-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 04:31:21" itemprop="dateModified" datetime="2020-04-20T04:31:21+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前端面试-笔试题-1"><a href="#前端面试-笔试题-1" class="headerlink" title="前端面试 笔试题 1"></a>前端面试 笔试题 1</h1><h2 id="1、Cookie、sessionStorage、localStorage-区别"><a href="#1、Cookie、sessionStorage、localStorage-区别" class="headerlink" title="1、Cookie、sessionStorage、localStorage 区别"></a>1、Cookie、sessionStorage、localStorage 区别</h2><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p><code>HTTP Cookie（也叫Web Cookie或浏览器 Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie 使基于无状态的HTTP协议记录稳定的状态信息成为了可能。</code></p>
+<ul>
+<li>会话期 Cookie<blockquote>
+<p>会话期 Cookie 是最简单的 Cookie：浏览器关闭之后它会被自动删除，也就是说它仅在会话期内有效。会话期 Cookie 不需要指定过期时间（Expires）或者有效期（Max-Age）。需要注意的是，有些浏览器提供了会话恢复功能，这种情况下即使关闭了浏览器，会话期 Cookie 也会被保留下来，就好像浏览器从来没有关闭一样。</p>
+</blockquote>
+</li>
+<li>持久性 Cookie<blockquote>
+<p>和关闭浏览器便失效的会话期 Cookie 不同，持久性 Cookie 可以指定一个特定的过期时间（Expires）或有效期（Max-Age）。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h3><ul>
+<li>sessionStorage    <blockquote>
+<p>为每一个给定的源（given origin）维持一个独立的存储区域，该存储区域在页面会话期间可用（即只要浏览器处于打开状态，包括页面重新加载和恢复）。</p>
+</blockquote>
+</li>
+<li>localStorage  <blockquote>
+<p>同样的功能，但是在浏览器关闭，然后重新打开后数据仍然存在。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="2、-Vue-的生命周期分为几个阶段，状态如何"><a href="#2、-Vue-的生命周期分为几个阶段，状态如何" class="headerlink" title="2、 Vue 的生命周期分为几个阶段，状态如何"></a>2、 Vue 的生命周期分为几个阶段，状态如何</h2><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="生命周期图"></p>
+<center>图片引用自官网</center>
+
+<h2 id="3、Vue-组件之间的传值通信"><a href="#3、Vue-组件之间的传值通信" class="headerlink" title="3、Vue 组件之间的传值通信"></a>3、Vue 组件之间的传值通信</h2><h2 id="4、添加、移动、复制、创建、查找节点"><a href="#4、添加、移动、复制、创建、查找节点" class="headerlink" title="4、添加、移动、复制、创建、查找节点"></a>4、添加、移动、复制、创建、查找节点</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">createDocumentFragment() <span class="comment">//创建一个 DOM 片段  </span></span><br><span class="line">createElement() <span class="comment">//创建一个具体的元素  </span></span><br><span class="line">createTextNode() <span class="comment">//创建一个文本节点</span></span><br><span class="line"></span><br><span class="line">appendChild() <span class="comment">//添加</span></span><br><span class="line">remove() <span class="comment">//移除</span></span><br><span class="line">replaceChild() <span class="comment">//替换</span></span><br><span class="line">insertBefore() <span class="comment">//插入</span></span><br><span class="line"></span><br><span class="line">getElementsByTagName()<span class="comment">//通过标签名</span></span><br><span class="line">getElementsByClassName()<span class="comment">//通过元素的name属性</span></span><br><span class="line">getElementById()<span class="comment">//通过ID</span></span><br><span class="line">getAttribute()</span><br></pre></td></tr></table></figure>
+<h2 id="5、闭包和闭包的用途、优缺点"><a href="#5、闭包和闭包的用途、优缺点" class="headerlink" title="5、闭包和闭包的用途、优缺点"></a>5、闭包和闭包的用途、优缺点</h2><h2 id="6、http状态码"><a href="#6、http状态码" class="headerlink" title="6、http状态码"></a>6、http状态码</h2><p>200<br>301<br>302<br>404<br>500 </p>
+<h2 id="7、web应用性能优化"><a href="#7、web应用性能优化" class="headerlink" title="7、web应用性能优化"></a>7、web应用性能优化</h2><blockquote>
+<p>1、减少请求次数<br>2、降低请求耗时</p>
+</blockquote>
+<ul>
+<li>CDN</li>
+<li>压缩传输，即GZIP/Deflate</li>
+<li>前端模块化</li>
+<li>使用缓存</li>
+<li>使用本地存储</li>
+<li>负载均衡：Nginx/SLB</li>
+</ul>
+<h2 id="8、DOM-事件流"><a href="#8、DOM-事件流" class="headerlink" title="8、DOM 事件流"></a>8、DOM 事件流</h2><p>“DOM2级事件”规定的事件流包括三个阶段: 事件捕获阶段、处于目标阶段和事件冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶 段，可以在这个阶段对事件做出响应。  </p>
+<p>在 DOM 事件流中，实际的目标在捕获阶段不会接收到事件。下一个阶段是“处于目标”阶段，于是事件在目标上发生，并在事件处理中被看成冒泡阶段的一部分。然后，冒泡阶段发生，事件又传播回文档。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://tedding.dev/2020/03/04/bash_profile.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -907,110 +1010,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tedding.dev/2017/09/08/Windows10-Python3-PyQt.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tedding">
-      <meta itemprop="description" content="前端小透明的踩坑之路">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tedding's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/09/08/Windows10-Python3-PyQt.html" class="post-title-link" itemprop="url">Windows 10 环境下安装 Python3 和 PyQt</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-09-08 02:23:24" itemprop="dateCreated datePublished" datetime="2017-09-08T02:23:24+08:00">2017-09-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-03 00:37:42" itemprop="dateModified" datetime="2020-03-03T00:37:42+08:00">2020-03-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="安装简述"><a href="#安装简述" class="headerlink" title="安装简述:"></a>安装简述:</h3><ul>
-<li>安装 <strong>python</strong></li>
-<li>安装 <strong>pip</strong></li>
-<li>通过 <strong>pip</strong> 安装 <strong>sip</strong></li>
-<li>通过 <strong>pip</strong> 安装 <strong>PyQt</strong>  </li>
-</ul>
-<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a>具体步骤:</h3><ol>
-<li>从 <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a> 下载对应的python版本  </li>
-<li><ul>
-<li>安装 <strong>python3</strong></li>
-<li>检查 <strong>python</strong> 环境<br><strong><code>win+x</code></strong>打开<strong>Windows PowerShell</strong>(或者CMD)窗口，键入<strong><code>python -V</code></strong>回车，查看 <strong>python</strong> 版本号，确定<strong>python</strong> 已经正确安装完成  </li>
-</ul>
-</li>
-<li><ul>
-<li>安装 <strong>pip</strong><ol>
-<li>获取 <strong>pip</strong> 官方文档中的安装脚本<a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a></li>
-<li>在脚本所在文件夹打开 <strong>Windows PowerShell</strong> 键入：<br><code>python get-pip.py</code><br>(更多参考<a href="https://pip.pypa.io/en/stable/installing/" target="_blank" rel="noopener">https://pip.pypa.io/en/stable/installing/</a>)</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>安装PyQt<ol>
-<li>在 <strong>Windows PowerShell</strong> 键入<code>pip3 install SIP</code>安装SIP</li>
-<li>在 <strong>Windows PowerShell</strong> 键入<code>pip3 install PyQt5</code>  安装PyQt<br>[注意]：在安装PyQt模块之前请确保已经正确安装SIP模块。</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1081,7 +1080,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
