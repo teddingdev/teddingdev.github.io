@@ -176,3 +176,28 @@ const forFlat = (arr = [], depth = 1) => {
 DocumentFragments 是DOM节点。它们不是主DOM树的一部分。通常的用例是创建文档片段，将元素附加到文档片段，然后将文档片段附加到DOM树。在DOM树中，文档片段被其所有的子元素所代替。
 
 因为文档片段存在于内存中，并不在DOM树中，所以将子元素插入到文档片段时不会引起页面回流（对元素位置和几何上的计算）。因此，使用文档片段通常会带来更好的性能。
+
+# 如何判断是数组
+```javascript
+const arr = []
+// 通过原型判断
+arr instanceof Array // true
+arr.__proto__ === Array.prototype // true
+arr.construct === Array //true
+
+Object.prototype.toString.call(arr) === '[object Array]' // true
+Array.isArray(arr) // true
+```
+
+# 基本数据类型
+ECMAScript 中有 5 种简单数据类型(也称为基本数据类型):
+Undefined、Null、Boolean、Number 和 String。
+还有 1 种复杂数据类型——Object
+
+typeof 操作符
+* "undefined"——如果这个值未定义;
+* "boolean"——如果这个值是布尔值;
+* "string"——如果这个值是字符串;
+* "number"——如果这个值是数值;
+* "object"——如果这个值是对象或 null;
+* "function"——如果这个值是函数。
