@@ -1,3 +1,6 @@
 [submodule ".deploy_git"]
 	path = .deploy_git
 	url = git@github.com:teddingdev/teddingdev.github.io.git
+[submodule "themes/hexo-theme-next"]
+	path = themes/hexo-theme-next
+	url = https://github.com/theme-next/hexo-theme-next.git
