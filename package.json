@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "hexo-deployer-git": "^3.0.0"
+  },
+  "volta": {
+    "node": "16.17.0"
   }
 }
