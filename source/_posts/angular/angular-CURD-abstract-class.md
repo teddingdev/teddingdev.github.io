@@ -212,7 +212,7 @@ export abstract class CurdFactoryService {
 ```typescript
 import { Injectable } from "@angular/core";
 import { CurdFactoryService } from "@core";
-import { _HttpClient } from "r@delon/theme";
+import { HttpClient } from "@angular/common/http";
 import { APIS } from "@configure";
 
 @Injectable({
@@ -226,14 +226,19 @@ export class DoctorAppConfigService extends CurdFactoryService {
   }
 }
 /** 也可以在此扩展特有的方法 **/
-funcA(){}
-funcB(){}
-funcC(){}
+funcA = () => {};
+funcB = () => {};
+funcC = () => {};
 ```
 
 ### 还可以这样用
 
 ```typescript
+import { Injectable } from "@angular/core";
+import { CurdFactoryService } from "@core";
+import { HttpClient } from "@angular/common/http";
+import { APIS } from "@configure";
+
 class AAA extends CurdFactoryService {
   baseUrl: string;
   constructor(http: _HttpClient) {
