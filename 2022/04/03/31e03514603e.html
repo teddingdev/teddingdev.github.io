@@ -20,21 +20,19 @@
     var CONFIG = {"hostname":"tedding.dev","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="bash_profile 常用配置备份">
+  <meta name="description" content="RPM Packages Backup openSUSE 首次启动 快速初始化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bash_profile 备份">
-<meta property="og:url" content="https://tedding.dev/2020/03/04/61bec85cd7cd.html">
+<meta property="og:title" content="RPM Packages Backup">
+<meta property="og:url" content="https://tedding.dev/2022/04/03/31e03514603e.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="bash_profile 常用配置备份">
+<meta property="og:description" content="RPM Packages Backup openSUSE 首次启动 快速初始化">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-04T14:45:00.000Z">
-<meta property="article:modified_time" content="2022-08-19T05:45:12.026Z">
+<meta property="article:published_time" content="2022-04-02T16:20:00.000Z">
+<meta property="article:modified_time" content="2022-04-02T17:05:23.342Z">
 <meta property="article:author" content="tedding">
-<meta property="article:tag" content="backup">
-<meta property="article:tag" content="profile">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tedding.dev/2020/03/04/61bec85cd7cd.html">
+<link rel="canonical" href="https://tedding.dev/2022/04/03/31e03514603e.html">
 
 
 <script id="page-configurations">
@@ -47,7 +45,7 @@
   };
 </script>
 
-  <title>bash_profile 备份 | tedding's blog</title>
+  <title>RPM Packages Backup | tedding's blog</title>
   
 
 
@@ -170,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tedding.dev/2020/03/04/61bec85cd7cd.html">
+    <link itemprop="mainEntityOfPage" href="https://tedding.dev/2022/04/03/31e03514603e.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          bash_profile 备份
+          RPM Packages Backup
         </h1>
 
         <div class="post-meta">
@@ -192,28 +190,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-04 22:45:00" itemprop="dateCreated datePublished" datetime="2020-03-04T22:45:00+08:00">2020-03-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-19 13:45:12" itemprop="dateModified" datetime="2022-08-19T13:45:12+08:00">2022-08-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/bash/" itemprop="url" rel="index"><span itemprop="name">bash</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/bash/profile/" itemprop="url" rel="index"><span itemprop="name">profile</span></a>
-                </span>
+              <time title="创建时间：2022-04-03 00:20:00 / 修改时间：01:05:23" itemprop="dateCreated datePublished" datetime="2022-04-03T00:20:00+08:00">2022-04-03</time>
             </span>
 
           
@@ -227,9 +206,89 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><code>bash_profile</code> 常用配置备份</p>
+        RPM Packages Backup
+<p>openSUSE 首次启动 快速初始化</p>
 <span id="more"></span>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#enables colorin the terminal bash shell export</span></span><br><span class="line"><span class="built_in">export</span> CLICOLOR=1</span><br><span class="line"></span><br><span class="line"><span class="comment">#setsup thecolor scheme for list export</span></span><br><span class="line"><span class="built_in">export</span> LSCOLORS=gxfxcxdxbxegedabagacad</span><br><span class="line"></span><br><span class="line"><span class="comment">#sets up theprompt color (currently a green similar to linux terminal)</span></span><br><span class="line"><span class="built_in">export</span> PS1=<span class="string">&#x27;\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ &#x27;</span></span><br><span class="line"><span class="comment">#enables colorfor iTerm</span></span><br><span class="line"><span class="built_in">export</span> TERM=xterm-256color</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">&#x27;grep --color&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> la=<span class="string">&#x27;ls -al&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">&#x27;ls -l&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> cls=clear</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> proxyon=<span class="string">&#x27;export http_proxy=http://127.0.0.1:1087; export https_proxy=http://127.0.0.1:1087;echo proxy is on!&#x27;</span></span><br><span class="line"><span class="built_in">alias</span> proxyoff=<span class="string">&#x27;unset http_proxy; unset https_proxy;echo proxy is off!&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">&quot;<span class="variable">$HOME</span>/.nvm&quot;</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span>  <span class="comment"># This loads nvm</span></span><br><span class="line">[ -s <span class="string">&quot;<span class="variable">$NVM_DIR</span>/bash_completion&quot;</span> ] &amp;&amp; \. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/bash_completion&quot;</span>  <span class="comment"># This loads nvm bash_completion</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> workspace=<span class="string">&quot;<span class="variable">$HOME</span>/Documents/workspace&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#shorcuts</span></span><br><span class="line"><span class="built_in">alias</span> doc=<span class="string">&quot;cd <span class="variable">$HOME</span>/Documents&quot;</span></span><br><span class="line"><span class="built_in">alias</span> dod=<span class="string">&quot;cd <span class="variable">$HOME</span>/Downloads&quot;</span></span><br><span class="line"><span class="built_in">alias</span> dop=<span class="string">&quot;cd <span class="variable">$HOME</span>/Desktop&quot;</span></span><br><span class="line"><span class="built_in">alias</span> app=<span class="string">&quot;cd <span class="variable">$HOME</span>/Applications&quot;</span></span><br><span class="line"><span class="built_in">alias</span> pic=<span class="string">&quot;cd <span class="variable">$HOME</span>/Pictures&quot;</span></span><br><span class="line"><span class="built_in">alias</span> mov=<span class="string">&quot;cd <span class="variable">$HOME</span>/Movies&quot;</span></span><br><span class="line"><span class="built_in">alias</span> mus=<span class="string">&quot;cd <span class="variable">$HOME</span>/Music&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#workspace</span></span><br><span class="line"><span class="built_in">alias</span> ws=<span class="string">&quot;cd <span class="variable">$workspace</span>&quot;</span></span><br><span class="line"><span class="built_in">alias</span> wsg=<span class="string">&quot;cd <span class="variable">$workspace</span>/github&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#npm</span></span><br><span class="line"><span class="built_in">alias</span> ns=<span class="string">&quot;npm run start&quot;</span></span><br><span class="line"><span class="built_in">alias</span> nb=<span class="string">&quot;npm run build&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#gits</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># mitmproxy</span></span><br><span class="line"><span class="comment"># SSLKEYLOGFILE=&quot;$PWD/.mitmproxy/sslkeylogfile.txt&quot; mitmproxy</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo </span></span><br><span class="line"><span class="built_in">alias</span> hexogs=<span class="string">&quot;hexo g &amp;&amp; hexo s&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>kSysGuard</li>
+<li>Kdevelop</li>
+<li>Kompare</li>
+<li>WPS</li>
+<li>plan</li>
+<li>kfind</li>
+<li>postman</li>
+<li>kde partition manager</li>
+<li>kde connect</li>
+<li>suse studio imagewriter</li>
+<li>latte</li>
+<li>yakuake</li>
+<li>dbeaver-ce</li>
+<li>yast2-fonts</li>
+<li>yast2-users</li>
+<li>screenkey &#x2F;&#x2F; 显示按键</li>
+<li>inkscape &#x2F;&#x2F; 适量图形编辑</li>
+<li>zip</li>
+<li>7zip</li>
+<li>packman</li>
+<li>packman-essentials</li>
+<li>vscode</li>
+<li>chrome</li>
+<li>edge<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3></li>
+<li>woeusb</li>
+</ul>
+<h3 id="当前已经安装"><a href="#当前已经安装" class="headerlink" title="当前已经安装"></a>当前已经安装</h3><p>latte-dock<br>partitionmanager<br>ksysguard5<br>kfind<br>kdeconnect-kde<br>git-gui</p>
+<h3 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</span><br><span class="line">sudo sh -c <span class="string">&#x27;echo -e &quot;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&quot; &gt; /etc/zypp/repos.d/vscode.repo&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://dl.google.com/linux/linux_signing_key.pub</span><br><span class="line">sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 google-chrome</span><br></pre></td></tr></table></figure>
+
+<h3 id="edge"><a href="#edge" class="headerlink" title="edge"></a>edge</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</span><br><span class="line">sudo zypper ar https://packages.microsoft.com/yumrepos/edge microsoft-edge</span><br></pre></td></tr></table></figure>
+
+<h3 id="packman"><a href="#packman" class="headerlink" title="packman"></a>packman</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper ar -cfp 90 https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman</span><br><span class="line">sudo zypper dup --from packman --allow-vendor-change</span><br></pre></td></tr></table></figure>
+
+<h3 id="vscode-KDE-x2F-Plasma-全局菜单失效"><a href="#vscode-KDE-x2F-Plasma-全局菜单失效" class="headerlink" title="vscode KDE&#x2F;Plasma 全局菜单失效"></a>vscode KDE&#x2F;Plasma 全局菜单失效</h3><p>需要安装 libdbusmenu-glib4 包</p>
+<h3 id="vscode-登录同步账户"><a href="#vscode-登录同步账户" class="headerlink" title="vscode 登录同步账户"></a>vscode 登录同步账户</h3><p>gnome-keyring</p>
+<h3 id="Wine"><a href="#Wine" class="headerlink" title="Wine"></a>Wine</h3><ul>
+<li>appmenu-gtk2-module</li>
+<li>appmenu-gtk3-module</li>
+<li>winetricks riched20  修复输入框聚焦问题</li>
+<li>export WINEPREFIX&#x3D;&#x2F;path&#x2F;to&#x2F;wineprefix</li>
+</ul>
+<h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3><p>translate-shell</p>
+<h3 id="解码"><a href="#解码" class="headerlink" title="解码"></a>解码</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://en.opensuse.org/Additional_package_repositories">https://en.opensuse.org/Additional_package_repositories</a></li>
+<li>vlc-codecs</li>
+<li>ffmpeg-4</li>
+</ul>
+<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><p>emacs</p>
+<h3 id="browser"><a href="#browser" class="headerlink" title="browser"></a>browser</h3><ul>
+<li>epiphany (webkit2gtk safari 同款内核)</li>
+</ul>
+<h3 id="ios-设备管理"><a href="#ios-设备管理" class="headerlink" title="ios 设备管理"></a>ios 设备管理</h3><ul>
+<li>libimobiledevice6 </li>
+<li>usbmuxd </li>
+<li>ifuse<br><code>https://libimobiledevice.org/#downloads</code></li>
+</ul>
+<h3 id="Clang-LLVM"><a href="#Clang-LLVM" class="headerlink" title="Clang LLVM"></a>Clang LLVM</h3><ul>
+<li>clang </li>
+<li>llvm</li>
+</ul>
+<h3 id="创建-Classic-Macos-9"><a href="#创建-Classic-Macos-9" class="headerlink" title="创建 Classic Macos 9"></a>创建 Classic Macos 9</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-ppc -hda ../mac_os9_zh_CN.img  -M mac99 -m 256 -prom-env <span class="string">&quot;boot-args=-v&quot;</span> -g 1024x768x32</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><ul>
+<li>wqy-bitmap-fonts</li>
+<li>wqy-microhei-fonts</li>
+</ul>
+<h3 id="Okular-插件"><a href="#Okular-插件" class="headerlink" title="Okular 插件"></a>Okular 插件</h3><ul>
+<li>calligra-extras-okular</li>
+<li>okular-spectre</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zypper <span class="keyword">in</span> latte-dock partitionmanager ksysguard5 kfind kdeconnect-kde git-gui libdbusmenu-glib4 appmenu-gtk2-module appmenu-gtk3-module translate-shell epiphany yakuake yast2-fonts yast2-users screenkey zip 7zip ksysguard wine -y</span><br></pre></td></tr></table></figure>
+
+<h2 id="广告屏蔽"><a href="#广告屏蔽" class="headerlink" title="广告屏蔽"></a>广告屏蔽</h2><p>AdNauseam</p>
+
     </div>
 
     
@@ -244,7 +303,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://tedding.dev/2020/03/04/61bec85cd7cd.html" title="bash_profile 备份">https://tedding.dev/2020/03/04/61bec85cd7cd.html</a>
+    <a href="https://tedding.dev/2022/04/03/31e03514603e.html" title="RPM Packages Backup">https://tedding.dev/2022/04/03/31e03514603e.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -254,10 +313,6 @@
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/backup/" rel="tag"># backup</a>
-              <a href="/tags/profile/" rel="tag"># profile</a>
-          </div>
 
         
 
@@ -265,12 +320,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/05/25/f70aa3db9773.html" rel="prev" title="为 React 项目手动配置代理">
-      <i class="fa fa-chevron-left"></i> 为 React 项目手动配置代理
+    <a href="/2021/05/29/d208a30ead9f.html" rel="prev" title="“被蚊子咬了个包”用英文怎么说？">
+      <i class="fa fa-chevron-left"></i> “被蚊子咬了个包”用英文怎么说？
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/18/7a0470522099.html" rel="next" title="Interview QS 1">
-      Interview QS 1 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/04/03/71048c57aa27.html" rel="next" title="塞尔达传说:荒野之息 游戏原声">
+      塞尔达传说:荒野之息 游戏原声 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -330,6 +385,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%80%89"><span class="nav-number">1.</span> <span class="nav-text">可选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E5%89%8D%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">当前已经安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode"><span class="nav-number">3.</span> <span class="nav-text">vscode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chrome"><span class="nav-number">4.</span> <span class="nav-text">chrome</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edge"><span class="nav-number">5.</span> <span class="nav-text">edge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packman"><span class="nav-number">6.</span> <span class="nav-text">packman</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-KDE-x2F-Plasma-%E5%85%A8%E5%B1%80%E8%8F%9C%E5%8D%95%E5%A4%B1%E6%95%88"><span class="nav-number">7.</span> <span class="nav-text">vscode KDE&#x2F;Plasma 全局菜单失效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-%E7%99%BB%E5%BD%95%E5%90%8C%E6%AD%A5%E8%B4%A6%E6%88%B7"><span class="nav-number">8.</span> <span class="nav-text">vscode 登录同步账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wine"><span class="nav-number">9.</span> <span class="nav-text">Wine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BF%BB%E8%AF%91"><span class="nav-number">10.</span> <span class="nav-text">翻译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81"><span class="nav-number">11.</span> <span class="nav-text">解码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">12.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#browser"><span class="nav-number">13.</span> <span class="nav-text">browser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios-%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86"><span class="nav-number">14.</span> <span class="nav-text">ios 设备管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clang-LLVM"><span class="nav-number">15.</span> <span class="nav-text">Clang LLVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-Classic-Macos-9"><span class="nav-number">16.</span> <span class="nav-text">创建 Classic Macos 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">17.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Okular-%E6%8F%92%E4%BB%B6"><span class="nav-number">18.</span> <span class="nav-text">Okular 插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BF%E5%91%8A%E5%B1%8F%E8%94%BD"><span class="nav-number"></span> <span class="nav-text">广告屏蔽</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -343,7 +399,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

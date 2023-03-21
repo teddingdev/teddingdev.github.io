@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"tedding.dev","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="“被蚊子咬了个包”用英文怎么说？">
+  <meta name="description" content="1.sudo  apt-get update2.sudo apt-get upgrade3.sudo apt-get install apache24.sudo apt-get install php7.05.sudo apt-get install mysql-server mysql-client6.sudo apt-get install phpmyadmin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“被蚊子咬了个包”用英文怎么说？">
-<meta property="og:url" content="https://tedding.dev/2021/05/29/856b19e6b40f.html">
+<meta property="og:title" content="debian 部署 Apache2+php7+MySQL+phpMyAdmin">
+<meta property="og:url" content="https://tedding.dev/2017/09/30/50dded07ffde.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="“被蚊子咬了个包”用英文怎么说？">
+<meta property="og:description" content="1.sudo  apt-get update2.sudo apt-get upgrade3.sudo apt-get install apache24.sudo apt-get install php7.05.sudo apt-get install mysql-server mysql-client6.sudo apt-get install phpmyadmin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-28T17:41:14.000Z">
+<meta property="article:published_time" content="2017-09-30T15:04:48.000Z">
 <meta property="article:modified_time" content="2022-04-02T13:44:56.108Z">
 <meta property="article:author" content="tedding">
+<meta property="article:tag" content="debian">
+<meta property="article:tag" content="Server">
+<meta property="article:tag" content="LAMP">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tedding.dev/2021/05/29/856b19e6b40f.html">
+<link rel="canonical" href="https://tedding.dev/2017/09/30/50dded07ffde.html">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>“被蚊子咬了个包”用英文怎么说？ | tedding's blog</title>
+  <title>debian 部署 Apache2+php7+MySQL+phpMyAdmin | tedding's blog</title>
   
 
 
@@ -168,7 +171,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tedding.dev/2021/05/29/856b19e6b40f.html">
+    <link itemprop="mainEntityOfPage" href="https://tedding.dev/2017/09/30/50dded07ffde.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -181,7 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          “被蚊子咬了个包”用英文怎么说？
+          debian 部署 Apache2+php7+MySQL+phpMyAdmin
         </h1>
 
         <div class="post-meta">
@@ -191,7 +194,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-05-29 01:41:14" itemprop="dateCreated datePublished" datetime="2021-05-29T01:41:14+08:00">2021-05-29</time>
+              <time title="创建时间：2017-09-30 23:04:48" itemprop="dateCreated datePublished" datetime="2017-09-30T23:04:48+08:00">2017-09-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -200,6 +203,19 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2022-04-02 21:44:56" itemprop="dateModified" datetime="2022-04-02T21:44:56+08:00">2022-04-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index"><span itemprop="name">Server</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/LAMP/" itemprop="url" rel="index"><span itemprop="name">LAMP</span></a>
+                </span>
+            </span>
 
           
 
@@ -212,21 +228,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>“被蚊子咬了个包”用英文怎么说？ </p>
+        <p>1.<code>sudo  apt-get update</code><br>2.<code>sudo apt-get upgrade</code><br>3.<code>sudo apt-get install apache2</code><br>4.<code>sudo apt-get install php7.0</code><br>5.<code>sudo apt-get install mysql-server mysql-client</code><br>6.<code>sudo apt-get install phpmyadmin</code></p>
 <span id="more"></span>
-<ul>
-<li><p><code>I think I’ve been bitten by a mosquito. It’s really itchy.</code><br>我好像被蚊子咬了，痒痒死了。</p>
-</li>
-<li><p><code>I must have 10 mozzie bites on my arm.</code><br>我胳膊上有差不多十个蚊子咬的包<br>  *<code>mozzie</code> 是 <code>mosquito</code> 的简称<br>  *<code>mozzie</code> <code>bite(s)</code>蚊子咬的包</p>
-</li>
-<li><p><code>I was bitten by so many mosquitos last night.</code><br>我昨天晚上被好多蚊子咬了包</p>
-</li>
-<li><p><code>I’ve got a mosquito bite.</code><br>我被蚊子咬了个包</p>
-</li>
-</ul>
-<blockquote>
-<p>内容原创：Bilibili <a target="_blank" rel="noopener" href="https://space.bilibili.com/642892779/">帅山姆先生</a><br>视频地址: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1XC4y1b7k4">https://www.bilibili.com/video/BV1XC4y1b7k4</a></p>
-</blockquote>
+<p>【注意】安装mysql的时候不会提示输入root密码，需要在安装完成之后在终端执行<br><code>sudo mysql_secure_installation</code><br>根据提示设置MySQL root帐号的密码，以及是否允许root 账号远程连接。<br>接着终端执行下面几条<br><code>sudo mysql -u root</code><br><code>use mysql</code><br><code>update mysql.user set plugin = &#39;&#39;where User=&#39;root&#39;; </code><br><code>flush privileges; </code><br><code>exit;</code><br>至此phpmyadmin可以使用root帐户登陆。</p>
 
     </div>
 
@@ -242,7 +246,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://tedding.dev/2021/05/29/856b19e6b40f.html" title="“被蚊子咬了个包”用英文怎么说？">https://tedding.dev/2021/05/29/856b19e6b40f.html</a>
+    <a href="https://tedding.dev/2017/09/30/50dded07ffde.html" title="debian 部署 Apache2+php7+MySQL+phpMyAdmin">https://tedding.dev/2017/09/30/50dded07ffde.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -252,6 +256,11 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/debian/" rel="tag"># debian</a>
+              <a href="/tags/Server/" rel="tag"># Server</a>
+              <a href="/tags/LAMP/" rel="tag"># LAMP</a>
+          </div>
 
         
 
@@ -259,12 +268,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/28/38abd0dcbc84.html" rel="prev" title="How-to-say-suibian-in-english">
-      <i class="fa fa-chevron-left"></i> How-to-say-suibian-in-english
+    <a href="/2017/09/30/9fc405932de4.html" rel="prev" title="Linux 虚拟机 访问 Virtual Box 宿主机 共享文件夹">
+      <i class="fa fa-chevron-left"></i> Linux 虚拟机 访问 Virtual Box 宿主机 共享文件夹
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/04/03/566ecc1579de.html" rel="next" title="RPM Packages Backup">
-      RPM Packages Backup <i class="fa fa-chevron-right"></i>
+    <a href="/2017/09/30/d6039629f1a6.html" rel="next" title="Linux 虚拟机中 Apache 访问宿主机 Vbox-shared-folder">
+      Linux 虚拟机中 Apache 访问宿主机 Vbox-shared-folder <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -337,7 +346,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
