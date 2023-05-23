@@ -1,0 +1,60 @@
+name: Deployment
+
+on:
+  push:
+    branches: [master]
+    # paths-ignore: [.github/workflows/**]
+
+env:
+  TZ: Asia/Shanghai
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ACTION_BOT_NAME: github-actions[bot]
+  ACTION_BOT_EMAIL: github-actions[bot]@users.noreply.github.com
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v3
+        with:
+          path: master
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build
+        run: |
+          cd master
+          npm install
+          npm run build
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Copy Files
+        run: |
+          cp -r ./master/public/* ./gh-pages
+          cp ./master/.gitignore ./gh-pages
+          ls -al ./gh-pages
+          date +%Y-%m-%d\ %H:%M:%S\ %z > ./gh-pages/generated.txt
+
+      - name: Deploy
+        run: |
+          date +%Y-%m-%d\ %H:%M:%S\ %z > ./gh-pages/generated.txt
+          cd gh-pages
+          git add .
+          git config user.name $ACTION_BOT_NAME
+          git config user.email $ACTION_BOT_EMAIL
+          git commit -m "Site updated: $(date +%Y-%d-%m\ %H:%M:%S\ %z)"
+          git push
