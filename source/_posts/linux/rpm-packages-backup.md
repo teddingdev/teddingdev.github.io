@@ -2,7 +2,11 @@
 title: RPM Packages Backup
 date: 2022-04-03 00:20:00
 tags:
+    - Linux
+    - shell
 categories:
+    - Linux
+    - shell
 ---
 
 {{ title }}

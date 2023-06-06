@@ -4,6 +4,7 @@ date: 2023-03-15 09:44:26
 tags:
   - 前端
   - Angular
+  - RxJs
 categories:
   - 前端
   - Angular
@@ -204,7 +205,7 @@ export abstract class CurdFactoryService {
   };
 
   constructor(private http: HttpClient) {}
-}
+
 ```
 
 ### 如何使用

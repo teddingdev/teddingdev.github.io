@@ -1,8 +1,11 @@
 ---
 title: RxJs-Set-Interval
 date: 2023-05-30 19:09:14
-tags:
+tags: 
+    - 前端
+    - RxJs
 categories:
+    - 前端
 ---
 
 {{ title }}

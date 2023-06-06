@@ -2,7 +2,11 @@
 title: Linux 笔记
 date: 2023-03-21 17:23:35
 tags:
+    - Linux
+    - shell
 categories:
+    - Linux
+    - shell
 ---
 
 {{ title }}
