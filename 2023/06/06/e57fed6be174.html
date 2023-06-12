@@ -13,19 +13,19 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="tedding">
+  <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="angular-format-number-pipe">
+    <meta name="description" content="Angular format number pipe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angular-format-number-pipe">
+<meta property="og:title" content="Angular format number pipe">
 <meta property="og:url" content="https://tedding.dev/2023/06/06/e57fed6be174.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="angular-format-number-pipe">
+<meta property="og:description" content="Angular format number pipe">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-06T07:32:01.000Z">
 <meta property="article:modified_time" content="2023-06-06T07:32:01.000Z">
-<meta property="article:author" content="tedding">
+<meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="Angular">
 <meta property="article:tag" content="Pipe">
@@ -33,7 +33,7 @@
   
   
   
-  <title>angular-format-number-pipe - tedding&#39;s blog</title>
+  <title>Angular format number pipe - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="angular-format-number-pipe"></span>
+            <span id="subtitle" data-typed-text="Angular format number pipe"></span>
           
         </div>
 
@@ -271,12 +271,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">angular-format-number-pipe</h1>
+            <h1 style="display: none">Angular format number pipe</h1>
             
             
               <div class="markdown-body">
                 
-                angular-format-number-pipe
+                Angular format number pipe
 <span id="more"></span>
 <p>Angular <code>pipe</code>，用来自定义格式化页面中的数字，通过配置 最多小数位数 和 最少小数位数，截取小数位或者在小数位尾部补<code>0</code>。<br>如：<br>3.133 -&gt; 3.13<br>3.1 -&gt; 3.10</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Pipe</span>, <span class="hljs-title class_">PipeTransform</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;<br><br><span class="hljs-meta">@Pipe</span>(&#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;formatNumberPipe&#x27;</span>,<br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FormatNumberPipe</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">PipeTransform</span> &#123;<br>  <span class="hljs-comment">/**</span><br><span class="hljs-comment">   * 数字字符 格式化; 默认最少 2 位小数，最多 4 位小数，可配置</span><br><span class="hljs-comment">   * <span class="hljs-doctag">@description</span>  数字字符 格式化</span><br><span class="hljs-comment">   * <span class="hljs-doctag">@param</span> value: 输入值</span><br><span class="hljs-comment">   * <span class="hljs-doctag">@param</span> minFractionDigits: 小数点后最小位数 默认 2</span><br><span class="hljs-comment">   * <span class="hljs-doctag">@param</span> maxFractionDigits: 小数点后最大位数 默认 4</span><br><span class="hljs-comment">   */</span><br>  <span class="hljs-title function_">transform</span>(<span class="hljs-attr">value</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> | <span class="hljs-literal">undefined</span> | <span class="hljs-literal">null</span>, minFractionDigits = <span class="hljs-number">2</span>, maxFractionDigits = <span class="hljs-number">4</span>): <span class="hljs-built_in">string</span> &#123;<br>    <span class="hljs-keyword">let</span> originValue = value;<br>    <span class="hljs-keyword">if</span> (!originValue &amp;&amp; originValue !== <span class="hljs-number">0</span>) &#123;<br>      originValue = <span class="hljs-string">&#x27;&#x27;</span>;<br>      <span class="hljs-keyword">return</span> originValue;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> originValue === <span class="hljs-string">&#x27;string&#x27;</span> &amp;&amp; <span class="hljs-built_in">isNaN</span>(<span class="hljs-title class_">Number</span>(originValue))) &#123;<br>      <span class="hljs-keyword">return</span> originValue;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      originValue = <span class="hljs-title class_">Number</span>(originValue);<br>    &#125;<br><br>    <span class="hljs-keyword">const</span> isInteger = originValue % <span class="hljs-number">1</span> === <span class="hljs-number">0</span>; <span class="hljs-comment">// 是否是整数</span><br>    <span class="hljs-comment">// 整数</span><br>    <span class="hljs-keyword">if</span> (isInteger) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;originValue.toFixed(minFractionDigits)&#125;</span>`</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-comment">// 浮点数</span><br>      <span class="hljs-keyword">const</span> fractionDigits = <span class="hljs-title class_">String</span>(originValue).<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">1</span>];<br>      <span class="hljs-keyword">if</span> (fractionDigits.<span class="hljs-property">length</span> &gt; maxFractionDigits) &#123;<br>        <span class="hljs-keyword">return</span> originValue.<span class="hljs-title function_">toFixed</span>(maxFractionDigits); <span class="hljs-comment">// 按 最大 小数 位数 保留</span><br>      &#125;<br>      <span class="hljs-keyword">if</span> (fractionDigits.<span class="hljs-property">length</span> &lt; minFractionDigits) &#123;<br>        <span class="hljs-keyword">return</span> originValue.<span class="hljs-title function_">toFixed</span>(minFractionDigits); <span class="hljs-comment">// 按 最小 小数 位数 保留</span><br>      &#125;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;value&#125;</span>`</span>; <span class="hljs-comment">// 返回原始值</span><br>    &#125;<br>  &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
@@ -342,14 +342,14 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>angular-format-number-pipe</div>
+      <div>Angular format number pipe</div>
       <div>https://tedding.dev/2023/06/06/e57fed6be174.html</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>tedding</div>
+          <div>TED.DING</div>
         </div>
       
       
@@ -387,12 +387,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/06/12/880b4abbba03.html" title="在 Linux 终端中预览图片的工具 [Terminal image viewer]">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">在 Linux 终端中预览图片的工具 [Terminal image viewer]</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/06/86a6fe06f0b4.html" title="vue-CURD-class">
-                        <span class="hidden-mobile">vue-CURD-class</span>
+                      <a href="/2023/06/06/86a6fe06f0b4.html" title="Vue CURD Class">
+                        <span class="hidden-mobile">Vue CURD Class</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
