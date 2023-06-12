@@ -1,5 +1,5 @@
 ---
-title: vue-CURD-class
+title: Vue CURD Class
 date: 2023-06-06 13:48:46
 tags:
   - 前端

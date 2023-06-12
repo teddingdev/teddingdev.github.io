@@ -1,5 +1,5 @@
 ---
-title: angular-format-number-pipe
+title: Angular format number pipe
 date: 2023-06-06 15:32:01
 tags:
   - 前端

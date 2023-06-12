@@ -1,5 +1,5 @@
 ---
-title: 将数组值相同的索引分为一组 [group array index by value]
+title: 将数组值相同的索引分为一组 [Group array index by value]
 date: 2023-03-14 13:55:27
 tags:
     - 前端

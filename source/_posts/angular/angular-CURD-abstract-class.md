@@ -1,5 +1,5 @@
 ---
-title: Angular CURD abstract class
+title: Angular CURD Abstract Class
 date: 2023-03-15 09:44:26
 tags:
   - 前端
