@@ -16,22 +16,25 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="关于 VS Code、Edge、Chrome 中缩放的偏好设置今天偶然在一个博主的文章中看到了关于 Chrome 、EDGE 配置缩放的问题，很有意思，虽然可选的缩放比例都是整数，但是在存储的时确是一个看似没规律的浮点数。">
+    <meta name="description" content="通过 github actions 部署 github pages这篇文章提供一个思路，利用 git 分支实现 git source 和 github pages 在同一个repo。从一开始我的博客 source 和 github pages 就分别在两个不同的 repo 并利用 git submodule 来管理，每次发布文章都是通过 hexo 自己的部署功能，久而久之有点疲倦，便想着尝试利用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于 VS Code、Edge、Chrome 中缩放的偏好设置">
-<meta property="og:url" content="https://tedding.dev/2023/06/13/188b36d1ae0.html">
+<meta property="og:title" content="通过 github actions 部署 github pages">
+<meta property="og:url" content="https://tedding.dev/2023/06/13/188b3b89ee8.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="关于 VS Code、Edge、Chrome 中缩放的偏好设置今天偶然在一个博主的文章中看到了关于 Chrome 、EDGE 配置缩放的问题，很有意思，虽然可选的缩放比例都是整数，但是在存储的时确是一个看似没规律的浮点数。">
+<meta property="og:description" content="通过 github actions 部署 github pages这篇文章提供一个思路，利用 git 分支实现 git source 和 github pages 在同一个repo。从一开始我的博客 source 和 github pages 就分别在两个不同的 repo 并利用 git submodule 来管理，每次发布文章都是通过 hexo 自己的部署功能，久而久之有点疲倦，便想着尝试利用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-13T06:24:12.000Z">
-<meta property="article:modified_time" content="2023-06-13T06:24:12.000Z">
+<meta property="article:published_time" content="2023-06-13T07:46:41.000Z">
+<meta property="article:modified_time" content="2023-06-13T07:46:41.000Z">
 <meta property="article:author" content="TED.DING">
-<meta property="article:tag" content="VS Code">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="github-pages">
+<meta property="article:tag" content="github-actions">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于 VS Code、Edge、Chrome 中缩放的偏好设置 - tedding&#39;s blog</title>
+  <title>通过 github actions 部署 github pages - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于 VS Code、Edge、Chrome 中缩放的偏好设置"></span>
+            <span id="subtitle" data-typed-text="通过 github actions 部署 github pages"></span>
           
         </div>
 
@@ -208,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-13 14:24" pubdate>
+        <time datetime="2023-06-13 15:46" pubdate>
           2023年6月13日 下午
         </time>
       </span>
@@ -220,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          2.2k 字
         
       </span>
     
@@ -231,7 +234,7 @@
         
         
         
-          10 分钟
+          18 分钟
         
       </span>
     
@@ -269,34 +272,20 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">关于 VS Code、Edge、Chrome 中缩放的偏好设置</h1>
+            <h1 style="display: none">通过 github actions 部署 github pages</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id=""><a href="#" class="headerlink" title=""></a>关于 VS Code、Edge、Chrome 中缩放的偏好设置</h2><p>今天偶然在一个博主的文章中看到了关于 <code>Chrome</code> 、<code>EDGE</code> 配置缩放的问题，很有意思，虽然可选的缩放比例都是整数，但是在存储的时确是一个看似没规律的浮点数。</p>
+                <h2 id=""><a href="#" class="headerlink" title=""></a>通过 github actions 部署 github pages</h2><p>这篇文章提供一个思路，利用 <code>git</code> 分支实现 <code>git source</code> 和 <code>github pages</code> 在同一个<code>repo</code>。<br>从一开始我的博客 <code>source</code> 和 <code>github pages</code> 就分别在两个不同的 <code>repo</code> 并利用 <code>git submodule</code> 来管理，每次发布文章都是通过 <code>hexo</code> 自己的部署功能，久而久之有点疲倦，便想着尝试利用 <code>github actions</code> 在同一个 <code>repo</code> 部署。</p>
 <span id="more"></span>
-<p>博主提到了这个数字是可能是一个对数，验证了一下确实是取以 1.2 为底的对数。<br>在 VS Code 设置中是这么描述的 ：</p>
-<blockquote>
-<p><strong>Window: Zoom Level</strong><br>Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming &gt;20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.</p>
-</blockquote>
-<p>我自己一直将这部分配置为 <code>0.7142857142857143</code>，但可惜的是我并不知道这可能与对数有关。编辑器默认的字体大小是 14 号，而我想要的结果16号，最简单是方式是通过设置编辑区域的字体大小达到目的，但是整个 vscode 窗口的其他部分会显得很突兀，所以我决定用 <code>zoom</code> 属性来达到目的。最简单的计算方式是根据描述得到的 下面这个</p>
-<blockquote>
-<p>14 * ( 0.2 * zoomLevel + 1 ) &#x3D; 16</p>
-</blockquote>
-<p>简单算一下就可以得到 (( 16 &#x2F; 14 ) - 1 ) &#x2F; 0.2 &#x3D; <code>0.7142857142857143</code> 的结果。<br>当得知这个缩放值是对数的时候，我们可以更简单的计算出</p>
-<blockquote>
-<p>Math.log(16&#x2F;14) &#x2F; Math.log(1.2) </p>
-</blockquote>
-<p>16: 目标字体大小<br>14: 当前字体大小</p>
-<p>了解缩放值是怎么来的以后，我们就可以开始随心所欲了。Chrome、Edge 和 Firefox 中都可以配置浏览器的默认缩放级别，但是它们的选项并不相同，为了配合 KDE 桌面设置字体大小，Firefox 一直默认配置全局缩放 120%，到了 Chromium 系之后就只有125% 可选了，虽然不能直接设置，但我们可以通过直接修改偏好设置文件达到我们的目的。</p>
-<blockquote>
-<p>~&#x2F;.config&#x2F;microsoft-edge&#x2F;Default&#x2F;Preferences</p>
-</blockquote>
-<p>打开之后 找到 <code>&#123;&quot;default_zoom_level&quot;:&#123;&quot;x&quot;:zoomLevel&#125;</code> 替换 <code>zoomLevel</code> 的值为 <code>1</code> 保存后就生效了。</p>
-<blockquote>
-<p>zoomLevel &#x3D; Math.log(1.2) &#x2F; Math.log(1.2)</p>
-</blockquote>
+
+<h4 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h4><p>github pages 是允许我们选择一个分支来部署静态页面的，</p>
+<h4 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h4><p>我们只需要新建一个空白分支（eg: github-pages）用来承载静态文件就可以,</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>当我们 <code>push</code> 之后，会通过 <code>github actions</code> 触发编译 ，将编译产物 <code>push</code> 到我们的空白分支就好了。</p>
+<p>PS：关于如何新建一个空白分支各位观众可以自行搜索。</p>
+<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>下面是 <code>github actions</code> 的一个实现，其中 <code>BRANCH_SOURCE</code> 和 <code>BRANCH_GITHUB_PAGES</code> 变量可以替换为自己的分支名称，默认是 <code>master</code> 和 <code>github-pages</code>。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deployment</span><br><br><span class="hljs-attr">on:</span><br>  <span class="hljs-attr">push:</span><br>    <span class="hljs-attr">branches:</span> [<span class="hljs-string">master</span>]<br>    <span class="hljs-attr">paths-ignore:</span> [<span class="hljs-string">.github/workflows/**</span>]<br><br><span class="hljs-attr">env:</span><br>  <span class="hljs-attr">TZ:</span> <span class="hljs-string">Asia/Shanghai</span><br>  <span class="hljs-attr">GITHUB_TOKEN:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span><br>  <span class="hljs-attr">ACTION_BOT_NAME:</span> <span class="hljs-string">github-actions[bot]</span><br>  <span class="hljs-attr">ACTION_BOT_EMAIL:</span> <span class="hljs-string">github-actions[bot]@users.noreply.github.com</span><br>  <span class="hljs-attr">BRANCH_SOURCE:</span> <span class="hljs-string">master</span><br>  <span class="hljs-attr">BRANCH_GITHUB_PAGES:</span> <span class="hljs-string">github-pages</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br><br>    <span class="hljs-attr">strategy:</span><br>      <span class="hljs-attr">matrix:</span><br>        <span class="hljs-attr">node-version:</span> [<span class="hljs-number">16.</span><span class="hljs-string">x</span>]<br><br>    <span class="hljs-attr">steps:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.BRANCH_SOURCE</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">path:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.BRANCH_SOURCE</span> <span class="hljs-string">&#125;&#125;</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Use</span> <span class="hljs-string">Node.js</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">matrix.node-version</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">node-version:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">matrix.node-version</span> <span class="hljs-string">&#125;&#125;</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">          cd $&#123;&#123; env.BRANCH_SOURCE &#125;&#125;</span><br><span class="hljs-string">          npm install</span><br><span class="hljs-string">          npm run build</span><br><span class="hljs-string"></span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.BRANCH_GITHUB_PAGES</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v3</span><br>        <span class="hljs-attr">with:</span><br>          <span class="hljs-attr">ref:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.BRANCH_GITHUB_PAGES</span> <span class="hljs-string">&#125;&#125;</span><br>          <span class="hljs-attr">path:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">env.BRANCH_GITHUB_PAGES</span> <span class="hljs-string">&#125;&#125;</span><br><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Copy</span> <span class="hljs-string">Files</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">          cp -r ./$&#123;&#123; env.BRANCH_SOURCE &#125;&#125;/public/* ./$&#123;&#123; env.BRANCH_GITHUB_PAGES &#125;&#125;</span><br><span class="hljs-string">          cp ./$&#123;&#123; env.BRANCH_SOURCE &#125;&#125;/.gitignore ./$&#123;&#123; env.BRANCH_GITHUB_PAGES &#125;&#125;</span><br><span class="hljs-string">          ls -al ./$&#123;&#123; env.BRANCH_GITHUB_PAGES &#125;&#125;</span><br><span class="hljs-string">          date +%Y-%m-%d\ %H:%M:%S\ %z &gt; ./$&#123;&#123; env.BRANCH_GITHUB_PAGES &#125;&#125;/generated.txt</span><br><span class="hljs-string">          ls -al ./$&#123;&#123; env.BRANCH_GITHUB_PAGES &#125;&#125;</span><br><span class="hljs-string"></span><br>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span><br>        <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br><span class="hljs-string">          cd $&#123;&#123; env.BRANCH_GITHUB_PAGES &#125;&#125;</span><br><span class="hljs-string">          git add .</span><br><span class="hljs-string">          git config user.name $ACTION_BOT_NAME</span><br><span class="hljs-string">          git config user.email $ACTION_BOT_EMAIL</span><br><span class="hljs-string">          git commit -m &quot;Site updated: $(date +%Y-%m-%d\ %H:%M:%S\ %z)&quot;</span><br><span class="hljs-string">          git push</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -315,8 +304,22 @@
     
       <span class="category-chain">
         
-  <a href="/categories/VS-Code/" class="category-chain-item">VS Code</a>
+  <a href="/categories/github/" class="category-chain-item">github</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/github/github-pages/" class="category-chain-item">github-pages</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/github/github-pages/github-actions/" class="category-chain-item">github-actions</a>
+  
+  
+
+  
+
   
 
       </span>
@@ -330,7 +333,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/VS-Code/">#VS Code</a>
+        <a href="/tags/github/">#github</a>
+      
+        <a href="/tags/github-pages/">#github-pages</a>
+      
+        <a href="/tags/github-actions/">#github-actions</a>
+      
+        <a href="/tags/hexo/">#hexo</a>
       
     </div>
   
@@ -342,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>关于 VS Code、Edge、Chrome 中缩放的偏好设置</div>
-      <div>https://tedding.dev/2023/06/13/188b36d1ae0.html</div>
+      <div>通过 github actions 部署 github pages</div>
+      <div>https://tedding.dev/2023/06/13/188b3b89ee8.html</div>
     </div>
     <div class="license-meta">
       
@@ -387,18 +396,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/13/188b3b89ee8.html" title="通过 github actions 部署 github pages">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">通过 github actions 部署 github pages</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/12/188ad5277b8.html" title="在 Linux 终端中预览图片的工具 [Terminal image viewer]">
-                        <span class="hidden-mobile">在 Linux 终端中预览图片的工具 [Terminal image viewer]</span>
+                      <a href="/2023/06/13/188b36d1ae0.html" title="关于 VS Code、Edge、Chrome 中缩放的偏好设置">
+                        <span class="hidden-mobile">关于 VS Code、Edge、Chrome 中缩放的偏好设置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
