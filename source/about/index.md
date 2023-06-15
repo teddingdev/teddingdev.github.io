@@ -1,6 +1,7 @@
 ---
 title: 关于
 date: 2018-01-03 04:00:53
+layout: about
 ---
 
 ### 个人主页 
@@ -15,5 +16,5 @@ GitHub主页：https://github.com/teddingdev
 消失的 [primeng-5](//primeng-5.tedding.dev) 文档 
 `https://primeng-5.tedding.dev`
 > - onlline diagraming application
-在线的 [diagramming-application](//drawio.tedding.dev/src/main/webapp/) 
+在线的 [diagraming-application](//drawio.tedding.dev/src/main/webapp/) 
 `https://drawio.tedding.dev/src/main/webapp/`
