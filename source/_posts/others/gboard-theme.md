@@ -20,13 +20,13 @@ categories:
 <!-- more -->
 
 ### 智能ABC
-![智能ABC](/assets/img/gboard-intelligent-abc.png)
+![智能ABC](/assets/img/gboard/gboard-intelligent-abc.png)
 ### 拼音加加
-![拼音加加](/assets/img/gboard-pinyin-plusplus.png)
+![拼音加加](/assets/img/gboard/gboard-pinyin-plusplus.png)
 
 ### 效果预览
 
 #### 智能ABC
-![智能ABC](/assets/img/preview-gboard-intelligent-abc.png)
+![智能ABC](/assets/img/gboard/preview-gboard-intelligent-abc.png)
 #### 拼音加加
-![拼音加加](/assets/img/preview-gboard-pinyin-plusplus.png)
+![拼音加加](/assets/img/gboard/preview-gboard-pinyin-plusplus.png)
