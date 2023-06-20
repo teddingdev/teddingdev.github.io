@@ -13,6 +13,7 @@ env:
   BRANCH_SOURCE: master
   BRANCH_GITHUB_PAGES: github-pages
   DINGTALK_ROBOT_ACCESS_TOKEN: ${{ secrets.DINGTALK_ROBOT_ACCESS_TOKEN }}
+  RENDER_BARK_SERVER: ${{ secrets.RENDER_BARK_SERVER }}
 
 jobs:
   build:
@@ -62,6 +63,19 @@ jobs:
           git commit -m "Site updated: $(date +%Y-%m-%d\ %H:%M:%S\ %z)"
           git push
 
+      - name: Bark
+        run: |
+          curl --location $RENDER_BARK_SERVER'/push' \
+          --header 'Content-Type: application/json; charset=utf-8' \
+          --data '{
+          "body": "tedding.dev build completed ",
+          "title": "Github-actions[bot]",
+          "device_key": "bark",
+          "icon": "https://github.com/fluidicon.png",
+          "group": "Github-actions[bot]",
+          "url": "https://github.com/teddingdev/teddingdev.github.io/actions"
+          }'
+          
       - name: DingTalk
         run: |
           cd ${{ env.BRANCH_SOURCE }}
