@@ -1,6 +1,7 @@
 ---
 title: 通过 github actions 部署 github pages
 date: 2023-06-13 15:46:41
+updated: 2023-06-20 13:23:20
 tags:
     - github
     - github-pages
@@ -31,7 +32,12 @@ github pages 是允许我们选择一个分支来部署静态页面的，
 
 当我们 `push` 之后，会通过 `github actions` 触发编译 ，将编译产物 `push` 到我们的空白分支就好了。
 
+#### 补充
+
+创建钉钉群并添加钉钉消息机器人，可以在 `github action` 编译完成之后 给我们的发送群消息通知。建议将钉钉的消息 `token` 以 `github-secrets` 的形式单独存储，防止被恶意利用。 
+
 PS：关于如何新建一个空白分支各位观众可以自行搜索。
+
 
 #### Action
 
@@ -52,6 +58,7 @@ env:
   ACTION_BOT_EMAIL: github-actions[bot]@users.noreply.github.com
   BRANCH_SOURCE: master
   BRANCH_GITHUB_PAGES: github-pages
+  DINGTALK_ROBOT_ACCESS_TOKEN: ${{ secrets.DINGTALK_ROBOT_ACCESS_TOKEN }}
 
 jobs:
   build:
@@ -100,4 +107,20 @@ jobs:
           git config user.email $ACTION_BOT_EMAIL
           git commit -m "Site updated: $(date +%Y-%m-%d\ %H:%M:%S\ %z)"
           git push
+
+      - name: DingTalk
+        run: |
+          cd ${{ env.BRANCH_SOURCE }}
+          curl --request POST \
+          --url 'https://oapi.dingtalk.com/robot/send?access_token='$DINGTALK_ROBOT_ACCESS_TOKEN \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "msgtype": "text",
+            "at": {
+              isAtAll: true
+              },
+            "text": {
+              "content": "#### Github-actions[bot] Notification #### \n*项目名称： teddingdev.github.io \n*日期： '"$(date +%Y-%m-%d\ %H:%M:%S\ %z)"' \n*路径： '"$(pwd)"' \n*Git地址： \n'"$(git remote -v)"' \n*分支： '"$(git name-rev --name-only HEAD)"' \n*最后提交： \n'"$(git show -s)"' \n*Build机器信息： \n'"$(uname -a)"' \n*Build机器IP： \n'"$(ip address | grep 'inet' | awk '{print $2}')"' \n\n我就是我, 是颜色不一样的烟火"
+              }
+            }'
 ```
