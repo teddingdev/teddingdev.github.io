@@ -1,4 +1,4 @@
-name: Deployment
+name: dist-build-flow
 
 on:
   push:
@@ -12,6 +12,8 @@ env:
   ACTION_BOT_EMAIL: github-actions[bot]@users.noreply.github.com
   BRANCH_SOURCE: master
   BRANCH_GITHUB_PAGES: github-pages
+  DINGTALK_ROBOT_ACCESS_TOKEN: ${{ secrets.DINGTALK_ROBOT_ACCESS_TOKEN }}
+
 
 jobs:
   build:
@@ -60,3 +62,20 @@ jobs:
           git config user.email $ACTION_BOT_EMAIL
           git commit -m "Site updated: $(date +%Y-%m-%d\ %H:%M:%S\ %z)"
           git push
+
+      - name: DingTalk
+        run: |
+          cd ${{ env.BRANCH_SOURCE }}
+          curl --request POST \
+          --url 'https://oapi.dingtalk.com/robot/send?access_token='$DINGTALK_ROBOT_ACCESS_TOKEN \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "msgtype": "text",
+            "at": {
+              isAtAll: true
+              },
+            "text": {
+              "content": "#### Github-actions[bot] Notification #### \n*项目名称： teddingdev.github.io \n*日期： '"$(date +%Y-%m-%d\ %H:%M:%S\ %z)"' \n*路径： '"$(pwd)"' \n*Git地址： \n'"$(git remote -v)"' \n*分支： '"$(git name-rev --name-only HEAD)"' \n*最后提交： \n'"$(git show -s)"' \n*Build机器信息： \n'"$(uname -a)"' \n*Build机器IP： \n'"$(ip address | grep 'inet' | awk '{print $2}')"' \n\n我就是我, 是颜色不一样的烟火"
+              }
+            }'
+ 
