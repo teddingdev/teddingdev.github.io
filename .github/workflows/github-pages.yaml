@@ -3,7 +3,7 @@ name: dist-build-flow
 on:
   push:
     branches: [master]
-    paths-ignore: [.github/workflows/**]
+    paths-ignore: [.github/workflows/**, ./LICENSE, ./README.md ./gitignore]
 
 env:
   TZ: Asia/Shanghai
@@ -13,7 +13,6 @@ env:
   BRANCH_SOURCE: master
   BRANCH_GITHUB_PAGES: github-pages
   DINGTALK_ROBOT_ACCESS_TOKEN: ${{ secrets.DINGTALK_ROBOT_ACCESS_TOKEN }}
-
 
 jobs:
   build:
@@ -78,4 +77,3 @@ jobs:
               "content": "#### Github-actions[bot] Notification #### \n*项目名称： teddingdev.github.io \n*日期： '"$(date +%Y-%m-%d\ %H:%M:%S\ %z)"' \n*路径： '"$(pwd)"' \n*Git地址： \n'"$(git remote -v)"' \n*分支： '"$(git name-rev --name-only HEAD)"' \n*最后提交： \n'"$(git show -s)"' \n*Build机器信息： \n'"$(uname -a)"' \n*Build机器IP： \n'"$(ip address | grep 'inet' | awk '{print $2}')"' \n\n我就是我, 是颜色不一样的烟火"
               }
             }'
- 
