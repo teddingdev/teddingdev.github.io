@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.back {
+  -webkit-transform: rotatey(180deg);
+     -moz-transform: rotatey(180deg);
+      -ms-transform: rotatey(180deg);
+       -o-transform: rotatey(180deg);
+          transform: rotatey(180deg);
+  position: absolute;
+  top: 0;
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.front,
+.back {
+  width: 250px;
+  height: 350px;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+}
+
+.front img,
+.back img {
+  display: inline-block;
+}
+
+.container:hover .front {
+  -webkit-transform: rotatey(180deg);
+     -moz-transform: rotatey(180deg);
+      -ms-transform: rotatey(180deg);
+       -o-transform: rotatey(180deg);
+          transform: rotatey(180deg);
+}
+.container:hover .back {
+  -webkit-transform: rotatey(360deg);
+     -moz-transform: rotatey(360deg);
+      -ms-transform: rotatey(360deg);
+       -o-transform: rotatey(360deg);
+          transform: rotatey(360deg);
+}
