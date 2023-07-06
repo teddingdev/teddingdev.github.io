@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>git 常用命令</title>
+    <link href="/2023/07/06/18929dcbb18.html"/>
+    <url>/2023/07/06/18929dcbb18.html</url>
+    
+    <content type="html"><![CDATA[<p>今天闲来无事，记录一下 git 常用的命令</p><span id="more"></span><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看分支信息</span><br>git branch -vv<br><br><span class="hljs-comment"># 重命名分支</span><br>git branch -m &lt;新分支名称&gt; (当前分支)<br><br><span class="hljs-comment"># 重命名分支 </span><br>git branch -m &lt;旧分支名称&gt; &lt;新分支名称&gt; (非当前分支) <br><br><span class="hljs-comment"># 关联远程分支</span><br>git branch --set-upstream-to=&lt;主机名称&gt; &lt;分支名称&gt;<br><br><span class="hljs-comment"># 关联远程主机</span><br>git remote add &lt;主机名称&gt; &lt;主机地址&gt;<br><br><span class="hljs-comment"># 删除远程地址</span><br>git remote remove &lt;主机名称&gt;<br><br><span class="hljs-comment"># 重命名远程地址</span><br>git remote rename &lt;旧主机名称&gt; &lt;新主机名称&gt;<br><br>git stash push -S -m &lt;message&gt;<br><br><span class="hljs-comment"># 删除远程分支</span><br>git push --delete &lt;主机名称&gt; &lt;分支名称&gt;<br><br><span class="hljs-comment"># git 对比两次提交 差异的文件 打包</span><br>git diff &lt;commitID&gt; &lt;commitID&gt; --name-only | xargs zip diff.zip<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSS box-shadow 动画</title>
     <link href="/2023/06/28/189009e1b48.html"/>
     <url>/2023/06/28/189009e1b48.html</url>
