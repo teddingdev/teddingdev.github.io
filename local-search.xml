@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>前端笔记</title>
+    <link href="/2023/07/20/18972fda5c8.html"/>
+    <url>/2023/07/20/18972fda5c8.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="没有分类的前端笔记"><a href="#没有分类的前端笔记" class="headerlink" title="没有分类的前端笔记"></a>没有分类的前端笔记</h2><span id="more"></span><h3 id="Webkit-对-lt-svg-gt-whitespace-属性的支持问题"><a href="#Webkit-对-lt-svg-gt-whitespace-属性的支持问题" class="headerlink" title="Webkit 对 &lt;svg&gt; whitespace 属性的支持问题"></a>Webkit 对 &lt;svg&gt; whitespace 属性的支持问题</h3><p>如果 svg 文件中<code>&lt;tspan&gt;</code>标签没有指定 <code>whitespace</code> 的属性，Webkit 浏览器将会忽略祖先元素的属性，没有被继承。<a href="https://github.com/fabricjs/fabric.js/pull/4294">fabric.js</a>中提到了这个问题。</p><blockquote><p><strong>本站顶部的 banner 图片是一个 ASCII 字符组成的 svg 图像，这个问题是在绘制这个图像的时候发现的[2023-07-20]</strong></p></blockquote><h2 id="浏览器对-lt-img-gt-alt-属性的表现"><a href="#浏览器对-lt-img-gt-alt-属性的表现" class="headerlink" title="浏览器对 &lt;img&gt; alt 属性的表现"></a>浏览器对 &lt;img&gt; alt 属性的表现</h2><p>如果把这个属性设置为空字符串（alt&#x3D;””），则表明该图像不是内容的关键部分（这是一种装饰或者一个追踪像素点），非可视化浏览器在渲染的时候可能会忽略它。而且，如果图片加载失败，可视化浏览器会隐藏表示图片损坏的图标。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img#%E5%B1%9E%E6%80%A7">MDN</a></p><blockquote><p><strong>本站底部的 <code>badge</code> 图标就应用了这个特性在用户网络不佳的情况下不展示破碎的图标。[2023-07-17]</strong></p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>notes</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>notes</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何在 Unix-like-System 获得 Figma-web 本地字体的支持</title>
     <link href="/2023/07/20/189715ab7b0.html"/>
     <url>/2023/07/20/189715ab7b0.html</url>
@@ -11,6 +40,22 @@
     <content type="html"><![CDATA[如何在 Unix-like-System 获得 Figma-web 本地字体的支持<span id="more"></span><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><a href="https://www.figma.com/">Figma</a> 为 <code>OS X</code> 和 <code>Windows</code> 提供了名为 <a href="https://www.figma.com/downloads/">Font installers</a> 的软件以提供在 Web 中选择并使用本地字体的功能。<br>虽然官方没有支持 <code>Unix-like</code>，但幸运的是开源社区提供的 <a href="https://github.com/Figma-Linux/figma-linux-font-helper">figma-linux-font-helper</a> 项目实现了类似功能。</p><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>通过<code>http</code>服务在本地端口提供了一个字体列表的接口，支持配置扫描的字体目录，默认系统目录，可以自定义添加用户的字体目录。</p><h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><ul><li>参照项目的 <code>Readme</code> 文档 通过 <code>systemctl</code> 使用 </li><li>下载 Release 文件，在需要的时候手动执行其中的 <code>fonthelper</code> 二进制文件。</li></ul>]]></content>
     
     
+    <categories>
+      
+      <category>Linux</category>
+      
+      <category>Figma</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Figma</tag>
+      
+    </tags>
     
   </entry>
   
