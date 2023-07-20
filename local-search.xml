@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>hexo 使用自定义脚本创建永久链接</title>
+    <link href="/2023/07/20/18973140c28.html"/>
+    <url>/2023/07/20/18973140c28.html</url>
+    
+    <content type="html"><![CDATA[<span id="more"></span><p>在使用自定义脚本之前一直使用 <code>hexo</code> 配置的 <code>年月日 + hash</code> 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。<br>起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的<code>创建时间</code>，但是并不是所有的 操作&#x2F;文件系统 都有<code>创建时间</code>属性，所以当我在 <code>unix-like</code> 系统中 build 时，所有的永久链接都重新生成了。<br>所以创建一个不会被改变的永久链接就迫在眉睫。</p><blockquote><p>下面的是本站使用的自定义脚本，使用了 md 文件中的 date 字段转换成 unix 时间的16进制。因为这个时间精确到了秒，所以在大部分非极端的情况下这个时间对于每一个 markdown 文件都是唯一的。</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 根据 创建时间 自定义文章永久链接，使用子文件夹管理文章且不改变文章永久链接</span><br><span class="hljs-comment"> * e.g. &quot;source/_posts/2019/slug.md&quot; =&gt; &quot;https://hexo.example/year/month/day/date_hexo.html&quot;</span><br><span class="hljs-comment"> */</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">filter</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;post_permalink&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">post_permalink</span>) &#123;<br>    <span class="hljs-keyword">const</span> [date, time] = post_permalink.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;|&#x27;</span>);<br>    <span class="hljs-keyword">const</span> [year, month, day] = date.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)<br>    <span class="hljs-keyword">const</span> date_path = <span class="hljs-string">`<span class="hljs-subst">$&#123;year&#125;</span>/<span class="hljs-subst">$&#123;month&#125;</span>/<span class="hljs-subst">$&#123;day&#125;</span>`</span>;<br>    <span class="hljs-keyword">const</span> unixTime = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;date&#125;</span>T<span class="hljs-subst">$&#123;time&#125;</span>.000+08:00`</span>).<span class="hljs-title function_">getTime</span>()<br>    <span class="hljs-keyword">const</span> date_hex = <span class="hljs-title class_">Number</span>.<span class="hljs-built_in">parseInt</span>(unixTime, <span class="hljs-number">10</span>).<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>);<br>    <span class="hljs-keyword">const</span> permalink = <span class="hljs-string">`<span class="hljs-subst">$&#123;date_path&#125;</span>/<span class="hljs-subst">$&#123;date_hex&#125;</span>.html`</span>;<br>    <span class="hljs-keyword">return</span> permalink;<br>&#125;);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+      <category>permalink</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>permalink</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>前端笔记</title>
     <link href="/2023/07/20/18972fda5c8.html"/>
     <url>/2023/07/20/18972fda5c8.html</url>
@@ -208,13 +237,13 @@
     
     <tags>
       
+      <tag>hexo</tag>
+      
       <tag>github</tag>
       
       <tag>github-pages</tag>
       
       <tag>github-actions</tag>
-      
-      <tag>hexo</tag>
       
     </tags>
     
@@ -820,10 +849,14 @@
       
       <category>Proxy</category>
       
+      <category>FE-Dev</category>
+      
     </categories>
     
     
     <tags>
+      
+      <tag>前端</tag>
       
       <tag>React</tag>
       
