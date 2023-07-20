@@ -14,6 +14,9 @@ env:
   BRANCH_GITHUB_PAGES: github-pages
   DINGTALK_ROBOT_ACCESS_TOKEN: ${{ secrets.DINGTALK_ROBOT_ACCESS_TOKEN }}
   RENDER_BARK_SERVER: ${{ secrets.RENDER_BARK_SERVER }}
+  CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+  CLOUDFLARE_USER_EMAIL: ${{ secrets.CLOUDFLARE_USER_EMAIL }}
+  CLOUDFLARE_PURGE_CACHE_API_TOKEN: ${{ secrets.CLOUDFLARE_PURGE_CACHE_API_TOKEN }}
 
 jobs:
   build:
@@ -48,10 +51,12 @@ jobs:
 
       - name: Copy Files
         run: |
+          generatedDateStr="$(date +%Y-%m-%d\ %H:%M:%S\ %z)"
+          echo $generatedDateStr > ./${{ env.BRANCH_GITHUB_PAGES }}/generated.txt
+          sed "s/{{\$date}}/$generatedDateStr/" ./${{ env.BRANCH_SOURCE }}/source/generated.template.svg > ./${{ env.BRANCH_SOURCE }}/public/generated.svg
           cp -r ./${{ env.BRANCH_SOURCE }}/public/* ./${{ env.BRANCH_GITHUB_PAGES }}
           cp ./${{ env.BRANCH_SOURCE }}/.gitignore ./${{ env.BRANCH_GITHUB_PAGES }}
           ls -al ./${{ env.BRANCH_GITHUB_PAGES }}
-          date +%Y-%m-%d\ %H:%M:%S\ %z > ./${{ env.BRANCH_GITHUB_PAGES }}/generated.txt
           ls -al ./${{ env.BRANCH_GITHUB_PAGES }}
 
       - name: Deploy
@@ -63,7 +68,24 @@ jobs:
           git commit -m "Site updated: $(date +%Y-%m-%d\ %H:%M:%S\ %z)"
           git push
 
+      - name: Cloudflare Purge Cache
+        continue-on-error: true
+        run: |
+          curl --write-out %{http_code} \
+          --silent \
+          --output /dev/null \
+          --request POST \
+          --header 'Content-Type: application/json' \
+          --header 'X-Auth-Email: '$CLOUDFLARE_USER_EMAIL \
+          --header 'X-Auth-Key: '$CLOUDFLARE_PURGE_CACHE_API_TOKEN \
+          --url 'https://api.cloudflare.com/client/v4/zones/'$CLOUDFLARE_ZONE_ID'/purge_cache' \
+          --data '{
+              "purge_everything": true
+          }'
+          
+
       - name: Bark
+        continue-on-error: true
         run: |
           curl --location $RENDER_BARK_SERVER'/push' \
           --header 'Content-Type: application/json; charset=utf-8' \
@@ -77,6 +99,7 @@ jobs:
           }'
           
       - name: DingTalk
+        continue-on-error: true
         run: |
           cd ${{ env.BRANCH_SOURCE }}
           curl --request POST \

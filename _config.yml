@@ -100,6 +100,7 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
 exclude:
+  - generated.template.svg
 ignore:
 
 # Extensions
