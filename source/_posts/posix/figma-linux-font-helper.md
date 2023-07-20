@@ -2,7 +2,11 @@
 title: 如何在 Unix-like-System 获得 Figma-web 本地字体的支持
 date: 2023-07-20 11:31:58
 tags:
+    - Linux
+    - Figma
 categories:
+    - Linux
+    - Figma
 ---
 
 {{ title }}
