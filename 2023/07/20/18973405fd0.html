@@ -16,23 +16,24 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在使用自定义脚本之前一直使用 hexo 配置的 年月日 + hash 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的创建时间，但是并不是所有的 操作&#x2F;文件系统 都有创建时间属性，所以当我在 unix-like 系统中 build 时，所有的永久链接都重新生成了">
+    <meta name="description" content="当你本地开发遇到跨域问题时，可以尝试在 Vite 项目中配置 API 代理帮助转发对应的接口。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 使用自定义脚本创建永久链接">
-<meta property="og:url" content="https://tedding.dev/2023/07/20/18973140c28.html">
+<meta property="og:title" content="Vite 配置 API 代理">
+<meta property="og:url" content="https://tedding.dev/2023/07/20/18973405fd0.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="在使用自定义脚本之前一直使用 hexo 配置的 年月日 + hash 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的创建时间，但是并不是所有的 操作&#x2F;文件系统 都有创建时间属性，所以当我在 unix-like 系统中 build 时，所有的永久链接都重新生成了">
+<meta property="og:description" content="当你本地开发遇到跨域问题时，可以尝试在 Vite 项目中配置 API 代理帮助转发对应的接口。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-20T11:34:01.000Z">
-<meta property="article:modified_time" content="2023-07-20T11:34:01.000Z">
+<meta property="article:published_time" content="2023-07-20T12:22:26.000Z">
+<meta property="article:modified_time" content="2023-07-20T12:22:26.000Z">
 <meta property="article:author" content="TED.DING">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="permalink">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="vite">
+<meta property="article:tag" content="proxy">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>hexo 使用自定义脚本创建永久链接 - tedding&#39;s blog</title>
+  <title>Vite 配置 API 代理 - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo 使用自定义脚本创建永久链接"></span>
+            <span id="subtitle" data-typed-text="Vite 配置 API 代理"></span>
           
         </div>
 
@@ -236,7 +237,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-20 19:34" pubdate>
+        <time datetime="2023-07-20 20:22" pubdate>
           2023年7月20日 晚上
         </time>
       </span>
@@ -248,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          955 字
+          1.9k 字
         
       </span>
     
@@ -259,7 +260,7 @@
         
         
         
-          8 分钟
+          17 分钟
         
       </span>
     
@@ -297,17 +298,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">hexo 使用自定义脚本创建永久链接</h1>
+            <h1 style="display: none">Vite 配置 API 代理</h1>
             
             
               <div class="markdown-body">
                 
-                <span id="more"></span>
-<p>在使用自定义脚本之前一直使用 <code>hexo</code> 配置的 <code>年月日 + hash</code> 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。<br>起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的<code>创建时间</code>，但是并不是所有的 操作&#x2F;文件系统 都有<code>创建时间</code>属性，所以当我在 <code>unix-like</code> 系统中 build 时，所有的永久链接都重新生成了。<br>所以创建一个不会被改变的永久链接就迫在眉睫。</p>
-<blockquote>
-<p>下面的是本站使用的自定义脚本，使用了 md 文件中的 date 字段转换成 unix 时间的16进制。因为这个时间精确到了秒，所以在大部分非极端的情况下这个时间对于每一个 markdown 文件都是唯一的。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 根据 创建时间 自定义文章永久链接，使用子文件夹管理文章且不改变文章永久链接</span><br><span class="hljs-comment"> * e.g. &quot;source/_posts/2019/slug.md&quot; =&gt; &quot;https://hexo.example/year/month/day/date_hexo.html&quot;</span><br><span class="hljs-comment"> */</span><br>hexo.<span class="hljs-property">extend</span>.<span class="hljs-property">filter</span>.<span class="hljs-title function_">register</span>(<span class="hljs-string">&#x27;post_permalink&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">post_permalink</span>) &#123;<br>    <span class="hljs-keyword">const</span> [date, time] = post_permalink.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;|&#x27;</span>);<br>    <span class="hljs-keyword">const</span> [year, month, day] = date.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)<br>    <span class="hljs-keyword">const</span> date_path = <span class="hljs-string">`<span class="hljs-subst">$&#123;year&#125;</span>/<span class="hljs-subst">$&#123;month&#125;</span>/<span class="hljs-subst">$&#123;day&#125;</span>`</span>;<br>    <span class="hljs-keyword">const</span> unixTime = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;date&#125;</span>T<span class="hljs-subst">$&#123;time&#125;</span>.000+08:00`</span>).<span class="hljs-title function_">getTime</span>()<br>    <span class="hljs-keyword">const</span> date_hex = <span class="hljs-title class_">Number</span>.<span class="hljs-built_in">parseInt</span>(unixTime, <span class="hljs-number">10</span>).<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>);<br>    <span class="hljs-keyword">const</span> permalink = <span class="hljs-string">`<span class="hljs-subst">$&#123;date_path&#125;</span>/<span class="hljs-subst">$&#123;date_hex&#125;</span>.html`</span>;<br>    <span class="hljs-keyword">return</span> permalink;<br>&#125;);<br></code></pre></td></tr></table></figure>
+                <p>当你本地开发遇到跨域问题时，可以尝试在 Vite 项目中配置 API 代理帮助转发对应的接口。</p>
+<span id="more"></span>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;proxy:dev&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vite --debug serve --mode proxy-dev --config vite-enable-proxy.config.ts&quot;</span><br>    <span class="hljs-attr">&quot;proxy:qa&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vite --debug serve --mode proxy-qa --config vite-enable-proxy.config.ts&quot;</span><br>    <span class="hljs-attr">&quot;proxy:prod&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vite --debug serve --mode proxy-prod --config vite-enable-proxy.config.ts&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="vite-enable-proxy-config-ts"><a href="#vite-enable-proxy-config-ts" class="headerlink" title="vite-enable-proxy.config.ts"></a>vite-enable-proxy.config.ts</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; defineConfig, type <span class="hljs-title class_">UserConfig</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span>;<br><span class="hljs-keyword">import</span> viteConfig <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./vite.config&#x27;</span>;<br><br><span class="hljs-comment">// https://vitejs.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(<span class="hljs-function">(<span class="hljs-params">&#123; mode &#125;</span>) =&gt;</span> &#123;<br>  <span class="hljs-comment">// 加载不同的代理配置</span><br>  <span class="hljs-keyword">let</span> <span class="hljs-attr">proxy</span>: <span class="hljs-title class_">Required</span>&lt;<span class="hljs-title class_">UserConfig</span>&gt;[<span class="hljs-string">&#x27;server&#x27;</span>][<span class="hljs-string">&#x27;proxy&#x27;</span>] = <span class="hljs-literal">undefined</span>;<br>  <span class="hljs-keyword">if</span> (mode === <span class="hljs-string">&#x27;proxy-dev&#x27;</span>) &#123;<br>    proxy = proxyConfig[<span class="hljs-string">&#x27;dev&#x27;</span>];<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (mode === <span class="hljs-string">&#x27;proxy-qa&#x27;</span>) &#123;<br>    proxy = proxyConfig[<span class="hljs-string">&#x27;qa&#x27;</span>];<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (mode === <span class="hljs-string">&#x27;proxy-prep&#x27;</span>) &#123;<br>    proxy = proxyConfig[<span class="hljs-string">&#x27;prep&#x27;</span>];<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    proxy = <span class="hljs-literal">undefined</span>;<br>  &#125;<br><br>  <span class="hljs-keyword">const</span> draft = &#123;<br>    ...viteConfig,<br>    <span class="hljs-attr">server</span>: &#123;<br>      ...viteConfig[<span class="hljs-string">&#x27;server&#x27;</span>],<br>      proxy,<br>    &#125;,<br>  &#125;;<br>  <span class="hljs-comment">// console.log(draft.server);</span><br>  <span class="hljs-keyword">return</span> draft;<br>&#125;);<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">proxyConfig</span>: &#123; [key <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;dev&#x27;</span> | <span class="hljs-string">&#x27;qa&#x27;</span> | <span class="hljs-string">&#x27;prep&#x27;</span>]?: <span class="hljs-title class_">Required</span>&lt;<span class="hljs-title class_">UserConfig</span>&gt;[<span class="hljs-string">&#x27;server&#x27;</span>][<span class="hljs-string">&#x27;proxy&#x27;</span>] &#125; = &#123;<br>  <span class="hljs-attr">dev</span>: &#123;<br>    <span class="hljs-string">&#x27;/PROXY_DOMAIN&#x27;</span>: &#123;<br>      <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;https://devapi.domain.com&#x27;</span>,<br>      <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,<br>      <span class="hljs-attr">rewrite</span>: <span class="hljs-function"><span class="hljs-params">path</span> =&gt;</span> path.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/PROXY_AAA/</span>, <span class="hljs-string">&#x27;&#x27;</span>),<br>    &#125;,<br>  &#125;,<br>  <span class="hljs-attr">qa</span>: &#123;<br>    <span class="hljs-string">&#x27;/PROXY_DOMAIN&#x27;</span>: &#123;<br>      <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;https://qaapi.domain.com&#x27;</span>,<br>      <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,<br>      <span class="hljs-attr">rewrite</span>: <span class="hljs-function"><span class="hljs-params">path</span> =&gt;</span> path.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/PROXY_DOMAIN/</span>, <span class="hljs-string">&#x27;&#x27;</span>),<br>    &#125;,<br>  &#125;,<br>  <span class="hljs-attr">prep</span>: &#123;<br>    <span class="hljs-string">&#x27;/PROXY_DOMAIN&#x27;</span>: &#123;<br>      <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;https://prepapi.domain.com&#x27;</span>,<br>      <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,<br>      <span class="hljs-attr">rewrite</span>: <span class="hljs-function"><span class="hljs-params">path</span> =&gt;</span> path.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/PROXY_DOMAIN/</span>, <span class="hljs-string">&#x27;&#x27;</span>),<br>    &#125;,<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
@@ -325,12 +326,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
   
   
     <span>></span>
     
-  <a href="/categories/hexo/permalink/" class="category-chain-item">permalink</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF/vite/" class="category-chain-item">vite</a>
   
   
 
@@ -347,9 +348,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
       
-        <a href="/tags/permalink/">#permalink</a>
+        <a href="/tags/vite/">#vite</a>
+      
+        <a href="/tags/proxy/">#proxy</a>
       
     </div>
   
@@ -361,8 +364,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo 使用自定义脚本创建永久链接</div>
-      <div>https://tedding.dev/2023/07/20/18973140c28.html</div>
+      <div>Vite 配置 API 代理</div>
+      <div>https://tedding.dev/2023/07/20/18973405fd0.html</div>
     </div>
     <div class="license-meta">
       
@@ -418,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/20/18973405fd0.html" title="Vite 配置 API 代理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vite 配置 API 代理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/20/18972fda5c8.html" title="前端笔记">
-                        <span class="hidden-mobile">前端笔记</span>
+                      <a href="/2023/07/20/18973140c28.html" title="hexo 使用自定义脚本创建永久链接">
+                        <span class="hidden-mobile">hexo 使用自定义脚本创建永久链接</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -449,8 +446,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://tedding.dev/2023/07/20/18973140c28.html';
-          this.page.identifier = '/2023/07/20/18973140c28.html';
+          this.page.url = 'https://tedding.dev/2023/07/20/18973405fd0.html';
+          this.page.identifier = '/2023/07/20/18973405fd0.html';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
