@@ -16,15 +16,15 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在使用自定义脚本之前一直使用 hexo 配置的 年月日 + hash 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的创建时间，但是并不是所有的 操作&#x2F;文件系统 都有创建时间属性，所以当我在 unix-like 系统中 build 时，所有的永久链接都重新生成了">
+    <meta name="description" content="在使用自定义脚本之前一直使用 hexo 配置的 年月日 + hash 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。起因是换了一台电脑部署之后永久链接都被更新了，经过查阅原来是hexo对于文件hash的计算使用了文件的创建时间，但并不是所有的 操作&#x2F;文件系统 都有创建时间属性，当在 unix-like 系统中 build 时，便出现了所有的永久链接都重新生成的问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 使用自定义脚本创建永久链接">
 <meta property="og:url" content="https://tedding.dev/2023/07/20/18973140c28.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="在使用自定义脚本之前一直使用 hexo 配置的 年月日 + hash 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的创建时间，但是并不是所有的 操作&#x2F;文件系统 都有创建时间属性，所以当我在 unix-like 系统中 build 时，所有的永久链接都重新生成了">
+<meta property="og:description" content="在使用自定义脚本之前一直使用 hexo 配置的 年月日 + hash 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。起因是换了一台电脑部署之后永久链接都被更新了，经过查阅原来是hexo对于文件hash的计算使用了文件的创建时间，但并不是所有的 操作&#x2F;文件系统 都有创建时间属性，当在 unix-like 系统中 build 时，便出现了所有的永久链接都重新生成的问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-20T11:34:01.000Z">
-<meta property="article:modified_time" content="2023-07-20T11:34:01.000Z">
+<meta property="article:modified_time" content="2023-07-21T05:44:10.000Z">
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="permalink">
@@ -248,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          955 字
+          972 字
         
       </span>
     
@@ -259,7 +259,7 @@
         
         
         
-          8 分钟
+          9 分钟
         
       </span>
     
@@ -303,7 +303,7 @@
               <div class="markdown-body">
                 
                 <span id="more"></span>
-<p>在使用自定义脚本之前一直使用 <code>hexo</code> 配置的 <code>年月日 + hash</code> 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。<br>起因是后来换了一台电脑之后发现永久链接都被更新了，经过查阅发现是hexo对于文件hash的计算中使用了文件的<code>创建时间</code>，但是并不是所有的 操作&#x2F;文件系统 都有<code>创建时间</code>属性，所以当我在 <code>unix-like</code> 系统中 build 时，所有的永久链接都重新生成了。<br>所以创建一个不会被改变的永久链接就迫在眉睫。</p>
+<p>在使用自定义脚本之前一直使用 <code>hexo</code> 配置的 <code>年月日 + hash</code> 的方式生成的永久链接，而且一直是本地生成 + 手动部署的静态文件。<br>起因是换了一台电脑部署之后永久链接都被更新了，经过查阅原来是<code>hexo</code>对于文件<code>hash</code>的计算使用了文件的<code>创建时间</code>，但并不是所有的 操作&#x2F;文件系统 都有<code>创建时间</code>属性，当在 <code>unix-like</code> 系统中 <code>build</code> 时，便出现了所有的永久链接都重新生成的问题。这个影响会搜索引擎的收录和用户书签，所以创建一个不会被改变的永久链接就迫在眉睫。</p>
 <blockquote>
 <p>下面的是本站使用的自定义脚本，使用了 md 文件中的 date 字段转换成 unix 时间的16进制。因为这个时间精确到了秒，所以在大部分非极端的情况下这个时间对于每一个 markdown 文件都是唯一的。</p>
 </blockquote>
@@ -377,6 +377,11 @@
           <div>2023年7月20日</div>
         </div>
       
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年7月21日</div>
+        </div>
       
       
         <div class="license-meta-item">
