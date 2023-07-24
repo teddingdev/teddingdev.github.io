@@ -350,7 +350,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -1006,23 +1006,83 @@ links:
   # 友链的成员项
   # Member item of page
   items:
+    # - {
+    #   title: "Fluid Blog",
+    #   intro: "主题博客",
+    #   link: "https://hexo.fluid-dev.com/",
+    #   avatar: "/img/favicon.png"
+    # }
+    # - {
+    #   title: "Fluid Docs",
+    #   intro: "主题使用指南",
+    #   link: "https://hexo.fluid-dev.com/docs/",
+    #   avatar: "/img/favicon.png"
+    # }
+    # - {
+    #   title: "Fluid Repo",
+    #   intro: "主题 GitHub 仓库",
+    #   link: "https://github.com/fluid-dev/hexo-theme-fluid",
+    #   avatar: "/img/favicon.png"
+    # }
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
-      avatar: "/img/favicon.png"
+      title: "Pantheon",
+      intro: "Pantheon",
+      link: "https://blog.pantheon.press",
+      avatar: "https://blog.pantheon.press/favicon.png"
     }
     - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
-      avatar: "/img/favicon.png"
+      title: "回忆中的明天",
+      intro: "码农小站，写点Java、Swift和感悟",
+      link: "https://ichochy.com/",
+      avatar: "https://ichochy.com/favicon.png"
     }
     - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
-      avatar: "/img/favicon.png"
+      title: "Lxn-Chan!",
+      intro: "欢迎来到泠泫凝的异次元空间",
+      link: "https://lxnchan.cn/",
+      avatar: "https://lxnchan.cn/favicon.png"
+    }
+    - {
+      title: "LavaC",
+      intro: "前端人;尚且年轻;不太能加班;前办公室手冲达人，现宿舍胶囊懒狗",
+      link: "https://blog.lavac.cc/",
+      avatar: "https://blog.lavac.cc/favicon.png"
+    }
+    - {
+      title: "骚人",
+      intro: "骚人",
+      link: "https://sao.ren/",
+      avatar: "https://sao.ren/favicon.png"
+    }
+    - {
+      title: "wxy97",
+      intro: "wxy97",
+      link: "https://www.wxy97.com/",
+      avatar: "https://www.wxy97.com/favicon.png"
+    }
+    - {
+      title: "ccc2",
+      intro: "ccc2",
+      link: "https://ccc2.icu/",
+      avatar: "https://ccc2.icu/favicon.png"
+    }
+    - {
+      title: "淡白",
+      intro: "淡白的记忆",
+      link: "https://p00q.cn/",
+      avatar: "https://p00q.cn/favicon.png"
+    }
+    - {
+      title: "瑷在左右",
+      intro: "瑷在左右",
+      link: "https://youngxhui.top/",
+      avatar: "https://youngxhui.top/favicon.png"
+    }
+    - {
+      title: "#hsfzxjy#",
+      intro: "#hsfzxjy#",
+      link: "https://i.hsfzxjy.site/",
+      avatar: "https://i.hsfzxjy.site/favicon.png"
     }
 
   # 当成员头像加载失败时，替换为指定图片
