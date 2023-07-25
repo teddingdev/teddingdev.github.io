@@ -1028,7 +1028,7 @@ links:
       title: "Pantheon",
       intro: "Pantheon",
       link: "https://blog.pantheon.press",
-      avatar: "https://blog.pantheon.press/favicon.png"
+      avatar: "https://blog.pantheon.press/favicon.ico"
     }
     - {
       title: "回忆中的明天",
@@ -1040,67 +1040,73 @@ links:
       title: "Lxn-Chan!",
       intro: "欢迎来到泠泫凝的异次元空间",
       link: "https://lxnchan.cn/",
-      avatar: "https://lxnchan.cn/favicon.png"
+      avatar: "https://bucket.lxnchan.cn/logo.webp"
     }
     - {
       title: "LavaC",
       intro: "前端人;尚且年轻;不太能加班;前办公室手冲达人，现宿舍胶囊懒狗",
       link: "https://blog.lavac.cc/",
-      avatar: "https://blog.lavac.cc/favicon.png"
+      avatar: "https://blog.lavac.cc/favicon.ico"
     }
     - {
       title: "骚人",
       intro: "骚人",
       link: "https://sao.ren/",
-      avatar: "https://sao.ren/favicon.png"
+      avatar: "https://sao.ren/favicon.ico"
     }
     - {
       title: "wxy97",
       intro: "wxy97",
       link: "https://www.wxy97.com/",
-      avatar: "https://www.wxy97.com/favicon.png"
+      avatar: "https://www.wxy97.com/favicon.ico"
     }
     - {
       title: "ccc2",
       intro: "ccc2",
       link: "https://ccc2.icu/",
-      avatar: "https://ccc2.icu/favicon.png"
+      avatar: "https://ccc2.icu/favicon.ico"
     }
     - {
       title: "淡白",
       intro: "淡白的记忆",
       link: "https://p00q.cn/",
-      avatar: "https://p00q.cn/favicon.png"
+      avatar: "	https://p00q.cn/upload/2020/2/favicon-0398f1022b07448d93080ccd8b643122.ico"
     }
     - {
       title: "瑷在左右",
       intro: "瑷在左右",
       link: "https://youngxhui.top/",
-      avatar: "https://youngxhui.top/favicon.png"
+      avatar: "https://youngxhui.top/favicon.ico"
     }
     - {
       title: "#hsfzxjy#",
       intro: "#hsfzxjy#",
       link: "https://i.hsfzxjy.site/",
-      avatar: "https://i.hsfzxjy.site/favicon.png"
+      avatar: "https://i.hsfzxjy.site/favicon.ico"
     }
     - {
       title: "Ike",
       intro: "Ike",
       link: "https://blog.ikeno.top/",
-      avatar: "https://blog.ikeno.top/favicon.png"
+      avatar: "https://blog.ikeno.top/favicon.svg"
     }
     - {
       title: "sslover",
       intro: "A Blog",
       link: "https://sslover.me/",
-      avatar: "https://sslover.me/favicon.png"
+      avatar: "https://sslover.me/images/favicon-32x32-next.png"
     }
     - {
       title: "ZHUSCAFE",
       intro: "ZHUSCAFE",
       link: "https://www.zhuscat.com/",
-      avatar: "https://www.zhuscat.com/favicon.png"
+      avatar: "https://www.zhuscat.com/favicon.ico"
+    }
+    - {
+      title: "booop",
+      intro: "一个隐匿的私人小站",
+      link: "https://booop.net/",
+      avatar: "https://booop.net/wp-content/uploads/2023/04/cropped-booop_logo_512_white_background-32x32.png"
     }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
@@ -1110,7 +1116,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：TED.DING</li><li>简介：前端小透明的踩坑之路</li><li>链接：https://tedding.dev</li><li>图片：https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：TED.DING</li><li>简介：前端小透明的踩坑之路</li><li>链接：https://tedding.dev</li><li>图片：<a href="https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png" target="_blank">https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png</a></li></ul>'
 
   # 评论插件
   # Comment plugin
