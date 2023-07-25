@@ -11,12 +11,13 @@ categories:
 ---
 
 {{ title }}
-`fcitx5` 输入法在输入特殊”字符“时，可以通过 `extension` 转换成预定义的内容。`fcitx5` 内置了一个 `pinyin.lua` 脚本。这个脚本我没有仔细读，大致是实现了：
+`fcitx5` 输入法在输入特殊”字符“时，可以通过 `extension` 转换成预定义的内容。
+<!-- more -->
+`fcitx5` 内置了一个 `pinyin.lua` 脚本。这个脚本我没有仔细读，大致是实现了：
 - 输入 “日期”，候选列表 提供 [2023-07-21]，[2023年7月21日]，[二〇二三年七月二十一日]
 - 输入 “时间”，候选列表 提供 [15:52]，[15时52分]，[十五时五十三分]
 
 现在我使用起来，希望能够提供“时分秒”的时间精度，所以从我们将 `/usr/share/fcitx5/lua/imeapi/extensions/pinyin.lua` 复制到 `/home/suse/.local/share/fcitx5/lua/imeapi/extensions/pinyin.lua`，然后修改用户目录下的脚本。下面是脚本变更的部分：
-<!-- more -->
 ### 脚本变更
 ```bash
 ┌──(suse@localhost)-[~/.local/share/fcitx5/lua/imeapi/extensions]

@@ -13,12 +13,10 @@ categories:
     - github-actions
 ---
 
-## {{ title }}
-
 这篇文章提供一个思路，利用 `git` 分支实现 `git source` 和 `github pages` 在同一个`repo`。
+<!-- more -->
 从一开始我的博客 `source` 和 `github pages` 就分别在两个不同的 `repo` 并利用 `git submodule` 来管理，每次发布文章都是通过 `hexo` 自己的部署功能，久而久之有点疲倦，便想着尝试利用 `github actions` 在同一个 `repo` 部署。
 
-<!-- more -->
 
 #### 首先
 

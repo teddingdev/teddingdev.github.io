@@ -1110,7 +1110,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：Fluid</li><li>简介：Fluid 主题官方博客</li><li>链接：https://hexo.fluid-dev.com</li><li>图片：https://hexo.fluid-dev.com/img/favicon.png</li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：TED.DING</li><li>简介：前端小透明的踩坑之路</li><li>链接：https://tedding.dev</li><li>图片：https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png</li></ul>'
 
   # 评论插件
   # Comment plugin
