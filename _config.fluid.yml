@@ -1090,7 +1090,18 @@ links:
       link: "https://blog.ikeno.top/",
       avatar: "https://blog.ikeno.top/favicon.png"
     }
-
+    - {
+      title: "sslover",
+      intro: "A Blog",
+      link: "https://sslover.me/",
+      avatar: "https://sslover.me/favicon.png"
+    }
+    - {
+      title: "ZHUSCAFE",
+      intro: "ZHUSCAFE",
+      link: "https://www.zhuscat.com/",
+      avatar: "https://www.zhuscat.com/favicon.png"
+    }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
   onerror_avatar: /img/avatar.png
