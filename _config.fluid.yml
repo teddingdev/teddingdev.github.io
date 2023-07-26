@@ -1108,6 +1108,12 @@ links:
       link: "https://booop.net/",
       avatar: "https://booop.net/wp-content/uploads/2023/04/cropped-booop_logo_512_white_background-32x32.png"
     }
+    - {
+      title: "-LAN-'s Blog",
+      intro: "my life, my stories, my thoughts",
+      link: "https://blog.yeningxue.com/",
+      avatar: "https://blog.yeningxue.com/images/favicon-32x32-next.png"
+    }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
   onerror_avatar: /img/avatar.png
