@@ -1114,6 +1114,12 @@ links:
       link: "https://blog.yeningxue.com/",
       avatar: "https://blog.yeningxue.com/images/favicon-32x32-next.png"
     }
+    - {
+      title: "mephisto",
+      intro: "这是mephisto的个人站点，主要内容为技术文章、旅行记录等。",
+      link: "https://mephisto.cc/",
+      avatar: "https://mephisto.cc/icons/favicon-32x32.svg"
+    }
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
   onerror_avatar: /img/avatar.png
