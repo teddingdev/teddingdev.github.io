@@ -16,15 +16,15 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="cp -p 保持文件属性chowm -R 递归处理目录及文件">
+    <meta name="description" content="1234567891011# 保持文件属性cp -p # 递归处理目录及文件chowm -R # 统计目录大小&#x2F;排序&#x2F;前20du -shc ~&#x2F;.cache&#x2F;* | sort -hr | head -20# 获取当前目录名称echo $(cd $(dirname $0); pwd)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux common commands">
 <meta property="og:url" content="https://tedding.dev/2017/05/08/15be6bd3bc8.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="cp -p 保持文件属性chowm -R 递归处理目录及文件">
+<meta property="og:description" content="1234567891011# 保持文件属性cp -p # 递归处理目录及文件chowm -R # 统计目录大小&#x2F;排序&#x2F;前20du -shc ~&#x2F;.cache&#x2F;* | sort -hr | head -20# 获取当前目录名称echo $(cd $(dirname $0); pwd)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-05-08T06:26:53.000Z">
-<meta property="article:modified_time" content="2017-05-08T06:26:53.000Z">
+<meta property="article:modified_time" content="2023-07-31T05:35:17.000Z">
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="commands">
@@ -70,7 +70,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"tedding.dev","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"tedding.dev","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":"G-5FKXSGPLDL"},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -80,6 +80,19 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -233,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          26 字
+          121 字
         
       </span>
     
@@ -244,7 +257,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -281,14 +294,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Linux common commands</h1>
+            <h1 id="seo-header">Linux common commands</h1>
             
             
               <div class="markdown-body">
                 
-                <p>cp -p 保持文件属性<br>chowm -R 递归处理目录及文件</p>
-
+                <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 保持文件属性</span><br><span class="hljs-built_in">cp</span> -p <br><br><span class="hljs-comment"># 递归处理目录及文件</span><br>chowm -R <br><br><span class="hljs-comment"># 统计目录大小/排序/前20</span><br><span class="hljs-built_in">du</span> -shc ~/.cache/* | <span class="hljs-built_in">sort</span> -hr | <span class="hljs-built_in">head</span> -20<br><br><span class="hljs-comment"># 获取当前目录名称</span><br><span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">cd</span> $(<span class="hljs-built_in">dirname</span> <span class="hljs-variable">$0</span>); <span class="hljs-built_in">pwd</span>)<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -328,9 +339,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/commands/">#commands</a>
+        <a href="/tags/commands/" class="print-no-link">#commands</a>
       
     </div>
   
@@ -359,6 +370,11 @@
         </div>
       
       
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年7月31日</div>
+        </div>
+      
       
         <div class="license-meta-item">
           <div>许可协议</div>
@@ -366,19 +382,19 @@
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
                 </a>
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
                     <i class="iconfont icon-nc"></i>
                   </span>
                 </a>
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
                     <i class="iconfont icon-sa"></i>
                   </span>

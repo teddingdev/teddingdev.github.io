@@ -1235,7 +1235,7 @@
     <link href="/2017/05/08/15be6bd3bc8.html"/>
     <url>/2017/05/08/15be6bd3bc8.html</url>
     
-    <content type="html"><![CDATA[<p>cp -p 保持文件属性<br>chowm -R 递归处理目录及文件</p>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 保持文件属性</span><br><span class="hljs-built_in">cp</span> -p <br><br><span class="hljs-comment"># 递归处理目录及文件</span><br>chowm -R <br><br><span class="hljs-comment"># 统计目录大小/排序/前20</span><br><span class="hljs-built_in">du</span> -shc ~/.cache/* | <span class="hljs-built_in">sort</span> -hr | <span class="hljs-built_in">head</span> -20<br><br><span class="hljs-comment"># 获取当前目录名称</span><br><span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">cd</span> $(<span class="hljs-built_in">dirname</span> <span class="hljs-variable">$0</span>); <span class="hljs-built_in">pwd</span>)<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
