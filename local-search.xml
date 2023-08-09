@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>使用 &quot;cross-env&quot; 设置 &quot;nodejs&quot; 环境变量</title>
+    <link href="/2023/08/09/189d94c4e60.html"/>
+    <url>/2023/08/09/189d94c4e60.html</url>
+    
+    <content type="html"><![CDATA[使用 "cross-env" 设置 "nodejs" 环境变量<span id="more"></span><blockquote><p>use “cross-env” to set “nodejs” env</p></blockquote><h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>最近需要维护公司的一个旧项目(<code>React</code>)，起初一切正常，但是本地开发调试时无法切换到其他的环境（eg: qa），排查了一段时间，最后发现 <code>package.json</code> script 设置了系统的临时环境变量,可能当时的开发机器都是 <code>widdow</code> 的缘故，所以用了<code>set xxx=xxx</code>，导致我用 <code>linux</code>（posix） 机器无法正确设置环境变量。</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>除了多些几个 <code>script</code> 这个手动的方案之外，就像经常使用的各种 <code>polyfill</code> 一样，还可以通过 <code>cross-env</code> 设置环境变量，抹平各个平台之间的差异。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>node</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>node</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>一些有趣的项目集合</title>
     <link href="/2023/08/01/189af5fea30.html"/>
     <url>/2023/08/01/189af5fea30.html</url>
@@ -524,35 +553,6 @@
     <url>/2023/03/21/187037b25d8.html</url>
     
     <content type="html"><![CDATA[Linux 笔记<span id="more"></span><h3 id="microsoft-edge-通过命令行配置代理"><a href="#microsoft-edge-通过命令行配置代理" class="headerlink" title="microsoft-edge 通过命令行配置代理"></a>microsoft-edge 通过命令行配置代理</h3><p><a href="'https://learn.microsoft.com/zh-cn/deployedge/edge-learnmore-cmdline-options-proxy-settings'">microsoft 文档</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">microsoft-edge --proxy-server=<span class="hljs-string">&quot;socks5://ip:port&quot;</span><br>microsoft-edge --proxy-server=<span class="hljs-string">&quot;http://ip:port&quot;</span><br></code></pre></td></tr></table></figure><h3 id="zypper-命令技巧"><a href="#zypper-命令技巧" class="headerlink" title="zypper 命令技巧"></a>zypper 命令技巧</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">zypper <span class="hljs-built_in">rm</span> -u package-name // 卸载软件包的同时删除相关联的包<br></code></pre></td></tr></table></figure><h3 id="bash-配置-sudo-可以使用当前用户环境变量"><a href="#bash-配置-sudo-可以使用当前用户环境变量" class="headerlink" title="bash 配置 sudo 可以使用当前用户环境变量"></a>bash 配置 sudo 可以使用当前用户环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> sudo=<span class="hljs-string">&#x27;sudo &#x27;</span><br>// bash manpage 有详细解释<br></code></pre></td></tr></table></figure><h3 id="linux-通过-firefox-查看-manpage-文档"><a href="#linux-通过-firefox-查看-manpage-文档" class="headerlink" title="linux 通过 firefox 查看 manpage 文档"></a>linux 通过 firefox 查看 manpage 文档</h3><p>在地址栏键入 <code>man:command</code> 就可以查看对应命令的文档，<br><code>kde</code> 环境能够打开 <code>kde help center</code>，其他 <code>DE</code> 未测试。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Linux</category>
-      
-      <category>shell</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>shell</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Linux 脚本片段</title>
-    <link href="/2023/03/21/187035ffcb8.html"/>
-    <url>/2023/03/21/187035ffcb8.html</url>
-    
-    <content type="html"><![CDATA[Linux 脚本片段<span id="more"></span><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [ -f /usr/bin/pipewire-pulse ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;success&#x27;</span><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -1248,7 +1248,7 @@
     <link href="/2017/05/08/15be6bd3bc8.html"/>
     <url>/2017/05/08/15be6bd3bc8.html</url>
     
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 保持文件属性</span><br><span class="hljs-built_in">cp</span> -p <br><br><span class="hljs-comment"># 递归处理目录及文件</span><br>chowm -R <br><br><span class="hljs-comment"># 统计目录大小/排序/前20</span><br><span class="hljs-built_in">du</span> -shc ~/.cache/* | <span class="hljs-built_in">sort</span> -hr | <span class="hljs-built_in">head</span> -20<br><br><span class="hljs-comment"># 获取当前目录名称</span><br><span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">cd</span> $(<span class="hljs-built_in">dirname</span> <span class="hljs-variable">$0</span>); <span class="hljs-built_in">pwd</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 保持文件属性</span><br><span class="hljs-built_in">cp</span> -p <br><br><span class="hljs-comment"># 递归处理目录及文件</span><br>chowm -R <br><br><span class="hljs-comment"># 统计目录大小/排序/前20</span><br><span class="hljs-built_in">du</span> -shc ~/.cache/* | <span class="hljs-built_in">sort</span> -hr | <span class="hljs-built_in">head</span> -20<br><br><span class="hljs-comment"># 获取当前目录名称</span><br><span class="hljs-built_in">echo</span> $(<span class="hljs-built_in">cd</span> $(<span class="hljs-built_in">dirname</span> <span class="hljs-variable">$0</span>); <span class="hljs-built_in">pwd</span>)<br><br><span class="hljs-comment"># 获取指定 nvme 硬盘的 信息</span><br>sudo nvme smart-log /dev/nvme0n1<br><br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [ -f /usr/bin/pipewire-pulse ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;success&#x27;</span><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -1263,6 +1263,8 @@
     <tags>
       
       <tag>Linux</tag>
+      
+      <tag>shell</tag>
       
       <tag>commands</tag>
       
