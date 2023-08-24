@@ -76,8 +76,7 @@ jobs:
           --output /dev/null \
           --request POST \
           --header 'Content-Type: application/json' \
-          --header 'X-Auth-Email: '$CLOUDFLARE_USER_EMAIL \
-          --header 'X-Auth-Key: '$CLOUDFLARE_PURGE_CACHE_API_TOKEN \
+          --header 'Authorization: Bearer '$CLOUDFLARE_PURGE_CACHE_API_TOKEN \
           --url 'https://api.cloudflare.com/client/v4/zones/'$CLOUDFLARE_ZONE_ID'/purge_cache' \
           --data '{
               "purge_everything": true
