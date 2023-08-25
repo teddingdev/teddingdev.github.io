@@ -2,7 +2,13 @@
 title: 当前 Linux 使用的 bashrc 文件 备份
 date: 2023-08-25 15:08:47
 tags:
+- bash
+- bashrc
+- backup
+- profile
 categories:
+- bash
+- profile
 ---
 
 备份一下当前终端使用的配置文件
