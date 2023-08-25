@@ -16,23 +16,21 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="使用 &quot;cross-env&quot; 设置 &quot;nodejs&quot; 环境变量">
+    <meta name="description" content="kde-plasma-develop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 &quot;cross-env&quot; 设置 &quot;nodejs&quot; 环境变量">
-<meta property="og:url" content="https://tedding.dev/2023/08/09/189d94c4e60.html">
+<meta property="og:title" content="kde-plasma-develop">
+<meta property="og:url" content="https://tedding.dev/2023/08/10/189dee38500.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="使用 &quot;cross-env&quot; 设置 &quot;nodejs&quot; 环境变量">
+<meta property="og:description" content="kde-plasma-develop">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-09T07:56:44.000Z">
-<meta property="article:modified_time" content="2023-08-09T07:56:44.000Z">
+<meta property="article:published_time" content="2023-08-10T10:00:00.123Z">
+<meta property="article:modified_time" content="2023-08-10T10:00:00.123Z">
 <meta property="article:author" content="TED.DING">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>使用 &#34;cross-env&#34; 设置 &#34;nodejs&#34; 环境变量 - tedding&#39;s blog</title>
+  <title>kde-plasma-develop - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -237,7 +235,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用 &#34;cross-env&#34; 设置 &#34;nodejs&#34; 环境变量"></span>
+            <span id="subtitle" data-typed-text="kde-plasma-develop"></span>
           
         </div>
 
@@ -248,8 +246,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-09 15:56" pubdate>
-          2023年8月9日 下午
+        <time datetime="2023-08-10 18:00" pubdate>
+          2023年8月10日 晚上
         </time>
       </span>
     
@@ -260,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          300 字
+          1.2k 字
         
       </span>
     
@@ -271,7 +269,7 @@
         
         
         
-          3 分钟
+          11 分钟
         
       </span>
     
@@ -308,18 +306,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用 &#34;cross-env&#34; 设置 &#34;nodejs&#34; 环境变量</h1>
+            <h1 id="seo-header">kde-plasma-develop</h1>
             
             
               <div class="markdown-body">
                 
-                使用 "cross-env" 设置 "nodejs" 环境变量
+                kde-plasma-develop
 <span id="more"></span>
-<blockquote>
-<p>use “cross-env” to set “nodejs” env</p>
-</blockquote>
-<h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>最近需要维护公司的一个旧项目(<code>React</code>)，起初一切正常，但是本地开发调试时无法切换到其他的环境（eg: qa），排查了一段时间，最后发现 <code>package.json</code> script 设置了系统的临时环境变量,可能当时的开发机器都是 <code>widdow</code> 的缘故，所以用了<code>set xxx=xxx</code>，导致我用 <code>linux</code>（posix） 机器无法正确设置环境变量。</p>
-<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>除了多些几个 <code>script</code> 这个手动的方案之外，就像经常使用的各种 <code>polyfill</code> 一样，还可以通过 <code>cross-env</code> 设置环境变量，抹平各个平台之间的差异。</p>
+
+<p>plasma5-sdk<br>kdevelop5</p>
+<!-- Qt oriented code checker based on the Clang framework -->
+<p>clazy</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>┌──(suse@localhost)-[~]<br>└─$ sudo zypper in –no-recommends plasma-framework-devel plasma5-addons-devel plasma5-integration-devel plasma5-workspace-devel<br>[sudo] password for root:<br>Loading repository data…<br>Reading installed packages…<br>Resolving package dependencies…</p>
+<p>The following 48 NEW packages are going to be installed:<br>  extra-cmake-modules gcc-c++ gettext-tools kconfig-devel kcoreaddons-devel kf5-filesystem ki18n-devel<br>  kiconthemes-devel kpackage-devel kservice-devel kwayland-devel kwindowsystem-devel libdrm-devel libffi-devel<br>  libglvnd-devel libksysguard5-devel libpciaccess-devel libQt5Core-devel libQt5DBus-devel libQt5Gui-devel<br>  libQt5Network-devel libqt5-qtbase-common-devel libqt5-qtdeclarative-devel libqt5-qtdeclarative-tools<br>  libQt5Test-devel libQt5Widgets-devel libQt5Xml-devel libX11-devel libXau-devel libxcb-devel libxcb-screensaver0<br>  libxcb-xf86dri0 libxcb-xtest0 libxcb-xvmc0 libXext-devel libXrandr-devel libXrender-devel Mesa-KHR-devel<br>  Mesa-libEGL-devel Mesa-libGL-devel plasma5-addons-devel plasma5-integration-devel plasma5-workspace-devel<br>  plasma-framework-devel vulkan-devel vulkan-headers wayland-devel xorgproto-devel</p>
+<p>48 new packages to install.<br>Overall download size: 20.3 MiB. Already cached: 0 B. After the operation, additional 97.4 MiB will be used.</p>
 
                 
               </div>
@@ -328,43 +328,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E5%89%8D%E7%AB%AF/node/" class="category-chain-item">node</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
-      
-        <a href="/tags/node/" class="print-no-link">#node</a>
-      
-    </div>
   
 </div>
 
@@ -374,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用 &#34;cross-env&#34; 设置 &#34;nodejs&#34; 环境变量</div>
-      <div>https://tedding.dev/2023/08/09/189d94c4e60.html</div>
+      <div>kde-plasma-develop</div>
+      <div>https://tedding.dev/2023/08/10/189dee38500.html</div>
     </div>
     <div class="license-meta">
       
@@ -387,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月9日</div>
+          <div>2023年8月10日</div>
         </div>
       
       
@@ -431,9 +394,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/10/189dee38500.html" title="kde-plasma-develop">
+                      <a href="/2023/08/25/18a2b862818.html" title="bashrc">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">kde-plasma-develop</span>
+                        <span class="hidden-mobile">bashrc</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -441,8 +404,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/01/189af5fea30.html" title="一些有趣的项目集合">
-                        <span class="hidden-mobile">一些有趣的项目集合</span>
+                      <a href="/2023/08/09/189d94c4e60.html" title="使用 &#34;cross-env&#34; 设置 &#34;nodejs&#34; 环境变量">
+                        <span class="hidden-mobile">使用 &#34;cross-env&#34; 设置 &#34;nodejs&#34; 环境变量</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -462,8 +425,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://tedding.dev/2023/08/09/189d94c4e60.html';
-          this.page.identifier = '/2023/08/09/189d94c4e60.html';
+          this.page.url = 'https://tedding.dev/2023/08/10/189dee38500.html';
+          this.page.identifier = '/2023/08/10/189dee38500.html';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
