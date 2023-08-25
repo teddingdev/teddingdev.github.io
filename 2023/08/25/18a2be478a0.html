@@ -16,23 +16,34 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前端小透明的踩坑之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://tedding.dev/archives/2017/index.html">
+    <meta name="description" content="配和 crontab 在 openwrt 中定时执行，检测公网 ip 变动并同时推送 钉钉 、BARK，以及更新 cloudflare DNS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在路由上运行一个简单的 ddns 实用脚本">
+<meta property="og:url" content="https://tedding.dev/2023/08/25/18a2be478a0.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="前端小透明的踩坑之路">
+<meta property="og:description" content="配和 crontab 在 openwrt 中定时执行，检测公网 ip 变动并同时推送 钉钉 、BARK，以及更新 cloudflare DNS">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-25T08:51:48.000Z">
+<meta property="article:modified_time" content="2023-08-25T08:51:48.000Z">
 <meta property="article:author" content="TED.DING">
+<meta property="article:tag" content="openwrt">
+<meta property="article:tag" content="crontab">
+<meta property="article:tag" content="ddns">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - tedding&#39;s blog</title>
+  <title>在路由上运行一个简单的 ddns 实用脚本 - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -109,7 +120,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -227,9 +238,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="在路由上运行一个简单的 ddns 实用脚本"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-25 16:51" pubdate>
+          2023年8月25日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          145 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          2 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -245,88 +296,237 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 45 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2017</p>
-    
-    <a href="/2017/09/30/15ed351a990.html" class="list-group-item list-group-item-action">
-      <time>09-30</time>
-      <div class="list-group-item-title">Linux 虚拟机中 Apache 访问宿主机 Vbox-shared-folder</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">在路由上运行一个简单的 ddns 实用脚本</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>配和 crontab 在 openwrt 中定时执行，检测公网 ip 变动并同时推送 钉钉 、BARK，以及更新 cloudflare DNS</p>
+<span id="more"></span>
+<h3 id="给死去的路由添加功能"><a href="#给死去的路由添加功能" class="headerlink" title="给死去的路由添加功能"></a>给死去的路由添加功能</h3><p>死去许久的 HiWiFi 路由 + shell 脚本 完美实现了我需要的 <code>ddns</code>，这也是第一次完整的用 <code>shell script</code> 实现小功能，<br>完整代码这里 <a target="_blank" rel="noopener" href="https://github.com/teddingdev/ddns-util">Github</a>      </p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
   
     
-    <a href="/2017/09/30/15ed3518280.html" class="list-group-item list-group-item-action">
-      <time>09-30</time>
-      <div class="list-group-item-title">debian 部署 Apache2+php7+MySQL+phpMyAdmin</div>
-    </a>
+      <span class="category-chain">
+        
+  <a href="/categories/openwrt/" class="category-chain-item">openwrt</a>
   
+  
+    <span>></span>
     
-    <a href="/2017/09/30/15ed350de70.html" class="list-group-item list-group-item-action">
-      <time>09-30</time>
-      <div class="list-group-item-title">Linux 虚拟机 访问 Virtual Box 宿主机 共享文件夹</div>
-    </a>
+  <a href="/categories/openwrt/shell/" class="category-chain-item">shell</a>
   
+  
+
+  
+
+      </span>
     
-    <a href="/2017/09/22/15ea83d3c38.html" class="list-group-item list-group-item-action">
-      <time>09-22</time>
-      <div class="list-group-item-title">免费获取 Paragon 系列正版软件（NTFS for Mac &amp;&amp; HFS+ for Windows）</div>
-    </a>
   
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/openwrt/" class="print-no-link">#openwrt</a>
+      
+        <a href="/tags/crontab/" class="print-no-link">#crontab</a>
+      
+        <a href="/tags/ddns/" class="print-no-link">#ddns</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>在路由上运行一个简单的 ddns 实用脚本</div>
+      <div>https://tedding.dev/2023/08/25/18a2be478a0.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>TED.DING</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年8月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/25/18a2b862818.html" title="当前 Linux 使用的 bashrc 文件 备份">
+                        <span class="hidden-mobile">当前 Linux 使用的 bashrc 文件 备份</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments">
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
     
-    <a href="/2017/09/11/15e704ae0c8.html" class="list-group-item list-group-item-action">
-      <time>09-11</time>
-      <div class="list-group-item-title">高度不一的&amp;lt;li&amp;gt;列表靠底部对齐</div>
-    </a>
-  
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'https://tedding.dev/2023/08/25/18a2be478a0.html';
+          this.page.identifier = '/2023/08/25/18a2be478a0.html';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'tedding' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
     
-    <a href="/2017/09/08/15e5d951160.html" class="list-group-item list-group-item-action">
-      <time>09-08</time>
-      <div class="list-group-item-title">Windows 10 环境下安装 Python3 和 PyQt</div>
-    </a>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
   
-    
-    <a href="/2017/06/17/15cb542dcc8.html" class="list-group-item list-group-item-action">
-      <time>06-17</time>
-      <div class="list-group-item-title">树莓派安装指定版本的node.js</div>
-    </a>
-  
-    
-    <a href="/2017/05/08/15be78a9230.html" class="list-group-item list-group-item-action">
-      <time>05-08</time>
-      <div class="list-group-item-title">2018 百度前端技术学院课程 Demo</div>
-    </a>
-  
-    
-    <a href="/2017/05/08/15be6bd3bc8.html" class="list-group-item list-group-item-action">
-      <time>05-08</time>
-      <div class="list-group-item-title">Linux common commands</div>
-    </a>
-  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -416,10 +616,105 @@
 
   
     
+      <script  src="/js/img-lazyload.js" ></script>
+    
   
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
