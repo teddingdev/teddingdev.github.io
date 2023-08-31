@@ -1,6 +1,7 @@
 ---
 title: 在 Linux "rpm" 系发行版上运行钉钉应用程序
 date: 2023-06-16 13:29:42
+updated: 2023-08-31 15:51:18
 tags:
     - Linux
     - openSUSE
@@ -17,7 +18,7 @@ categories:
 今天尝试了一下，如何在 `openSUSE Tumbleweed 20230613` 上运行钉钉 linux 版本，现在记录一下过程。
 <!-- more -->
 首先去官网下载 dingtalk 的 deb 包，毕竟官方支持的发行版有限，只有deb系列有包可以直接安装，可能即使安装成功也不一定能完全运行。 
-[点击这里可以下载dingtalk_1.8.0.30601版本](https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_1.8.0.30601_amd64.deb)，然后当作压缩文件解压到某个位置。
+点击这里可以下载 [dingtalk_1.8.0.30601](https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_1.8.0.30601_amd64.deb)，[dingtalk_7.0.40.30706](https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_7.0.40.30706_amd64.deb)，然后当作压缩文件解压到某个位置。
 ```bash
 ┌──(suse@localhost)-[~/Documents/com.alibabainc.dingtalk_1.8.0.30601_amd64]
 └─$ ls -al

@@ -246,6 +246,7 @@ web_analytics:  # 网页访问统计
   # Follow the "Do Not Track" setting of the visitor's browser
   # See: https://www.w3.org/TR/tracking-dnt/
   follow_dnt: false
+  follow_dnt_local: true
 
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
@@ -591,7 +592,7 @@ post:
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
   updated:
-    enable: false
+    enable: true
 
     # 格式参照 ISO-8601 日期格式化
     # ISO-8601 date format
@@ -1124,7 +1125,7 @@ links:
   # Custom content at the bottom of the links
   custom:
     enable: true
-    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客名：TED.DING</li><li>简介：前端小透明的踩坑之路</li><li>链接：https://tedding.dev</li><li>图片：<a href="https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png" target="_blank">https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png</a></li></ul>'
+    content: '<hr><p>在下方留言申请加入我的友链，按如下格式提供信息：</p><ul><li>博客：TED.DING</li><li>简介：前端小透明的踩坑之路</li><li>链接：https://tedding.dev</li><li>图片：<a href="https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png" target="_blank">https://tedding.dev/assets/img/favicon/SpongeBobSquare@64.png</a></li></ul>'
 
   # 评论插件
   # Comment plugin
