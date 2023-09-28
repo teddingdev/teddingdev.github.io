@@ -16,23 +16,23 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="上周在公网暴露了一台 linux 机器用于远程开发，关闭了 root 和 password 登录，只保留了密钥验证登录。昨晚查询了一下sshd日志发现有4w+的暴力破解登录记录。今天开启了fail2ban ，现在记录一下在 openSUSE 配置的过程。">
+    <meta name="description" content="为 Firefox Developer Edition 创建桌面快捷方式（.desktop）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fail2ban 配置记录">
-<meta property="og:url" content="https://tedding.dev/2023/08/31/18a4aa06fd8.html">
+<meta property="og:title" content="为 Firefox Developer Edition 创建桌面快捷方式（.desktop）">
+<meta property="og:url" content="https://tedding.dev/2023/09/28/18adb016b90.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="上周在公网暴露了一台 linux 机器用于远程开发，关闭了 root 和 password 登录，只保留了密钥验证登录。昨晚查询了一下sshd日志发现有4w+的暴力破解登录记录。今天开启了fail2ban ，现在记录一下在 openSUSE 配置的过程。">
+<meta property="og:description" content="为 Firefox Developer Edition 创建桌面快捷方式（.desktop）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-31T08:05:43.000Z">
-<meta property="article:modified_time" content="2023-08-31T08:05:43.000Z">
+<meta property="article:published_time" content="2023-09-28T08:56:58.000Z">
+<meta property="article:modified_time" content="2023-09-28T08:56:58.000Z">
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="fail2ban">
+<meta property="article:tag" content="Firefox">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>fail2ban 配置记录 - tedding&#39;s blog</title>
+  <title>为 Firefox Developer Edition 创建桌面快捷方式（.desktop） - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -237,7 +237,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="fail2ban 配置记录"></span>
+            <span id="subtitle" data-typed-text="为 Firefox Developer Edition 创建桌面快捷方式（.desktop）"></span>
           
         </div>
 
@@ -248,8 +248,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-31 16:05" pubdate>
-          2023年8月31日 下午
+        <time datetime="2023-09-28 16:56" pubdate>
+          2023年9月28日 下午
         </time>
       </span>
     
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          972 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          15 分钟
+          9 分钟
         
       </span>
     
@@ -308,41 +308,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">fail2ban 配置记录</h1>
+            <h1 id="seo-header">为 Firefox Developer Edition 创建桌面快捷方式（.desktop）</h1>
             
             
               <div class="markdown-body">
                 
-                <p>上周在公网暴露了一台 linux 机器用于远程开发，关闭了 <code>root</code> 和 <code>password</code> 登录，只保留了密钥验证登录。昨晚查询了一下sshd日志发现有4w+的暴力破解登录记录。今天开启了<code>fail2ban</code> ，现在记录一下在 <code>openSUSE</code> 配置的过程。</p>
+                为 Firefox Developer Edition 创建桌面快捷方式（.desktop）
 <span id="more"></span>
-
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">zypper ref &amp;&amp; zypper <span class="hljs-keyword">in</span> fail2ban<br></code></pre></td></tr></table></figure>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><code>fail2ban</code> 的配置 文件默认在 <code>/etc/fail2ban/</code>，<code>jail.conf</code> 是默认的配置文件，升级时会被覆盖。目录下有一个同名的<code>jail.local</code>文件，我们的自定义的配置可以放在这里。优先级是 <em><em>file</em>.local &gt; file</em>.conf**，包括根目录下的配置和 <code>dir*.d</code> 目录下的配置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(user@localhost)-[/etc/fail2ban]<br>└─$ tree -L 1<br>.<br>├── action.d<br>├── fail2ban.conf<br>├── fail2ban.d<br>├── filter.d<br>├── jail.conf<br>├── jail.d<br>├── jail.local<br>├── paths-common.conf<br>└── paths-opensuse.conf<br></code></pre></td></tr></table></figure>
-<p>复制 <code>jail.conf</code> 的内容到 <code>jail.local</code>（也可以只拷贝你需要的部分配置）<br>大概在274行找到 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs conf">[sshd]<br><br># To use more aggressive sshd modes set filter parameter &quot;mode&quot; in jail.local:<br># normal (default), ddos, extra or aggressive (combines all).<br># See &quot;tests/files/logs/sshd&quot; or &quot;filter.d/sshd.conf&quot; for usage example and details.<br>#mode   = normal<br>port    = ssh<br>logpath = %(sshd_log)s<br>backend = %(sshd_backend)s<br># 新增下面几行<br>enabled = true<br># 秒<br>bantime = 86400<br># 最大错误次数<br>maxretry = 3<br># 如果主机在最后“findtime”秒内生成了“maxretry”，则该主机将被禁止<br>findtime = 10m<br></code></pre></td></tr></table></figure>
-
-<h3 id="将-fail2ban-服务添加到开机自启动项"><a href="#将-fail2ban-服务添加到开机自启动项" class="headerlink" title="将 fail2ban 服务添加到开机自启动项"></a>将 fail2ban 服务添加到开机自启动项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> fail2ban<br></code></pre></td></tr></table></figure>
-
-<h3 id="启动-fail2ban-服务"><a href="#启动-fail2ban-服务" class="headerlink" title="启动 fail2ban 服务"></a>启动 fail2ban 服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl start fail2ban<br></code></pre></td></tr></table></figure>
-
-<h3 id="查看服务状态"><a href="#查看服务状态" class="headerlink" title="查看服务状态"></a>查看服务状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl status fail2ban.service<br></code></pre></td></tr></table></figure>
-
-<h3 id="查看-fail2ban-状态"><a href="#查看-fail2ban-状态" class="headerlink" title="查看 fail2ban 状态"></a>查看 fail2ban 状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">fail2ban-client status<br></code></pre></td></tr></table></figure>
-
-<h3 id="查看-sshd-jail-状态"><a href="#查看-sshd-jail-状态" class="headerlink" title="查看 sshd jail 状态"></a>查看 sshd jail 状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">fail2ban-client status sshd<br></code></pre></td></tr></table></figure>
+<p>Mozilla 并没有为 <code>Firefox Developer Editon</code> 提供诸如 Rpm、Deb 、Pkg、AppImage 此类的安装包，你只会得到一个 *.tar.bz2的压缩文件。你需要将全部的文件释放到一个目录，并执行其中的 <code>firefox</code> 可执行文件，到此为止一切正常。<br>但是很快你就会发现怎么也找不到经常见到的采用 XDG 桌面配置规范的 *.desktop 文件。幸运的是你可以从你使用的发行版那里获得并安装 stable 版本的firefox（大部分安装了桌面环境的发行版都附带了 firefox 供用户浏览器互联网）。而你可以拷贝firefox stable 所使用的 *.desktop 文件到 <code>$HOME/.local/share/applications</code> 并修改为你希望的名字(如：Firefox-Develop-Edition.desktop)。但是此时还不能使用，使用你熟悉的文本编辑器 vi&#x2F;vim&#x2F;nano&#x2F;kate 等打开，替换其中所有的 Exec&#x3D;xxxxx 部分，并填入你刚刚释放的 firefox 文件的路径。当你将快捷入口固定到窗口管理器提供的dock &#x2F; panel 栏的时候 一切正常，但是你关闭之后再次打开你会发现蓝色 firefox 图标在 dock&#x2F;panel 出现了两次，而不是出现在固定的位置。此时你需要在 <code>[Desktop Entry]</code> 项目下面加入 <code>StartupWMClass=firefox-aurora</code>,内容大概和下面的样子差不多。当你关闭窗口之后重新打开你会发现图标和高亮出现在了它应该在的位置。</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs abnf">...<br>[Desktop Entry]<br><span class="hljs-attribute">Actions</span><span class="hljs-operator">=</span>new-window<span class="hljs-comment">;PrivateBrowsing;ProfileManager</span><br><span class="hljs-attribute">Categories</span><span class="hljs-operator">=</span>Network<span class="hljs-comment">;WebBrowser;GTK</span><br><span class="hljs-attribute">Name</span><span class="hljs-operator">=</span>Firefox-Developer-Edition<br><span class="hljs-attribute">Path</span><span class="hljs-operator">=</span><br><span class="hljs-attribute">StartupNotify</span><span class="hljs-operator">=</span>true<br><span class="hljs-attribute">StartupWMClass</span><span class="hljs-operator">=</span>firefox-aurora<br>...<br></code></pre></td></tr></table></figure>
 
 <blockquote>
-<p>注意 默认的配置是 当 <code>restart / reload</code> fail2ban 服务时，被 ban 的 ip 列表将会被清除。</p>
-</blockquote>
-<h3 id="取消-restart-x2F-reload-默认清除-baned-ip-列表的配置"><a href="#取消-restart-x2F-reload-默认清除-baned-ip-列表的配置" class="headerlink" title="取消 restart &#x2F; reload 默认清除 baned ip 列表的配置"></a>取消 restart &#x2F; reload 默认清除 baned ip 列表的配置</h3><p>在 <code>action.d</code>目录下有 iptables.conf 文件，手动创建 iptables.local 文件，并添加如下配置，删除 <code>&lt;actionflush&gt;</code>行，使自动清除的配置不生效。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs conf"># Option:  actionstop<br># Notes.:  command executed at the stop of jail (or at the end of Fail2Ban)<br># Values:  CMD<br>#<br>actionstop = &lt;_ipt_del_rules&gt;<br># 删除 &lt;actionflush&gt; 行<br>             &lt;actionflush&gt;<br>             &lt;iptables&gt; -X f2b-&lt;name&gt;<br><br></code></pre></td></tr></table></figure>
-
-<h3 id="重新加载-fail2ban-服务"><a href="#重新加载-fail2ban-服务" class="headerlink" title="重新加载 fail2ban 服务"></a>重新加载 fail2ban 服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl reload fail2ban<br></code></pre></td></tr></table></figure>
-
-<h3 id="手动添加向fail2ban-添加-禁止的-ip"><a href="#手动添加向fail2ban-添加-禁止的-ip" class="headerlink" title="手动添加向fail2ban 添加 禁止的 ip"></a>手动添加向fail2ban 添加 禁止的 ip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">fail2ban-client <span class="hljs-built_in">set</span> sshd 8.8.8.8 4.4.4.4 114.114.114.114 <br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>通过 <code>journal</code> 日志过滤曾经登录失败的 ip，<a href="/2017/05/08/15be6bd3bc8.html#%E7%BB%9F%E8%AE%A1%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3-ssh-%E7%99%BB%E5%BD%95%E7%9A%84-ip">查看</a><br>参考文档<br><a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/blogs/china/open-source-tool-to-protect-ec2-instances-fail2ban/">https://aws.amazon.com/cn/blogs/china/open-source-tool-to-protect-ec2-instances-fail2ban/</a></p>
+<p>你可以通过 xprop 工具 获取打开窗口的 WMClass 值，<code>Firefox Developer Editon</code> 窗口为 <code>firefox-aurora</code></p>
 </blockquote>
 
                 
@@ -367,7 +344,7 @@
   
     <span>></span>
     
-  <a href="/categories/Linux/fail2ban/" class="category-chain-item">fail2ban</a>
+  <a href="/categories/Linux/Firefox/" class="category-chain-item">Firefox</a>
   
   
 
@@ -386,7 +363,7 @@
       
         <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/fail2ban/" class="print-no-link">#fail2ban</a>
+        <a href="/tags/Firefox/" class="print-no-link">#Firefox</a>
       
     </div>
   
@@ -398,8 +375,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>fail2ban 配置记录</div>
-      <div>https://tedding.dev/2023/08/31/18a4aa06fd8.html</div>
+      <div>为 Firefox Developer Edition 创建桌面快捷方式（.desktop）</div>
+      <div>https://tedding.dev/2023/09/28/18adb016b90.html</div>
     </div>
     <div class="license-meta">
       
@@ -411,7 +388,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月31日</div>
+          <div>2023年9月28日</div>
         </div>
       
       
@@ -455,18 +432,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/28/18adb016b90.html" title="为 Firefox Developer Edition 创建桌面快捷方式（.desktop）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">为 Firefox Developer Edition 创建桌面快捷方式（.desktop）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/25/18a2be478a0.html" title="在路由上运行一个简单的 ddns 实用脚本">
-                        <span class="hidden-mobile">在路由上运行一个简单的 ddns 实用脚本</span>
+                      <a href="/2023/08/31/18a4aa06fd8.html" title="fail2ban 配置记录">
+                        <span class="hidden-mobile">fail2ban 配置记录</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -486,8 +457,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://tedding.dev/2023/08/31/18a4aa06fd8.html';
-          this.page.identifier = '/2023/08/31/18a4aa06fd8.html';
+          this.page.url = 'https://tedding.dev/2023/09/28/18adb016b90.html';
+          this.page.identifier = '/2023/09/28/18adb016b90.html';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
