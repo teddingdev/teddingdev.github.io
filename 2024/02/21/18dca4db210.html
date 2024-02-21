@@ -16,25 +16,24 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在阅读最近一版的 Visual Studio Code Release Notes 时注意到内置的终端已经支持了 Images in the terminal。">
+    <meta name="description" content="Linux bash 内建命令 getopts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Linux 终端中预览图片的工具 [Terminal image viewer]">
-<meta property="og:url" content="https://tedding.dev/2023/06/12/188ad5277b8.html">
+<meta property="og:title" content="Linux bash 内建命令 getopts">
+<meta property="og:url" content="https://tedding.dev/2024/02/21/18dca4db210.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="在阅读最近一版的 Visual Studio Code Release Notes 时注意到内置的终端已经支持了 Images in the terminal。">
+<meta property="og:description" content="Linux bash 内建命令 getopts">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-12T01:57:23.000Z">
-<meta property="article:modified_time" content="2023-06-12T01:57:23.000Z">
+<meta property="article:published_time" content="2024-02-21T06:15:06.000Z">
+<meta property="article:modified_time" content="2024-02-21T06:15:06.000Z">
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="Linux">
-<meta property="article:tag" content="VS Code">
+<meta property="article:tag" content="Bash">
 <meta property="article:tag" content="Shell">
-<meta property="article:tag" content="Terminal">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>在 Linux 终端中预览图片的工具 [Terminal image viewer] - tedding&#39;s blog</title>
+  <title>Linux bash 内建命令 getopts - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -239,7 +238,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在 Linux 终端中预览图片的工具 [Terminal image viewer]"></span>
+            <span id="subtitle" data-typed-text="Linux bash 内建命令 getopts"></span>
           
         </div>
 
@@ -250,8 +249,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-12 09:57" pubdate>
-          2023年6月12日 上午
+        <time datetime="2024-02-21 14:15" pubdate>
+          2024年2月21日 下午
         </time>
       </span>
     
@@ -262,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          203 字
+          2.5k 字
         
       </span>
     
@@ -273,7 +272,7 @@
         
         
         
-          2 分钟
+          22 分钟
         
       </span>
     
@@ -310,16 +309,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在 Linux 终端中预览图片的工具 [Terminal image viewer]</h1>
+            <h1 id="seo-header">Linux bash 内建命令 getopts</h1>
             
             
               <div class="markdown-body">
                 
-                <p>在阅读最近一版的 <code>Visual Studio Code</code> <a target="_blank" rel="noopener" href="https://code.visualstudio.com/updates/v1_79">Release Notes</a> 时注意到内置的终端已经支持了 <code>Images in the terminal</code>。</p>
+                Linux bash 内建命令 getopts
 <span id="more"></span>
-<p>想要体验可以手动在设置中开启</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;terminal.integrated.experimentalImageSupport&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><br></code></pre></td></tr></table></figure>
-<p>你可以使用 <a target="_blank" rel="noopener" href="https://pypi.org/project/imgcat/">imgcat python package</a> 或者 <a target="_blank" rel="noopener" href="https://iterm2.com/documentation-images.html">imgcat script</a> 在终端预览 png, gif, jpg 文件。</p>
+
+<p>下面的例子是假设 test-getopts.sh 文件的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#/bin/bash</span><br><span class="hljs-built_in">getopts</span> <span class="hljs-string">&quot;a:b:&quot;</span> opt<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$opt</span>: <span class="hljs-variable">$OPTARG</span>&quot;</span><br><span class="hljs-built_in">getopts</span> <span class="hljs-string">&quot;a:b:&quot;</span> opt<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$opt</span>: <span class="hljs-variable">$OPTARG</span>&quot;</span><br></code></pre></td></tr></table></figure>
+<p>当执行之后 <code>bash test-getopts.sh -a 1 -b 2</code> 会在终端输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">a: 1<br>b: 2<br></code></pre></td></tr></table></figure>
+<p>每次调用 <code>getopts &quot;a:b:&quot; opt</code> 都会按照顺序解析传入的参数，所以大部分使用场景都是在一个循环中多次调用</p>
+<p>下面是另一个例子 其中 <code>$OPTARG</code> 是内置全局变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><br><span class="hljs-keyword">while</span> <span class="hljs-built_in">getopts</span> <span class="hljs-string">&quot;:ab:&quot;</span> opt; <span class="hljs-keyword">do</span><br>    <span class="hljs-keyword">case</span> <span class="hljs-variable">$opt</span> <span class="hljs-keyword">in</span><br>        a) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Option -a&quot;</span> ;;<br>        b) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Option -b with argument &#x27;<span class="hljs-variable">$OPTARG</span>&#x27;&quot;</span> ;;<br>        \?) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Invalid option: -<span class="hljs-variable">$OPTARG</span>&quot;</span> &gt;&amp;2; <span class="hljs-built_in">exit</span> 1 ;;<br>        :) <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Option -<span class="hljs-variable">$OPTARG</span> requires an argument.&quot;</span> &gt;&amp;2; <span class="hljs-built_in">exit</span> 1 ;;<br>    <span class="hljs-keyword">esac</span><br><span class="hljs-keyword">done</span><br><br><span class="hljs-comment"># Process non-option arguments, if any</span><br><span class="hljs-built_in">shift</span> $((OPTIND-<span class="hljs-number">1</span>))<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Remaining arguments: <span class="hljs-variable">$@</span>&quot;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>bash shell manpage</p>
+<blockquote>
+<p>getopts  is  used  by  shell procedures to parse positional parameters.  optstring contains the option<br>characters to be recognized; if a character is followed by a colon, the option is expected to have  an<br>argument,  which  should  be separated from it by white space.  The colon and question mark characters<br>may not be used as option characters.  Each time it is invoked, getopts places the next option in  the<br>shell  variable name, initializing name if it does not exist, and the index of the next argument to be<br>processed into the variable OPTIND.  OPTIND is initialized to 1 each time the shell or a shell  script<br>is  invoked.   When an option requires an argument, getopts places that argument into the variable OP‐<br>TARG.  The shell does not reset OPTIND automatically; it must be manually reset between multiple calls<br>to getopts within the same shell invocation if a new set of parameters is to be used.</p>
+<p>When the end of options is encountered, getopts exits with a return value greater than  zero.   OPTIND<br>is set to the index of the first non‐option argument, and name is set to ?.</p>
+<p>getopts  normally  parses the positional parameters, but if more arguments are supplied as arg values,<br>getopts parses those instead.</p>
+<p>getopts can report errors in two ways.  If the first character of optstring is a colon,  silent  error<br>reporting is used.  In normal operation, diagnostic messages are printed when invalid options or miss‐<br>ing  option  arguments are encountered.  If the variable OPTERR is set to 0, no error messages will be<br>displayed, even if the first character of optstring is not a colon.</p>
+<p>If an invalid option is seen, getopts places ? into name and, if not silent, prints an  error  message<br>and  unsets OPTARG.  If getopts is silent, the option character found is placed in OPTARG and no diag‐<br>nostic message is printed.</p>
+<p>If a required argument is not found, and getopts is not silent, a question mark (?) is placed in name,<br>OPTARG is unset, and a diagnostic message is printed.  If getopts is  silent,  then  a  colon  (:)  is<br>placed in name and OPTARG is set to the option character found.</p>
+<p>getopts returns true if an option, specified or unspecified, is found.  It returns false if the end of<br>options is encountered or an error occurs.</p>
+</blockquote>
 
                 
               </div>
@@ -343,15 +358,8 @@
   
     <span>></span>
     
-  <a href="/categories/Linux/Terminal/" class="category-chain-item">Terminal</a>
+  <a href="/categories/Linux/Bash/" class="category-chain-item">Bash</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/Linux/Terminal/Shell/" class="category-chain-item">Shell</a>
-  
-  
-
   
 
   
@@ -369,11 +377,9 @@
       
         <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
-        <a href="/tags/VS-Code/" class="print-no-link">#VS Code</a>
+        <a href="/tags/Bash/" class="print-no-link">#Bash</a>
       
         <a href="/tags/Shell/" class="print-no-link">#Shell</a>
-      
-        <a href="/tags/Terminal/" class="print-no-link">#Terminal</a>
       
     </div>
   
@@ -385,8 +391,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在 Linux 终端中预览图片的工具 [Terminal image viewer]</div>
-      <div>https://tedding.dev/2023/06/12/188ad5277b8.html</div>
+      <div>Linux bash 内建命令 getopts</div>
+      <div>https://tedding.dev/2024/02/21/18dca4db210.html</div>
     </div>
     <div class="license-meta">
       
@@ -398,7 +404,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月12日</div>
+          <div>2024年2月21日</div>
         </div>
       
       
@@ -442,18 +448,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/13/188b36d1ae0.html" title="关于 VS Code、Edge、Chrome 中缩放的偏好设置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">关于 VS Code、Edge、Chrome 中缩放的偏好设置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/06/1888f9ead68.html" title="Angular format number pipe">
-                        <span class="hidden-mobile">Angular format number pipe</span>
+                      <a href="/2023/09/28/18adb016b90.html" title="为 Firefox Developer Edition 创建桌面快捷方式（.desktop）">
+                        <span class="hidden-mobile">为 Firefox Developer Edition 创建桌面快捷方式（.desktop）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -473,8 +473,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://tedding.dev/2023/06/12/188ad5277b8.html';
-          this.page.identifier = '/2023/06/12/188ad5277b8.html';
+          this.page.url = 'https://tedding.dev/2024/02/21/18dca4db210.html';
+          this.page.identifier = '/2024/02/21/18dca4db210.html';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
