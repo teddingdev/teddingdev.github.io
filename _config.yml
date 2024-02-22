@@ -12,9 +12,8 @@ language: zh-CN
 timezone: "Asia/Shanghai"
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://tedding.dev
-root: /
 permalink: :year-:month-:day|:hour::minute::second
 permalink_defaults:
 pretty_urls:
@@ -110,8 +109,9 @@ ignore:
 theme: fluid
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: git@github.com:teddingdev/teddingdev.github.io.git
-  branch: master
+  type: ''
+  # type: git
+  # repo: git@github.com:teddingdev/teddingdev.github.io.git
+  # branch: master
