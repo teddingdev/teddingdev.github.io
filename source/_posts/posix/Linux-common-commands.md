@@ -1,7 +1,7 @@
 ---
 title: Linux 常用命令记录
 date: 2017-05-08 14:26:53
-updated: 2023-08-31 16:01:34
+updated: 2024-02-22 14:54:13
 tags:
   - Linux
   - shell
@@ -63,22 +63,21 @@ journalctl -u sshd.service | grep 'Invalid .* from [0-9]\{1,3\}\.[0-9]\{1,3\}\.[
 
 ```
 
-```bash
-if [ -f /usr/bin/pipewire-pulse ]; then
-    echo 'success'
-fi
-```
+#### ffmpeg 分割音频文件
 
 ```bash
 # hh:mm:ss.mmm
 ffmpeg -i input.file -ss 00:00:00.000 -to 01:00:00.000 -c copy output.file
-ffmpeg -i '/home/suse/Music/2015-我只在乎你[蜚声环球系列][WAV]/out.flac' -acodec alac out.m4a
+ffmpeg -i '/path/to/Music/2015-我只在乎你[蜚声环球系列][WAV]/out.flac' -acodec alac out.m4a
 ```
 
-```bash
-shnsplit -f '/home/suse/Music/影视OST/仙剑奇侠传/麦振鸿 - 仙剑奇侠传 - 电视原创配乐.cue' -t "%n %p - %t" -d out '/home/suse/Music/影视OST/仙剑奇侠传/麦振鸿 - 仙剑奇侠传 - 电视 原创配乐.wav'
+#### shnsplit 按照指定的 cue 文件切割音频文件
 
-# 通过cue分割wav文件
+```bash
+# 手动指定 cue 和待分割的音频文件
+shnsplit -f '/path/to/Music/影视OST/仙剑奇侠传/麦振鸿 - 仙剑奇侠传 - 电视原创配乐.cue' -t "%n %p - %t" -d out '/path/to/Music/影视OST/仙剑奇侠传/麦振鸿 - 仙剑奇侠传 - 电视 原创配乐.wav'
+
+# 自动根据文件名分割 wav 文件
 mkdir out; for file in *.cue; do shnsplit -f "${file}" -t "%n.%p - %t" -d out "$(basename "${file}" ".cue").wav"; done;
 # 批量转换 wav -> m4a 并删除源文件
 for file in ./out/*.wav; do ffmpeg -i "$file" -c:a alac "`basename "$file" .wav`.m4a"; done; rm -rf ./out;
@@ -90,6 +89,6 @@ for file in ./*.wav; do ffmpeg -i "$file" -c:a alac -c:v copy "`basename "$file"
 for file in ./out/*.flac; do ffmpeg -i "$file" -c:a copy -vn "`basename "$file" .flac`.flac"; done; rm -rf ./out;
 # 批量转换 m4a -> m4a 并丢弃封面
 for file in ./out/*.m4a; do ffmpeg -i "$file" -c:a copy -vn "`basename "$file" .m4a`.m4a"; done; rm -rf ./out;
-
+# 批量重命名（删除指定字符串[qobuz]）
 for file in *; do mv "${file}" "$(basename "${file}" "[qobuz]")"; done;
 ```
