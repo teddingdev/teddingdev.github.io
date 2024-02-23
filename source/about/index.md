@@ -1,6 +1,7 @@
 ---
 title: 关于
 date: 2018-01-03 04:00:53
+update_date: 2024-02-23 17:42:10
 layout: about
 ---
 
@@ -20,3 +21,6 @@ GitHub主页：https://github.com/teddingdev
 > - online diagraming application
 在线的 [diagraming-application](//drawio.tedding.dev/src/main/webapp/) 
 `https://drawio.tedding.dev/src/main/webapp/`
+> - Google 开源项目风格指南 —— [中文版](https://zh-google-styleguide.readthedocs.io/en/latest/)
+> - Google 开源项目风格指南 —— [英文版](https://google.github.io/styleguide/)
+> - The Linux Command Line —— [中文版](https://billie66.github.io/TLCL/)
