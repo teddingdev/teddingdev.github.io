@@ -2,7 +2,11 @@
 title: Angular Style Guide [Angular 风格指南] 
 date: 2024-02-25 16:27:08
 tags:
+  - 前端
+  - Angular
 categories:
+  - 前端
+  - Angular
 ---
 
 {{ title }}
