@@ -1,0 +1,5 @@
+.markdown-body .highlight .gutter > pre span,
+.markdown-body .highlight .code > pre > code {
+  font-family: "Input Mono", "Droid Sans Mono", "monospace", "Menlo", "Monaco",
+    "Consolas", "Courier New", "PingFang SC", "Apple Color Emoji" !important;
+}
