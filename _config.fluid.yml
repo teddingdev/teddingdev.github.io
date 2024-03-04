@@ -1125,6 +1125,13 @@ links:
       link: "https://mephisto.cc/",
       avatar: "https://mephisto.cc/icons/favicon-32x32.svg"
     }
+    - {
+      title: "伊藤 • Blog",
+      intro: "记录技术、科研和生活感悟的普通人类",
+      link: "https://moc.1tlt1.com/",
+      avatar: "https://moc.1tlt1.com/usr/uploads/2022/07/166775764.png"
+    }
+    
   
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
