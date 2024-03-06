@@ -432,7 +432,7 @@ footer:
       <img src="https://github.com/teddingdev/teddingdev.github.io/actions/workflows/github-pages.yaml/badge.svg" alt=""/>
       <img src="https://github.com/teddingdev/teddingdev.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=github-pages" alt=""/>
     </div>
-    <div><img src="/generated.svg" alt=""/></div>
+    <div><img src="https://raw.githubusercontent.com/teddingdev/teddingdev.github.io/github-pages/generated.svg" alt=""/></div>
     '
 
   # 展示网站的 PV、UV 统计数
