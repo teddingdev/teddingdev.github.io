@@ -110,7 +110,7 @@ export function DebounceFetchDataServiceFactory<T extends string>(
 ### 使用
 
 将上面的代码拷贝到一个服务中，同时在组件自身的 **`providers`** 中添加如下的代码.
-首先提供我们刚刚创建的搜索服务 **`DebounceSearchService`** ，接着通过工厂函数 **`DebounceFetchDataServiceFactory`** 提供 **`DebounceFetchDataService`** ，同时别忘记指定需要调用的方法名称，以及在 **`deps`** 字段中指定需要依赖的服务。特别的是你可以通过[在 AngularJS 组件实例中注入相同 service 的多个实例] 以实现调用不同的实例。
+首先提供我们刚刚创建的搜索服务 **`DebounceSearchService`** ，接着通过工厂函数 **`DebounceFetchDataServiceFactory`** 提供 **`DebounceFetchDataService`** ，同时别忘记指定需要调用的方法名称，以及在 **`deps`** 字段中指定需要依赖的服务。特别的是你可以通过[在 Angular 组件实例中注入相同 service 的多个实例] 以实现调用不同的实例。
 
 ```typescript
 providers: [
@@ -132,4 +132,4 @@ providers: [
 提供给防抖服务的依赖可以是任意需要防抖的调用，上面提供的搜索只是其中一种特殊的用法。
 
 [Angular]: https://angular.io
-[在 AngularJS 组件实例中注入相同 service 的多个实例]: /2024/03/06/18e125846d8.html
+[在 Angular 组件实例中注入相同 service 的多个实例]: /2024/03/06/18e125846d8.html

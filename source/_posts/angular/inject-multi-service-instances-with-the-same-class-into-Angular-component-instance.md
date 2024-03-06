@@ -1,5 +1,5 @@
 ---
-title: 在 AngularJS 组件实例中注入相同 service 的多个实例
+title: 在 Angular 组件实例中注入相同 service 的多个实例
 date: 2024-03-06 13:59:19
 tags:
   - 前端
@@ -11,7 +11,7 @@ categories:
 
 {{ title }}
 
-> inject multi service instances with the same class into AngularJS component instance
+> inject multi service instances with the same class into Angular component instance
 
 <!-- more -->
 ### 在 providers 中定义
