@@ -16,12 +16,12 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在 AngularJS 组件实例中注入相同 service 的多个实例   inject multi service instances with the same class into AngularJS component instance">
+    <meta name="description" content="在 Angular 组件实例中注入相同 service 的多个实例   inject multi service instances with the same class into Angular component instance">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 AngularJS 组件实例中注入相同 service 的多个实例">
+<meta property="og:title" content="在 Angular 组件实例中注入相同 service 的多个实例">
 <meta property="og:url" content="https://tedding.dev/2024/03/06/18e125846d8.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="在 AngularJS 组件实例中注入相同 service 的多个实例   inject multi service instances with the same class into AngularJS component instance">
+<meta property="og:description" content="在 Angular 组件实例中注入相同 service 的多个实例   inject multi service instances with the same class into Angular component instance">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-06T05:59:19.000Z">
 <meta property="article:modified_time" content="2024-03-06T05:59:19.000Z">
@@ -32,7 +32,7 @@
   
   
   
-  <title>在 AngularJS 组件实例中注入相同 service 的多个实例 - tedding&#39;s blog</title>
+  <title>在 Angular 组件实例中注入相同 service 的多个实例 - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +241,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在 AngularJS 组件实例中注入相同 service 的多个实例"></span>
+            <span id="subtitle" data-typed-text="在 Angular 组件实例中注入相同 service 的多个实例"></span>
           
         </div>
 
@@ -312,15 +312,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在 AngularJS 组件实例中注入相同 service 的多个实例</h1>
+            <h1 id="seo-header">在 Angular 组件实例中注入相同 service 的多个实例</h1>
             
             
               <div class="markdown-body">
                 
-                在 AngularJS 组件实例中注入相同 service 的多个实例
+                在 Angular 组件实例中注入相同 service 的多个实例
 
 <blockquote>
-<p>inject multi service instances with the same class into AngularJS component instance</p>
+<p>inject multi service instances with the same class into Angular component instance</p>
 </blockquote>
 <span id="more"></span>
 <h3 id="在-providers-中定义"><a href="#在-providers-中定义" class="headerlink" title="在 providers 中定义"></a>在 providers 中定义</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// ...</span><br><span class="hljs-attr">providers</span>: [<br>  &#123;<br>    <span class="hljs-attr">privide</span>: <span class="hljs-string">&quot;privide_A&quot;</span>, <span class="hljs-comment">// 注入多次，所以需要别名</span><br>    <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>    <span class="hljs-attr">deps</span>: [], <span class="hljs-comment">// 如果需要</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">privide</span>: <span class="hljs-string">&quot;privide_B&quot;</span>, <span class="hljs-comment">// 注入多次，所以需要别名</span><br>    <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>    <span class="hljs-attr">deps</span>: [], <span class="hljs-comment">// 如果需要</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">privide</span>: <span class="hljs-string">&quot;privide_C&quot;</span>, <span class="hljs-comment">// 注入多次，所以需要别名</span><br>    <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>    <span class="hljs-attr">deps</span>: [], <span class="hljs-comment">// 如果需要</span><br>  &#125;,<br>  <span class="hljs-comment">// ... 可以有更多</span><br>];<br><span class="hljs-comment">// ...</span><br></code></pre></td></tr></table></figure>
@@ -388,7 +388,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在 AngularJS 组件实例中注入相同 service 的多个实例</div>
+      <div>在 Angular 组件实例中注入相同 service 的多个实例</div>
       <div>https://tedding.dev/2024/03/06/18e125846d8.html</div>
     </div>
     <div class="license-meta">
