@@ -16,23 +16,24 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在 Angular 组件实例中注入相同 service 的多个实例   inject multi service instances with the same class into Angular component instance">
+    <meta name="description" content="使用 Angular 指令进行自定义文本高亮显示">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Angular 组件实例中注入相同 service 的多个实例">
-<meta property="og:url" content="https://tedding.dev/2024/03/06/18e125846d8.html">
+<meta property="og:title" content="使用 Angular 指令进行自定义文本高亮显示">
+<meta property="og:url" content="https://tedding.dev/2024/04/03/18ea3582a40.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="在 Angular 组件实例中注入相同 service 的多个实例   inject multi service instances with the same class into Angular component instance">
+<meta property="og:description" content="使用 Angular 指令进行自定义文本高亮显示">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-06T05:59:19.000Z">
-<meta property="article:modified_time" content="2024-03-06T05:59:19.000Z">
+<meta property="article:published_time" content="2024-04-03T09:44:08.000Z">
+<meta property="article:modified_time" content="2024-04-03T09:44:08.000Z">
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="Angular">
+<meta property="article:tag" content="Directive">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>在 Angular 组件实例中注入相同 service 的多个实例 - tedding&#39;s blog</title>
+  <title>使用 Angular 指令进行自定义文本高亮显示 - tedding&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +242,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="在 Angular 组件实例中注入相同 service 的多个实例"></span>
+            <span id="subtitle" data-typed-text="使用 Angular 指令进行自定义文本高亮显示"></span>
           
         </div>
 
@@ -252,8 +253,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-06 13:59" pubdate>
-          2024年3月6日 下午
+        <time datetime="2024-04-03 17:44" pubdate>
+          2024年4月3日 下午
         </time>
       </span>
     
@@ -264,7 +265,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          344 字
+          238 字
         
       </span>
     
@@ -275,7 +276,7 @@
         
         
         
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -312,29 +313,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">在 Angular 组件实例中注入相同 service 的多个实例</h1>
+            <h1 id="seo-header">使用 Angular 指令进行自定义文本高亮显示</h1>
             
             
               <div class="markdown-body">
                 
-                在 Angular 组件实例中注入相同 service 的多个实例
+                使用 Angular 指令进行自定义文本高亮显示
 
-<blockquote>
-<p>inject multi service instances with the same class into Angular component instance</p>
-</blockquote>
 <span id="more"></span>
-<h3 id="在-providers-中定义"><a href="#在-providers-中定义" class="headerlink" title="在 providers 中定义"></a>在 providers 中定义</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// ...</span><br><span class="hljs-attr">providers</span>: [<br>  &#123;<br>    <span class="hljs-attr">privide</span>: <span class="hljs-string">&quot;privide_A&quot;</span>, <span class="hljs-comment">// 注入多次，所以需要别名</span><br>    <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>    <span class="hljs-attr">deps</span>: [], <span class="hljs-comment">// 如果需要</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">privide</span>: <span class="hljs-string">&quot;privide_B&quot;</span>, <span class="hljs-comment">// 注入多次，所以需要别名</span><br>    <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>    <span class="hljs-attr">deps</span>: [], <span class="hljs-comment">// 如果需要</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">privide</span>: <span class="hljs-string">&quot;privide_C&quot;</span>, <span class="hljs-comment">// 注入多次，所以需要别名</span><br>    <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>    <span class="hljs-attr">deps</span>: [], <span class="hljs-comment">// 如果需要</span><br>  &#125;,<br>  <span class="hljs-comment">// ... 可以有更多</span><br>];<br><span class="hljs-comment">// ...</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="在-constructor-中声明"><a href="#在-constructor-中声明" class="headerlink" title="在 constructor 中声明"></a>在 constructor 中声明</h3><p>接下来是在 constructor 函数中定义需要被注入的服务名称 和 类型</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-title function_">constructor</span> (<br>  <span class="hljs-meta">@Inject</span>(<span class="hljs-string">&#x27;privide_A&#x27;</span>) <span class="hljs-keyword">private</span> <span class="hljs-attr">privide_A_service</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>  <span class="hljs-meta">@Inject</span>(<span class="hljs-string">&#x27;privide_B&#x27;</span>) <span class="hljs-keyword">private</span> <span class="hljs-attr">privide_B_service</span>: <span class="hljs-title class_">BeInjectedService</span>,<br>  <span class="hljs-meta">@Inject</span>(<span class="hljs-string">&#x27;privide_C&#x27;</span>) <span class="hljs-keyword">private</span> <span class="hljs-attr">privide_C_service</span>: <span class="hljs-title class_">BeInjectedService</span><br>)&#123;<br>  <span class="hljs-comment">// code</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li><p>在组件中使用 <code>this.privide_A_service</code>,<code>this.privide_B_service</code>,<code>this.privide_C_service</code>, 将分别来自不同的实例，当你真的需要三个实例时可以尝试使用这种方式实现隔离。一般的 通过封装更加明确的组件可以避免使用这种方式来隔离数据，但是不得不说某些情况下，你清楚的知道自己在做什么，这样做反而会更加的简单。</p>
-</li>
-<li><p>需要说明的是，当在 <code>providers</code> 中有定义，同时这个 <code>service</code> 又声明在某些 module&#x2F;root 中提供的时候，组件会优先选择当前位置声明的实例，也就意味着会有不同的实例存在，而不是常规的单例服务，这也是我们这篇文章能够实现的基础。</p>
-</li>
-</ul>
-
+<h3 id="创建自定义指令"><a href="#创建自定义指令" class="headerlink" title="创建自定义指令"></a>创建自定义指令</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">Input</span>, <span class="hljs-title class_">ElementRef</span>, <span class="hljs-title class_">AfterViewInit</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@angular/core&quot;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>  <span class="hljs-attr">selector</span>: <span class="hljs-string">&quot;[appHighlight]&quot;</span>,<br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HighlightDirective</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">AfterViewInit</span> &#123;<br>  <span class="hljs-meta">@Input</span>() <span class="hljs-attr">highlightText</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;&quot;</span>;<br>  <span class="hljs-meta">@Input</span>() <span class="hljs-attr">highlightColor</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;red&quot;</span>;<br><br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> element: ElementRef</span>) &#123;&#125;<br><br>  <span class="hljs-title function_">ngAfterViewInit</span>(): <span class="hljs-built_in">void</span> &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">highlightAction</span>();<br>  &#125;<br><br>  <span class="hljs-keyword">private</span> <span class="hljs-title function_">highlightAction</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> innerHTML = <span class="hljs-variable language_">this</span>.<span class="hljs-property">element</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-property">innerHTML</span>;<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">highlightText</span> || !innerHTML) &#123;<br>      <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">const</span> escapedHighlightText = <span class="hljs-variable language_">this</span>.escapeRegExp(<span class="hljs-variable language_">this</span>.<span class="hljs-property">highlightText</span>);<br>    <span class="hljs-keyword">const</span> regex = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;escapedHighlightText&#125;</span>`</span>, <span class="hljs-string">&quot;gi&quot;</span>);<br>    <span class="hljs-keyword">const</span> highlightedText = innerHTML.<span class="hljs-title function_">replace</span>(<br>      regex,<br>      <span class="hljs-function">(<span class="hljs-params">match</span>) =&gt;</span> <span class="hljs-string">`&lt;span style=&quot;color:<span class="hljs-subst">$&#123;<span class="hljs-variable language_">this</span>.highlightColor&#125;</span>&quot;&gt;<span class="hljs-subst">$&#123;match&#125;</span>&lt;/span&gt;`</span><br>    );<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">element</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-property">innerHTML</span> = highlightedText;<br>  &#125;<br><br>  <span class="hljs-keyword">private</span> escapeRegExp(<span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span> &#123;<br>    <span class="hljs-keyword">return</span> text.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[-[\]&#123;&#125;()*+?.,\\^$|#\s]/g</span>, <span class="hljs-string">&quot;\\$&amp;&quot;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="默认红色"><a href="#默认红色" class="headerlink" title="默认红色"></a>默认红色</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs typescript">&lt;div appHighlight [highlightText]=<span class="hljs-string">&quot;高亮&quot;</span>&gt; 使用 <span class="hljs-title class_">Angular</span> 指令进行自定义文本高亮显示 &lt;/div&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="使用自定义颜色"><a href="#使用自定义颜色" class="headerlink" title="使用自定义颜色"></a>使用自定义颜色</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs typescript">&lt;div appHighlight [highlightText]=<span class="hljs-string">&quot;高亮&quot;</span> [highlightColor]=<span class="hljs-string">&quot;yellow&quot;</span>&gt; 使用 <span class="hljs-title class_">Angular</span> 指令进行自定义文本高亮显示 &lt;/div&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">appHighlight</span> [<span class="hljs-attr">highlightText</span>]=<span class="hljs-string">&quot;高亮&quot;</span> [<span class="hljs-attr">highlightColor</span>]=<span class="hljs-string">&quot;#000&quot;</span>&gt;</span> 使用 Angular 指令进行自定义文本高亮显示 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -360,6 +349,13 @@
   <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/" class="category-chain-item">Angular</a>
   
   
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/Angular/Directive/" class="category-chain-item">Directive</a>
+  
+  
+
+  
 
   
 
@@ -378,6 +374,8 @@
       
         <a href="/tags/Angular/" class="print-no-link">#Angular</a>
       
+        <a href="/tags/Directive/" class="print-no-link">#Directive</a>
+      
     </div>
   
 </div>
@@ -388,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>在 Angular 组件实例中注入相同 service 的多个实例</div>
-      <div>https://tedding.dev/2024/03/06/18e125846d8.html</div>
+      <div>使用 Angular 指令进行自定义文本高亮显示</div>
+      <div>https://tedding.dev/2024/04/03/18ea3582a40.html</div>
     </div>
     <div class="license-meta">
       
@@ -401,7 +399,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月6日</div>
+          <div>2024年4月3日</div>
         </div>
       
       
@@ -445,18 +443,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/03/18ea3582a40.html" title="使用 Angular 指令进行自定义文本高亮显示">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用 Angular 指令进行自定义文本高亮显示</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/29/18df45fa770.html" title="在 Angular 创建可注入的通用防抖服务">
-                        <span class="hidden-mobile">在 Angular 创建可注入的通用防抖服务</span>
+                      <a href="/2024/03/06/18e125846d8.html" title="在 Angular 组件实例中注入相同 service 的多个实例">
+                        <span class="hidden-mobile">在 Angular 组件实例中注入相同 service 的多个实例</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -476,8 +468,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://tedding.dev/2024/03/06/18e125846d8.html';
-          this.page.identifier = '/2024/03/06/18e125846d8.html';
+          this.page.url = 'https://tedding.dev/2024/04/03/18ea3582a40.html';
+          this.page.identifier = '/2024/04/03/18ea3582a40.html';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');

@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>使用 Angular 指令进行自定义文本高亮显示</title>
+    <link href="/2024/04/03/18ea3582a40.html"/>
+    <url>/2024/04/03/18ea3582a40.html</url>
+    
+    <content type="html"><![CDATA[使用 Angular 指令进行自定义文本高亮显示<span id="more"></span><h3 id="创建自定义指令"><a href="#创建自定义指令" class="headerlink" title="创建自定义指令"></a>创建自定义指令</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">Input</span>, <span class="hljs-title class_">ElementRef</span>, <span class="hljs-title class_">AfterViewInit</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@angular/core&quot;</span>;<br><br><span class="hljs-meta">@Directive</span>(&#123;<br>  <span class="hljs-attr">selector</span>: <span class="hljs-string">&quot;[appHighlight]&quot;</span>,<br>&#125;)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HighlightDirective</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">AfterViewInit</span> &#123;<br>  <span class="hljs-meta">@Input</span>() <span class="hljs-attr">highlightText</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;&quot;</span>;<br>  <span class="hljs-meta">@Input</span>() <span class="hljs-attr">highlightColor</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;red&quot;</span>;<br><br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> element: ElementRef</span>) &#123;&#125;<br><br>  <span class="hljs-title function_">ngAfterViewInit</span>(): <span class="hljs-built_in">void</span> &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">highlightAction</span>();<br>  &#125;<br><br>  <span class="hljs-keyword">private</span> <span class="hljs-title function_">highlightAction</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> innerHTML = <span class="hljs-variable language_">this</span>.<span class="hljs-property">element</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-property">innerHTML</span>;<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">highlightText</span> || !innerHTML) &#123;<br>      <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">const</span> escapedHighlightText = <span class="hljs-variable language_">this</span>.escapeRegExp(<span class="hljs-variable language_">this</span>.<span class="hljs-property">highlightText</span>);<br>    <span class="hljs-keyword">const</span> regex = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;escapedHighlightText&#125;</span>`</span>, <span class="hljs-string">&quot;gi&quot;</span>);<br>    <span class="hljs-keyword">const</span> highlightedText = innerHTML.<span class="hljs-title function_">replace</span>(<br>      regex,<br>      <span class="hljs-function">(<span class="hljs-params">match</span>) =&gt;</span> <span class="hljs-string">`&lt;span style=&quot;color:<span class="hljs-subst">$&#123;<span class="hljs-variable language_">this</span>.highlightColor&#125;</span>&quot;&gt;<span class="hljs-subst">$&#123;match&#125;</span>&lt;/span&gt;`</span><br>    );<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">element</span>.<span class="hljs-property">nativeElement</span>.<span class="hljs-property">innerHTML</span> = highlightedText;<br>  &#125;<br><br>  <span class="hljs-keyword">private</span> escapeRegExp(<span class="hljs-attr">text</span>: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">string</span> &#123;<br>    <span class="hljs-keyword">return</span> text.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[-[\]&#123;&#125;()*+?.,\\^$|#\s]/g</span>, <span class="hljs-string">&quot;\\$&amp;&quot;</span>);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="默认红色"><a href="#默认红色" class="headerlink" title="默认红色"></a>默认红色</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs typescript">&lt;div appHighlight [highlightText]=<span class="hljs-string">&quot;高亮&quot;</span>&gt; 使用 <span class="hljs-title class_">Angular</span> 指令进行自定义文本高亮显示 &lt;/div&gt;<br></code></pre></td></tr></table></figure><h3 id="使用自定义颜色"><a href="#使用自定义颜色" class="headerlink" title="使用自定义颜色"></a>使用自定义颜色</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs typescript">&lt;div appHighlight [highlightText]=<span class="hljs-string">&quot;高亮&quot;</span> [highlightColor]=<span class="hljs-string">&quot;yellow&quot;</span>&gt; 使用 <span class="hljs-title class_">Angular</span> 指令进行自定义文本高亮显示 &lt;/div&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">appHighlight</span> [<span class="hljs-attr">highlightText</span>]=<span class="hljs-string">&quot;高亮&quot;</span> [<span class="hljs-attr">highlightColor</span>]=<span class="hljs-string">&quot;#000&quot;</span>&gt;</span> 使用 Angular 指令进行自定义文本高亮显示 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>Angular</category>
+      
+      <category>Directive</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>Angular</tag>
+      
+      <tag>Directive</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>在 Angular 组件实例中注入相同 service 的多个实例</title>
     <link href="/2024/03/06/18e125846d8.html"/>
     <url>/2024/03/06/18e125846d8.html</url>
