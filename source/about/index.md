@@ -13,6 +13,7 @@ teddingdev[AT]gmail.com
 GitHub主页：https://github.com/teddingdev
 
 ### 其他工具
+> - Angular WebGL 组件库 [NGX-UVCANVAS](https://ngx-uvcanvas.ife.app/)
 > - NG-Clash
 未完成的 [clash-dashboard](//clash.tedding.dev)
 > - primeNG-5 Reference
