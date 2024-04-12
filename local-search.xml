@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>NGX-UVCANVAS 更新日志[v0.1.0]</title>
+    <link href="/2024/04/12/18ed0eba928.html"/>
+    <url>/2024/04/12/18ed0eba928.html</url>
+    
+    <content type="html"><![CDATA[NGX-UVCANVAS 更新日志[v0.1.0]<span id="more"></span><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://raw.githubusercontent.com/teddingdev/ngx-uvcanvas/github-pages/generated.svg" srcset="/img/loading.gif" lazyload alt="pages-generated"></div><div class="group-image-wrap"><img src="https://github.com/teddingdev/ngx-uvcanvas/actions/workflows/github-pages.yaml/badge.svg" srcset="/img/loading.gif" lazyload alt="github-pages"></div><div class="group-image-wrap"><img src="https://github.com/teddingdev/ngx-uvcanvas/actions/workflows/pages/pages-build-deployment/badge.svg" srcset="/img/loading.gif" lazyload alt="pages-build-deployment"></div></div></div><ul><li>文档：<a href="https://ngx-uvcanvas.ife.app/">https://ngx-uvcanvas.ife.app/</a></li><li>项目：<a href="https://github.com/teddingdev/ngx-uvcanvas">https://github.com/teddingdev/ngx-uvcanvas</a></li></ul><h3 id="v0-1-0"><a href="#v0-1-0" class="headerlink" title="v0.1.0"></a>v0.1.0</h3><p>2024-04-12 12:00:00 第一个版本发布啦 🎉🎉🎉<br>首次添加 <code>&lt;nuc-lumiflex&gt;</code>, <code>&lt;nuc-zenitho&gt;</code>, <code>&lt;nuc-novatrix&gt;</code>, <code>&lt;nuc-velustro&gt;</code>, <code>&lt;nuc-tranquiluxe&gt;</code>, <code>&lt;nuc-opulento&gt;</code> 组件</p><p><img src="https://ngx-uvcanvas.ife.app/assets/png/Screenshot.png" srcset="/img/loading.gif" lazyload alt="Screenshot"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+      <category>Angular</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端</tag>
+      
+      <tag>Angular</tag>
+      
+      <tag>Component</tag>
+      
+      <tag>open-source</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用 Angular 指令进行自定义文本高亮显示</title>
     <link href="/2024/04/03/18ea3582a40.html"/>
     <url>/2024/04/03/18ea3582a40.html</url>
