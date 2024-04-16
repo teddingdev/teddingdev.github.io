@@ -1,5 +1,5 @@
 ---
-title: NGX-UVCANVAS 更新日志[v0.1.0]
+title: NGX-UVCANVAS 更新日志[v0.1.1]
 date: 2024-04-12 14:08:09
 tags:
   - 前端
@@ -23,7 +23,10 @@ categories:
 - 项目：https://github.com/teddingdev/ngx-uvcanvas
 
 ### v0.1.0
-2024-04-12 12:00:00 第一个版本发布啦 🎉🎉🎉
+2024-04-12 第一个版本发布啦 🎉🎉🎉
 首次添加 `<nuc-lumiflex>`, `<nuc-zenitho>`, `<nuc-novatrix>`, `<nuc-velustro>`, `<nuc-tranquiluxe>`, `<nuc-opulento>` 组件
+### v0.1.1 
+2024-04-16 增加了一个新组件
+添加 `<nuc-forest>` 组件
 
 ![Screenshot](https://ngx-uvcanvas.ife.app/assets/png/Screenshot.png)

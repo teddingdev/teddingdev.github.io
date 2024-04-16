@@ -1131,6 +1131,12 @@ links:
       link: "https://moc.1tlt1.com/",
       avatar: "https://moc.1tlt1.com/usr/uploads/2022/07/166775764.png"
     }
+    - {
+      title: "ngx-uvcanvas",
+      intro: "An Angular component library that offers a diverse range of dynamic canvases pre-built.",
+      link: "https://ngx-uvcanvas.ife.app",
+      avatar: "https://ngx-uvcanvas.ife.app/favicon.ico"
+    }
     
   
   # 当成员头像加载失败时，替换为指定图片

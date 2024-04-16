@@ -59,7 +59,7 @@ kioclient exec <path-to-desktop-file>
 # 查询日志
 journalctl -u sshd.service | grep 'Invalid .* from [0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
 # 查询日志 重定向 输出 到 ～/Documents/ips.txt
-journalctl -u sshd.service | grep 'Invalid .* from [0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | uniq | awk '{print "\""$1"\""","}' > ～/Documents/ips.txt
+journalctl -u sshd.service | grep 'Invalid .* from [0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | uniq | awk '{print "\""$1"\""","}' > ~/Documents/ips.txt
 
 ```
 
