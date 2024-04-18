@@ -1,7 +1,7 @@
 ---
 title: NGX-UVCANVAS 更新日志[v0.1.2]
 date: 2024-04-12 14:08:09
-update_date: 2024-04-17 14:34:31
+update_date: 2024-04-18 10:11:53
 tags:
   - 前端
   - Angular
@@ -37,7 +37,7 @@ categories:
 2024-04-16 增加了一个新组件
 添加 `<nuc-forest>` 组件
 
-### v0.1.3
+### v0.1.2
 
 2024-04-17 增加了一个新组件
 添加 `<nuc-particles>` 组件
