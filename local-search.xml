@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>如何为 Docker 配置代理?（Linux）</title>
+    <link href="/2025/03/03/1955ac419e0.html"/>
+    <url>/2025/03/03/1955ac419e0.html</url>
+    
+    <content type="html"><![CDATA[如何为 Docker 配置代理?（Linux）<span id="more"></span><h3 id="为-docker-拉取镜像设置代理"><a href="#为-docker-拉取镜像设置代理" class="headerlink" title="为 docker 拉取镜像设置代理"></a>为 docker 拉取镜像设置代理</h3><p>在 <code>/etc/systemd/system/docker.service.d/</code> 创建 <code>http-proxy.conf</code></p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment">#/etc/systemd/system/docker.service.d/http-proxy.conf</span><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Environment</span>=<span class="hljs-string">&quot;HTTP_PROXY=http://localhost:port/&quot;</span><br><span class="hljs-attr">Environment</span>=<span class="hljs-string">&quot;HTTPS_PROXY=http://localhost:port/&quot;</span><br><span class="hljs-attr">Environment</span>=<span class="hljs-string">&quot;NO_PROXY=localhost,127.0.0.1,.example.com&quot;</span><br></code></pre></td></tr></table></figure><h3 id="为-docker-container-实例设置代理"><a href="#为-docker-container-实例设置代理" class="headerlink" title="为 docker container 实例设置代理"></a>为 docker container 实例设置代理</h3><p>在 <code>~/.docker/</code> 创建 <code>conig.json</code></p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">// ~/.docker/conig.json</span><br><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;auths&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;https://index.docker.io/v1/&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;auth&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;token&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;proxies&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;default&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;httpProxy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://localhost:port&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;httpsProxy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://localhost:port&quot;</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;noProxy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;localhost,127.0.0.1&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+      <category>Docker</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>NGX-UVCANVAS 更新日志[v0.1.2]</title>
     <link href="/2024/04/12/18ed0eba928.html"/>
     <url>/2024/04/12/18ed0eba928.html</url>
@@ -1004,16 +1033,16 @@
       
       <category>Linux</category>
       
-      <category>docker</category>
+      <category>Docker</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Linux</tag>
+      <tag>Docker</tag>
       
-      <tag>docker</tag>
+      <tag>Linux</tag>
       
       <tag>let&#39;s encrypt</tag>
       
