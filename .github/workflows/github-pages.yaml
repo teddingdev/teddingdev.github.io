@@ -4,6 +4,7 @@ on:
   push:
     branches: [master]
     paths-ignore: [.github/workflows/**, ./LICENSE, ./README.md ./gitignore]
+  workflow_dispatch:
 
 env:
   TZ: Asia/Shanghai
@@ -102,7 +103,7 @@ jobs:
       - name: Bark
         continue-on-error: true
         run: |
-          curl --location ${{ RENDER_BARK_SERVER }} \
+          curl --location ${{ env.RENDER_BARK_SERVER }} \
           --header 'Content-Type: application/json; charset=utf-8' \
           --data '{
           "body": "tedding.dev build completed ",
