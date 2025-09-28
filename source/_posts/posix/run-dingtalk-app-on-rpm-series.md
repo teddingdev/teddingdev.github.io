@@ -1,7 +1,7 @@
 ---
 title: 在 Linux "rpm" 系发行版上运行钉钉应用程序
 date: 2023-06-16 13:29:42
-updated: 2024-02-29 10:51:05
+updated: 2025-09-28 13:20:38
 tags:
     - Linux
     - openSUSE
@@ -14,7 +14,7 @@ categories:
     - office
     - dingtalk
 ---
-
+### 初次尝试
 今天尝试了一下，如何在 `openSUSE Tumbleweed 20230613` 上运行钉钉 linux 版本，现在记录一下过程。
 > **PS: 最新版本钉钉(dingtalk_7.5.0.40221)在 `openSUSE Tumbleweed 20240226` 只需要移除软件附带的 `libm.so.6`, 使用系统的so文件即可;**
 <!-- more -->
@@ -103,6 +103,20 @@ GLIBC_PRIVATE
 Load /opt/apps/com.alibabainc.dingtalk/files/1.8.0-Release.30601//dingtalk_dll.so failed! Err=/lib64/libcairo.so.2: undefined symbol: FT_Get_Color_Glyph_Layer
 ```
 看起来还是文件版本不一致的文件啊，简单搜索发现`libcairo.so.2` 这个库和 `libfreetype` 有关，所以将 `release` 下的 `libfreetype.so.6` 和 `libfreetype.so.6.16.1` 移动到 `exclude`。继续运行...好了，完成～
+### 2025-09-28 13:20:55 更新
+针对 [`com.alibabainc.dingtalk_7.6.45.5062501_amd64`](https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_7.6.45.5062501_amd64.deb),在最新的opeSUSE Tumbleweed 或者系统安全策略不允许executable stack时会遇到下面的问题:
+> Load /opt/apps/com.alibabainc.dingtalk/files/7.6.45-Release.5062501//dingtalk_dll.so failed! Err=/opt/apps/com.alibabainc.dingtalk/files/7.6.45-Release.5062501//dingtalk_dll.so: cannot enable executable stack as shared object requires: Invalid argument      
+
+- 检查 dingtalk_dll.so 的栈权限需求，发现输出`X`->需要可执行栈
+```bash
+execstack -q /opt/apps/com.alibabainc.dingtalk/files/7.6.45-Release.5062501/dingtalk_dll.so
+```
+- 大概率是错误的声明需要可执行栈，尝试删除
+```bash
+sudo execstack -c /opt/apps/com.alibabainc.dingtalk/files/7.6.45-Release.5062501/dingtalk_dll.so
+```     
+
+🎉🎉🎉
 ![dingtalk 登录](./assets/img/dingtalk/dingtalk_login.png)
 ![dingtalk 设置](./assets/img/dingtalk/dingtalk_preferences.png)
 ![dingtalk 文档](./assets/img/dingtalk/dingtalk_online.png)
