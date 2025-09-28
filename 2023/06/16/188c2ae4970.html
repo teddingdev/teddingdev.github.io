@@ -16,18 +16,18 @@
   <meta name="author" content="TED.DING">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天尝试了一下，如何在 openSUSE Tumbleweed 20230613 上运行钉钉 linux 版本，现在记录一下过程。  PS: 最新版本钉钉(dingtalk_7.5.0.40221)在 openSUSE Tumbleweed 20240226 只需要移除软件附带的 libm.so.6, 使用系统的so文件即可;">
+    <meta name="description" content="初次尝试今天尝试了一下，如何在 openSUSE Tumbleweed 20230613 上运行钉钉 linux 版本，现在记录一下过程。  PS: 最新版本钉钉(dingtalk_7.5.0.40221)在 openSUSE Tumbleweed 20240226 只需要移除软件附带的 libm.so.6, 使用系统的so文件即可;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Linux &quot;rpm&quot; 系发行版上运行钉钉应用程序">
 <meta property="og:url" content="https://tedding.dev/2023/06/16/188c2ae4970.html">
 <meta property="og:site_name" content="tedding&#39;s blog">
-<meta property="og:description" content="今天尝试了一下，如何在 openSUSE Tumbleweed 20230613 上运行钉钉 linux 版本，现在记录一下过程。  PS: 最新版本钉钉(dingtalk_7.5.0.40221)在 openSUSE Tumbleweed 20240226 只需要移除软件附带的 libm.so.6, 使用系统的so文件即可;">
+<meta property="og:description" content="初次尝试今天尝试了一下，如何在 openSUSE Tumbleweed 20230613 上运行钉钉 linux 版本，现在记录一下过程。  PS: 最新版本钉钉(dingtalk_7.5.0.40221)在 openSUSE Tumbleweed 20240226 只需要移除软件附带的 libm.so.6, 使用系统的so文件即可;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tedding.dev/assets/img/dingtalk/dingtalk_login.png">
 <meta property="og:image" content="https://tedding.dev/assets/img/dingtalk/dingtalk_preferences.png">
 <meta property="og:image" content="https://tedding.dev/assets/img/dingtalk/dingtalk_online.png">
 <meta property="article:published_time" content="2023-06-16T05:29:42.000Z">
-<meta property="article:modified_time" content="2024-02-29T02:51:05.000Z">
+<meta property="article:modified_time" content="2025-09-28T05:20:38.000Z">
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="openSUSE">
@@ -272,7 +272,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          771 字
+          929 字
         
       </span>
     
@@ -283,7 +283,7 @@
         
         
         
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -325,7 +325,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年2月29日 上午
+                    本文最后更新于 2025年9月28日 下午
                   
                 
               </p>
@@ -333,7 +333,7 @@
             
               <div class="markdown-body">
                 
-                <p>今天尝试了一下，如何在 <code>openSUSE Tumbleweed 20230613</code> 上运行钉钉 linux 版本，现在记录一下过程。</p>
+                <h3 id="初次尝试"><a href="#初次尝试" class="headerlink" title="初次尝试"></a>初次尝试</h3><p>今天尝试了一下，如何在 <code>openSUSE Tumbleweed 20230613</code> 上运行钉钉 linux 版本，现在记录一下过程。</p>
 <blockquote>
 <p><strong>PS: 最新版本钉钉(dingtalk_7.5.0.40221)在 <code>openSUSE Tumbleweed 20240226</code> 只需要移除软件附带的 <code>libm.so.6</code>, 使用系统的so文件即可;</strong></p>
 </blockquote>
@@ -354,7 +354,18 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(suse@localhost)-[/opt/apps/com.alibabainc.dingtalk/files]<br>└─$ strings ./1.8.0-Release.30601/libm.so.6 | grep ^GLIBC<br>GLIBC_2.2.5<br>GLIBC_2.4<br>GLIBC_2.15<br>GLIBC_2.18<br>GLIBC_2.23<br>GLIBC_2.24<br>GLIBC_2.25<br>GLIBC_2.26<br>GLIBC_2.27<br>GLIBC_2.28<br>GLIBC_PRIVATE<br></code></pre></td></tr></table></figure>
 <p>所以我们可以手动复制或者软链接一个 <code>/lib64/libm.so.6</code> 下的文件到 <code>release</code> 目录，也可以直接删掉，让系统文件生效。<br>这里我选择新建一个 <code>exclude</code> 目录 将 <code>release</code> 下的 <code>libm.so.6</code> 移动过去，做一个备份。<br>现在我们尝试再次执行 <code>Elevator.sh</code> 会有新的错误抛出</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">┌──(suse@localhost)-[/opt/apps/com.alibabainc.dingtalk/files/1.8.0-Release.30601]<br>└─$ ./com.alibabainc.dingtalk <br>Load /opt/apps/com.alibabainc.dingtalk/files/1.8.0-Release.30601//dingtalk_dll.so failed! Err=/lib64/libcairo.so.2: undefined symbol: FT_Get_Color_Glyph_Layer<br></code></pre></td></tr></table></figure>
-<p>看起来还是文件版本不一致的文件啊，简单搜索发现<code>libcairo.so.2</code> 这个库和 <code>libfreetype</code> 有关，所以将 <code>release</code> 下的 <code>libfreetype.so.6</code> 和 <code>libfreetype.so.6.16.1</code> 移动到 <code>exclude</code>。继续运行…好了，完成～<br><img src="/./assets/img/dingtalk/dingtalk_login.png" srcset="/img/loading.gif" lazyload alt="dingtalk 登录"><br><img src="/./assets/img/dingtalk/dingtalk_preferences.png" srcset="/img/loading.gif" lazyload alt="dingtalk 设置"><br><img src="/./assets/img/dingtalk/dingtalk_online.png" srcset="/img/loading.gif" lazyload alt="dingtalk 文档"></p>
+<p>看起来还是文件版本不一致的文件啊，简单搜索发现<code>libcairo.so.2</code> 这个库和 <code>libfreetype</code> 有关，所以将 <code>release</code> 下的 <code>libfreetype.so.6</code> 和 <code>libfreetype.so.6.16.1</code> 移动到 <code>exclude</code>。继续运行…好了，完成～</p>
+<h3 id="2025-09-28-13-20-55-更新"><a href="#2025-09-28-13-20-55-更新" class="headerlink" title="2025-09-28 13:20:55 更新"></a>2025-09-28 13:20:55 更新</h3><p>针对 <a target="_blank" rel="noopener" href="https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.dingtalk_7.6.45.5062501_amd64.deb"><code>com.alibabainc.dingtalk_7.6.45.5062501_amd64</code></a>,在最新的opeSUSE Tumbleweed 或者系统安全策略不允许executable stack时会遇到下面的问题:</p>
+<blockquote>
+<p>Load &#x2F;opt&#x2F;apps&#x2F;com.alibabainc.dingtalk&#x2F;files&#x2F;7.6.45-Release.5062501&#x2F;&#x2F;dingtalk_dll.so failed! Err&#x3D;&#x2F;opt&#x2F;apps&#x2F;com.alibabainc.dingtalk&#x2F;files&#x2F;7.6.45-Release.5062501&#x2F;&#x2F;dingtalk_dll.so: cannot enable executable stack as shared object requires: Invalid argument      </p>
+</blockquote>
+<ul>
+<li>检查 dingtalk_dll.so 的栈权限需求，发现输出<code>X</code>-&gt;需要可执行栈<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">execstack -q /opt/apps/com.alibabainc.dingtalk/files/7.6.45-Release.5062501/dingtalk_dll.so<br></code></pre></td></tr></table></figure></li>
+<li>大概率是错误的声明需要可执行栈，尝试删除</li>
+</ul>
+<pre><code class="bash">sudo execstack -c /opt/apps/com.alibabainc.dingtalk/files/7.6.45-Release.5062501/dingtalk_dll.so
+</code></pre>
+<p>🎉🎉🎉<br><img src="/./assets/img/dingtalk/dingtalk_login.png" srcset="/img/loading.gif" lazyload alt="dingtalk 登录"><br><img src="/./assets/img/dingtalk/dingtalk_preferences.png" srcset="/img/loading.gif" lazyload alt="dingtalk 设置"><br><img src="/./assets/img/dingtalk/dingtalk_online.png" srcset="/img/loading.gif" lazyload alt="dingtalk 文档"></p>
 
                 
               </div>
@@ -443,7 +454,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年2月29日</div>
+          <div>2025年9月28日</div>
         </div>
       
       
