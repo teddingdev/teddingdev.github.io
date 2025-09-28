@@ -8,7 +8,7 @@ layout: about
 ### 个人主页 
 https://tedding.dev
 ### 联系方式 
-teddingdev[AT]gmail.com
+aka[at]tedding.dev
 ### 说明
 GitHub主页：https://github.com/teddingdev
 
