@@ -19,6 +19,6 @@ cd ~/.local/share/plasma/look-and-feel/
 cd ~/.local/share/plasma/layout-templates/
 
 // local plugins folder
-cd ~/home/suse/.local/share/plasma/plasmoids/
+cd /home/suse/.local/share/plasma/plasmoids/
 
 ```
