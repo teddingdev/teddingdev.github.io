@@ -7,8 +7,11 @@
 
 <head>
   <meta charset="UTF-8">
+
   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/SpongeBobSquare@64.png">
   <link rel="icon" href="/assets/img/favicon/SpongeBobSquare@64.png">
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -28,8 +31,8 @@
 <meta property="article:author" content="TED.DING">
 <meta property="article:tag" content="Adobe">
 <meta property="article:tag" content="After Effect">
-<meta property="article:tag" content="插件">
 <meta property="article:tag" content="FLow">
+<meta property="article:tag" content="插件">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -51,7 +54,7 @@
 <!-- 主题依赖的图标库，不要自行修改 -->
 <!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
 
 
 
@@ -76,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"tedding.dev","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":{"measurement_id":"G-5FKXSGPLDL"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"tedding.dev","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":{"measurement_id":"G-5FKXSGPLDL"},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -111,12 +114,10 @@
 
   
 
-  
-
 
 
   
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 8.1.0"></head>
 
 
 <body>
@@ -324,10 +325,17 @@
 <h2 id="1、-插件修改"><a href="#1、-插件修改" class="headerlink" title="1、 插件修改"></a>1、 插件修改</h2><ul>
 <li>将flow.zxp更改扩展名为.zip并解压缩</li>
 <li>使用vscode 或者其他编辑器 打开.&#x2F;Flow&#x2F;js&#x2F;flow.js</li>
-<li>查找以下片段<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">A, Q</span>) &#123;<br>  <span class="hljs-keyword">var</span> B = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;iframe&#x27;</span>)<br>  ;(B.<span class="hljs-property">className</span> = <span class="hljs-string">&#x27;aesp &#x27;</span> + A),<br>    (B.<span class="hljs-property">src</span> = <span class="hljs-string">&#x27;data:text/html;charset=utf-8,&#x27;</span> + <span class="hljs-built_in">encodeURI</span>(Q))<br>  <span class="hljs-keyword">var</span> I = B.<span class="hljs-property">style</span><br>  ;(I.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;absolute&#x27;</span>),<br>    (I.<span class="hljs-property">left</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">top</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">right</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">bottom</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;100%&#x27;</span>),<br>    (I.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;100%&#x27;</span>),<br>    (I.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&#x27;white&#x27;</span>),<br>    (I.<span class="hljs-property">borderWidth</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>),<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(B)<br>  <span class="hljs-keyword">var</span> i = B.<span class="hljs-property">contentWindow</span><br>  <span class="hljs-keyword">return</span> (<br>    (i.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> A = i.<span class="hljs-title function_">_</span>(<span class="hljs-string">&#x27;[loc-key]&#x27;</span>), Q = <span class="hljs-number">0</span>; Q &lt; A.<span class="hljs-property">length</span>; Q++) &#123;<br>        <span class="hljs-keyword">var</span> B = A[Q],<br>          E = <span class="hljs-title function_">F</span>(B.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&#x27;loc-key&#x27;</span>))<br>        B.<span class="hljs-property">innerText</span> = E<br>      &#125;<br>    &#125;),<br>    B<br>  )<br>&#125;<br></code></pre></td></tr></table></figure>
-增加 <code>(I.display = &#39;none&#39;),</code></li>
-<li>接着查找下面这一句<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;app&#x27;</span>).<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>),<br></code></pre></td></tr></table></figure>
-将 <code>none</code> 改为 <code>block</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;app&#x27;</span>).<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;block&#x27;</span>),<br></code></pre></td></tr></table></figure></li>
+<li>查找以下片段</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">g</span>(<span class="hljs-params">A, Q</span>) &#123;<br>  <span class="hljs-keyword">var</span> B = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;iframe&#x27;</span>)<br>  ;(B.<span class="hljs-property">className</span> = <span class="hljs-string">&#x27;aesp &#x27;</span> + A),<br>    (B.<span class="hljs-property">src</span> = <span class="hljs-string">&#x27;data:text/html;charset=utf-8,&#x27;</span> + <span class="hljs-built_in">encodeURI</span>(Q))<br>  <span class="hljs-keyword">var</span> I = B.<span class="hljs-property">style</span><br>  ;(I.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;absolute&#x27;</span>),<br>    (I.<span class="hljs-property">left</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">top</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">right</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">bottom</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;100%&#x27;</span>),<br>    (I.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;100%&#x27;</span>),<br>    (I.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&#x27;white&#x27;</span>),<br>    (I.<span class="hljs-property">borderWidth</span> = <span class="hljs-string">&#x27;0px&#x27;</span>),<br>    (I.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>),<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(B)<br>  <span class="hljs-keyword">var</span> i = B.<span class="hljs-property">contentWindow</span><br>  <span class="hljs-keyword">return</span> (<br>    (i.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> A = i.<span class="hljs-title function_">_</span>(<span class="hljs-string">&#x27;[loc-key]&#x27;</span>), Q = <span class="hljs-number">0</span>; Q &lt; A.<span class="hljs-property">length</span>; Q++) &#123;<br>        <span class="hljs-keyword">var</span> B = A[Q],<br>          E = <span class="hljs-title function_">F</span>(B.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&#x27;loc-key&#x27;</span>))<br>        B.<span class="hljs-property">innerText</span> = E<br>      &#125;<br>    &#125;),<br>    B<br>  )<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>增加 <code>(I.display = &#39;none&#39;),</code></p>
+<ul>
+<li>接着查找下面这一句</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;app&#x27;</span>).<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>),<br></code></pre></td></tr></table></figure>
+<p>将 <code>none</code> 改为 <code>block</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;app&#x27;</span>).<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;block&#x27;</span>),<br></code></pre></td></tr></table></figure>
+<ul>
 <li>保存</li>
 </ul>
 <h2 id="2、系统修改，开启-Adobe-CEP-debug-模式"><a href="#2、系统修改，开启-Adobe-CEP-debug-模式" class="headerlink" title="2、系统修改，开启 Adobe CEP debug 模式"></a>2、系统修改，开启 Adobe CEP debug 模式</h2><p>因为插件在打包发布的时候有代码签名，默认不执行修改过的文件，需要手动开启 <code>debug</code> 模式。(下面是adobe CEP 开发文档原文)  </p>
@@ -426,19 +434,19 @@
               
                 <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
+                    <i class="iconfont icon-cc-by"></i>
                   </span>
                 </a>
               
                 <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
-                    <i class="iconfont icon-nc"></i>
+                    <i class="iconfont icon-cc-nc"></i>
                   </span>
                 </a>
               
                 <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
-                    <i class="iconfont icon-sa"></i>
+                    <i class="iconfont icon-cc-sa"></i>
                   </span>
                 </a>
               
@@ -604,7 +612,6 @@
   
   
   
-  
 </div>
 
   </footer>
@@ -703,7 +710,7 @@
 
   
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
     window.anchors.options = {
       placement: CONFIG.anchorjs.placement,
       visible  : CONFIG.anchorjs.visible
