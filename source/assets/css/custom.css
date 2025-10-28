@@ -1,5 +1,21 @@
-.markdown-body .highlight .gutter > pre span,
-.markdown-body .highlight .code > pre > code {
+@media not print {
+  [data-user-color-scheme="light"] {
+    body {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0) 18.75%, #f5f5f5 0 31.25%, rgba(0, 0, 0, 0) 0), repeating-linear-gradient(45deg, #f5f5f5 -6.25% 6.25%, rgba(255, 255, 255, 0) 0 18.75%);
+      background-size: 70px 70px;
+    }
+  }
+
+  [data-user-color-scheme="dark"] {
+    body {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0) 18.75%, #181C27 0 31.25%, rgba(0, 0, 0, 0) 0), repeating-linear-gradient(45deg, #181C27 -6.25% 6.25%, #13161F 0 18.75%);
+      background-size: 70px 70px;
+    }
+  }
+}
+
+.markdown-body .highlight .gutter>pre span,
+.markdown-body .highlight .code>pre>code {
   font-family: "Input Mono", "Droid Sans Mono", "monospace", "Menlo", "Monaco",
     "Consolas", "Courier New", "PingFang SC", "Apple Color Emoji" !important;
 }
